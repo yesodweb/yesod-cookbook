@@ -1,0 +1,79 @@
+#Silvester 2011:
+surfed through Hackage, did "cabal install filepath", then "cabal install yesod" fails, because the filepath package is too new. result of "ghc-pkg list" (where is formatting doc for this wiki? bye):
+
+<code>
+root@aguy:/home/aguy# ghc-pkg list
+/var/lib/ghc-6.12.1/package.conf.d
+   Cabal-1.8.0.2
+   ConfigFile-1.0.6
+   FileManip-0.3.2
+   GLUT-2.1.2.1
+   HTTP-4000.0.9
+   HUnit-1.2.2.1
+   MissingH-1.1.0.3
+   OpenGL-2.2.3.0
+   QuickCheck-2.1.0.3
+   array-0.3.0.0
+   base-3.0.3.2
+   base-4.2.0.0
+   bin-package-db-0.0.0.0
+   bytestring-0.9.1.5
+   cgi-3001.1.7.2
+   containers-0.3.0.0
+   deepseq-1.1.0.0
+   directory-1.0.1.0
+   dph-base-0.4.0
+   dph-par-0.4.0
+   dph-prim-interface-0.4.0
+   dph-prim-par-0.4.0
+   dph-prim-seq-0.4.0
+   dph-seq-0.4.0
+   extensible-exceptions-0.1.1.1
+   fgl-5.4.2.2
+   filepath-1.1.0.3
+   ghc-6.12.1
+   ghc-binary-0.5.0.2
+   ghc-prim-0.2.0.0
+   harp-0.4
+   haskell-src-1.0.1.3
+   haskell98-1.0.1.1
+   hpc-0.5.0.4
+   hslogger-1.0.9
+   html-1.0.1.2
+   integer-gmp-0.2.0.0
+   language-c-0.3.1.1
+   mtl-1.1.0.2
+   network-2.2.1.7
+   old-locale-1.0.0.2
+   old-time-1.0.0.3
+   parallel-2.2.0.1
+   parsec-2.1.0.1
+   pretty-1.0.1.1
+   process-1.0.1.2
+   random-1.0.0.2
+   regex-base-0.93.1
+   regex-compat-0.92
+   regex-posix-0.94.1
+   rts-1.0
+   stm-2.1.1.2
+   syb-0.1.0.2
+   template-haskell-2.4.0.0
+   text-0.7.1.0
+   time-1.1.4
+   unix-2.4.0.0
+   utf8-string-0.3.4
+   xhtml-3000.2.0.1
+   xml-1.3.7
+   zlib-0.5.2.0
+/root/.ghc/i386-linux-6.12.1/package.conf.d
+   Cabal-1.10.2.0
+   Crypto-4.2.4
+   QuickCheck-2.4.2
+   Useful-0.0.6
+   binary-0.5.0.2
+   dataenc-0.14.0.3
+   filepath-1.2.0.1
+   network-2.2.1.7
+   parsec-3.1.2
+   pkcs1-1.0.2
+</code>
