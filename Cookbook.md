@@ -4,29 +4,29 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 
 ## Templates
 
-* [[CompileCoffeescript|Compile Coffeescript once to Javascript]]
+* [[Compile Coffeescript once to Javascript|CompileCoffeescript]]
 
 ## Forms
 
-* [[OrderFormFields|Change the order of form fields]]
-* [[RequireInputMaybeField|Require input for Maybe field]]
-* [[CustomFormLayout|Custom form layout]]
-* [[Password Confirm Field|Password confirm field]]
-* [[Cookbook/Multi-field validation|Multi-field validation]]
-* [[Cookbook/File upload|File upload]]
+* [[Change the order of form fields|OrderFormFields]]
+* [[Require input for Maybe field|RequireInputMaybeField]]
+* [[Custom form layout|CustomFormLayout]]
+* [[Password confirm field|Password Confirm Field]]
+* [[Multi-field validation|Cookbook/Multi-field validation]]
+* [[File upload|Cookbook/File upload]]
 
 ## Persistence
 
-* [[RawSQL|Run raw SQL]]
+* [[Run raw SQL|RawSQL]]
 * [[Sphinx Search|Sphinx Search]]
 
 ## Auth
 
-* [[Using HashDB In a Scaffolded Site|Use HashDB in a scaffolded site]]
+* [[Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site]]
 
 ## Internationalization
 
-* [[Cookbook/InternationalizedForm|Internationalization of forms]]
+* [[Internationalization of forms|Cookbook/InternationalizedForm]]
 
 ## Routing
 
