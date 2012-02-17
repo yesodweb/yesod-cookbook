@@ -30,6 +30,7 @@ There are a lot of potential tasks here, including plenty of relatively green fi
 
 ## Deployment
 
+* Integation with ekg for monitoring
 * Faster deployment with binary diffs, perhaps using bsdiff of courgette.
 * A documented technique for zero-downtime (amazon load balancer?)
 
