@@ -19,3 +19,4 @@ This is the homepage for the Wiki section of the site. Feel free to add links as
 * [[YESOD Installation Errors|YESOD Installation Errors]]
 * [[0.10 upgrade|0.10 upgrade]]
 * [[0.10 release|missing:old/0.10_release/index.markdown]]
+* [[2.0 Goals]]
