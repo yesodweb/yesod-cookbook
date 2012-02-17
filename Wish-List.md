@@ -4,7 +4,7 @@ See the [TODO list](/page/todo) for tasks that will be implemented. Below is a l
 
 * Solution for integration testing using webkit. funcunit.js has some good ideas, but they try to couple it to steal.js and I couldn't get it to get pages from my localhost. The Ruby project ghostbuster may be the easiest approach, but I found it a little buggy. capybara-webkit demonstrates how we could bind directly to webkit. 
 * Create a wai-handler-direct-fastcgi which uses the direct-fastcgi package instead of the C library. Discussion: https://github.com/snoyberg/wai-handler-fastcgi/commit/ca64674de3934ae8dd9a612487596db0cd049781
-* http-enumerator: add multipart form rendering. That’s possibly even a good project for a separate package.
+* http-conduit: add multipart form rendering. That’s possibly even a good project for a separate package.
 * screen casts, maybe webinars/virtual meetups.
 * Have client session cookie code not only optional for whole site, but optional per subsite. Follow up on Matt’s idea of “Yesod middleware” for providing features like sessions.
 * Proxy subsite. Could be useful for cross-domain Ajax.
