@@ -1,6 +1,6 @@
-# Compile Coffeescript to Javascript
+# Compile a template once
 
-This lets you capture just type-safe urls but not any changing variables and compile to javascript just once. Just use the coffeescript watcher if you don't need any interpolation.
+Mostly useful if you are only inserting URLs and no variables. Any variables will only be rendered once. This example is using coffeescript.
 
     defaultLayout widget = do
       y <- getYesod
