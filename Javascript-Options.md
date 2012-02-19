@@ -23,7 +23,7 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 
 ## Add strong-typing to Coffeescript
 
-[Uberscript](https://github.com/jstrachan/coffee-script/blob/master/TypeAnnotations.md) requires Google Closure compiler for its type-checking.
+[Uberscript](https://github.com/jstrachan/coffee-script/blob/master/TypeAnnotations.md) requires Google Closure compiler for its type-checking. A great idea, but this is a fork of coffeescript that has now fallen behind coffeescript by almost a year.
 
 ## Other strongly typed languages that compile to Javascript
 
