@@ -1,6 +1,5 @@
 This is the homepage for the Wiki section of the site. Feel free to add links as you wish, this page is world writable.
 
-* [[Help|Creating a new wiki page]] for the wiki
 * [[Libraries|Yesod Libraries]]
 * [[Blog Posts|Blog Posts]]
 * [[Javascript Options|Javascript Options]]
