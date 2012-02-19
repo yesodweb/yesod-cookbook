@@ -11,7 +11,6 @@ This is the homepage for the Wiki section of the site. Feel free to add links as
 * [[Yesod Tutorial|yesod_tutorial]]: Learn by example
 * [[Using non-standard package versions|non-standard-versions]]
 * [[Record Hacks|record-hacks]]
-* [[Wiki Test|testXSS]]
 * [[Serving julius files|Rendering Javascript from a Handler]]
 * [[Other web frameworks that use WAI|WAI web frameworks]]
 * [[CSS Tips|CSS Tips]]
