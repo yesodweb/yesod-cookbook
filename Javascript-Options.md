@@ -9,6 +9,7 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 * [UHC js compiler](http://www.haskell.org/haskellwiki/The_JavaScript_Problem#UHC)
 * [ghcjs](https://github.com/pedromartins/ghcjs) - [example Yesod app](https://github.com/hamishmack/yesod-slides) - directly compile ghc code to javascript!
 * [Emscripten](https://github.com/kripken/emscripten) — compiles LLVM/Clang output to JavaScript. If you use features of the GHC runtime you also have to compile it, which nobody has made an effort to figure out.
+* [PNaCL](http://www.chromium.org/nativeclient/pnacl) - run native code on Google Chrome with NaCL. PNaCL is the next generation that will run LLVM byte code. Won't work on other browsers.
 
 ## A Haskell-like language that only compiles to Javascript
 
@@ -28,3 +29,4 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 ## Other strongly typed languages that compile to Javascript
 
 * [Ur/Web](http://impredicative.com/ur/demo/) - A Haskell-like programming language tailored to web programming. Automatically generates FRP javascript code. Apropriate for taking the FRP plunge, but Heavyweight (large library and difficult to debug) if you just want some strongly-typed JS. [Opa](opalang.org) is a very similar concept.
+* [JS of OCaml](http://ocsigen.org/js_of_ocaml/) - There is also an in-browser OCaml bytecode interpreter!
