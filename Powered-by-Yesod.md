@@ -14,3 +14,4 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Personal site of Blake Rain](http://meadowstalk.com/post/new-blog)
 * [Personal site of Pascal Wittmann](https://www.pascal-wittmann.de/)
 * [Personal site of Corey O'Connor](http://www.corebotllc.com/)
+* [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
