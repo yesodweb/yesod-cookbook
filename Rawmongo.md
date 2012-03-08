@@ -1,4 +1,4 @@
-~~~~ {.haskell}
+~~~~ {.hs}
 rawOne :: Trans.MonadIO m => MongoDB.Collection -> MongoDB.Selector -> Action m (Maybe Document)
 rawOne collection q = findOne (MongoDB.select q collection)
 
