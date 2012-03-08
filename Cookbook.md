@@ -17,6 +17,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 
 ## Persistence
 
+* [[Run raw MongoDB|RawMongo]]
 * [[Run raw SQL|RawSQL]]
 * [[Sphinx Search|Sphinx Search]]
 
