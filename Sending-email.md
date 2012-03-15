@@ -1,0 +1,1 @@
+For now, this is just a filler page. We'll be including information on how to add email sending capability to a Yesod app, what options you have for sending on the server, and how to set up a simple development option.
