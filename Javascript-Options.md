@@ -28,5 +28,5 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 
 ## Other strongly typed languages that compile to Javascript
 
-* [Ur/Web](http://impredicative.com/ur/demo/) - A Haskell-like programming language tailored to web programming. Automatically generates FRP javascript code. Apropriate for taking the FRP plunge, but Heavyweight (large library and difficult to debug) if you just want some strongly-typed JS. [Opa](opalang.org) is a very similar concept.
+* [Ur/Web](http://impredicative.com/ur/demo/) - A Haskell-like programming language tailored to web programming. Automatically generates FRP javascript code. Apropriate for taking the FRP plunge, but Heavyweight (large library and difficult to debug) if you just want some strongly-typed JS. [Opa](http://opalang.org) is a very similar concept.
 * [JS of OCaml](http://ocsigen.org/js_of_ocaml/) - There is also an in-browser OCaml bytecode interpreter!
