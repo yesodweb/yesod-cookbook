@@ -10,6 +10,7 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 * [ghcjs](https://github.com/pedromartins/ghcjs) - [example Yesod app](https://github.com/hamishmack/yesod-slides) - directly compile ghc code to javascript!
 * [Emscripten](https://github.com/kripken/emscripten) — compiles LLVM/Clang output to JavaScript. If you use features of the GHC runtime you also have to compile it, which nobody has made an effort to figure out.
 * [PNaCL](http://www.chromium.org/nativeclient/pnacl) - run native code on Google Chrome with NaCL. PNaCL is the next generation that will run LLVM byte code. Won't work on other browsers.
+* [JS Haskell interpreter](https://github.com/johang88/haskellinjavascript)
 
 ## A Haskell-like language that only compiles to Javascript
 
@@ -24,6 +25,7 @@ We are hoping someone will figure out a satisfactory way to have strongly typed 
 
 ## Add strong-typing to Coffeescript
 
+[contracts.coffee](http://disnetdev.com/contracts.coffee/) not types, but contracts. Well maintained, easy to use. Firefox only (for development, in production contracts are turned off anyways).
 [Uberscript](https://github.com/jstrachan/coffee-script/blob/master/TypeAnnotations.md) requires Google Closure compiler for its type-checking. A great idea, but this is a fork of coffeescript that has now fallen behind coffeescript by almost a year.
 
 ## Other strongly typed languages that compile to Javascript
