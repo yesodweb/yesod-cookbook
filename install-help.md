@@ -1,4 +1,4 @@
-To for the first time getting Yesod up and running is not always going smooth. There is a five-minute tutorial, but fact is that it can take significantly more time, especially if you're installing yesod for the first time.
+Getting Yesod up and running for the first time is not always going smooth. There is a five-minute tutorial, but fact is that it can take significantly more time, especially if you're installing yesod for the first time.
 
 Things not working don't need to be your fault! Sometimes the dependencies on the cabal packages can be wrong. If you find something wrong, let us know.
 
