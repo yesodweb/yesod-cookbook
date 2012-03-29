@@ -24,3 +24,10 @@
 ### WAI
 
 * Moved to conduit 0.4
+
+### Scaffolding
+
+* Removed tiny option
+* Including bootstrap.css
+* yesod-test tests included
+* More descriptive homepage
