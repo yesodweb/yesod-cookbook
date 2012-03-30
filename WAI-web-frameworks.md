@@ -8,3 +8,7 @@ Yesod does not attempt to revolutionize the web framework concept. Instead it ap
 Here is another WAI based framework.
 
 * [Scotty](https://github.com/xich/scotty) -  Sinatra (simple Ruby web framework) inspired. Consider using it if you have a simple site and no interest in Yesod's Widgets and various other features.
+
+Adapters
+
+* [happstack-wai](https://github.com/aslatter/happstack-wai.git)
