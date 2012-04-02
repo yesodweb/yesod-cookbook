@@ -8,6 +8,7 @@
 * yesod-test
 * yesod-generate (external)
 * `fsClass` in `FieldSettings` has been replaced by the more general purpose `fsAttrs`.
+* Drastically improved compile times for Persistent models and Shakespearean templates by avoiding the Text inlining bug.
 
 ### Scaffolding
 
@@ -15,6 +16,7 @@
 * Including bootstrap.css
 * yesod-test tests included
 * Homepage is a very small tutorial
+* Changed logic for approot and host config settings. Short story: host now gives the interface to bind to, approot should always be provided.
 
 ## Shakespeare
 
