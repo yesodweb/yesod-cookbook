@@ -23,10 +23,9 @@
 * Hamlet tags now require closing angle bracket, allow multiline tags.
 * Hamlet now supports `*{attrs}` syntax within a tag.
 * Removed support for infix operators.
-
 * Support Roy.js
 * Improved Coffeescript support (better job dealing with comments)
-
+* CSS in reload and runtime mode now has whitespace. Hamlet whitespace is available by changing default settings.
 
 ## Persistent
 
