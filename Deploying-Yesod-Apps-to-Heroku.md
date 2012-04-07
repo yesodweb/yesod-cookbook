@@ -1,4 +1,9 @@
 # Deploying to Heroku
+
+# Other resources
+
+* [TFoo Heroku deployment](http://nbartlomiej.com/2012/03/29/deploying-tfoo-and-other-haskell-applications-to-heroku/)
+
 # Introduction
 
 This is not meant to be a tutorial about [git][2], [heroku][3], or
@@ -197,6 +202,5 @@ being deployed to heroku.
 
 After pushing the deploy branch checkout the original branch and keep working on your
 application.
-
 
 
