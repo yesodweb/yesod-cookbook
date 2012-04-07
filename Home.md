@@ -1,38 +1,41 @@
-This is the homepage for the Wiki section of the site. Feel free to add links as you wish, this page is world writable.
+This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog Posts]] and other docs.
+
+# Installation/Upgrade
+  * [[YESOD Installation Errors|YESOD Installation Errors]]
+  * [[Using non-standard package versions|non-standard-versions]]
+  * [[0.10 upgrade|0.10 upgrade]]
+  * [[0.10 release|missing:old/0.10_release/index.markdown]]
+
+
+# General docs
+
+  * [[FAQ|faq]]
+  * [[Cookbook|Cookbook]]
+  * [[Yesod Tutorial|yesod_tutorial]]: Learn by example
 
 # Deployment
   * [[Deploying to Heroku|Deploying-Yesod-Apps-to-Heroku]]
   * [[Powered by|Powered by Yesod]] Yesod
 
-# Code
-  * [[Libraries|Yesod Libraries]]
-
-# Documentation
-  * [[YESOD Installation Errors|YESOD Installation Errors]]
-  * [[Blog Posts|Blog Posts]]
-  * [[FAQ|faq]]
-  * [[Cookbook|Cookbook]]
-  * [[Javascript Options|Javascript Options]]
-  * [[Yesod Tutorial|yesod_tutorial]]: Learn by example
-  * [[Using non-standard package versions|non-standard-versions]]
-  * [[Serving julius files|Rendering Javascript from a Handler]]
-  * [[Other web frameworks that use WAI|WAI web frameworks]]
+# Client side
   * [[CSS Tips|CSS Tips]]
-  * [[Record Hacks|record-hacks]]
+  * [[Serving julius files|Rendering Javascript from a Handler]]
+  * [[Javascript Options|Javascript Options]]
+
+
+# Find Code
+  * [[Libraries|Yesod Libraries]]
+  * [[Other web frameworks that use WAI|WAI web frameworks]]
 
 
 
 
 # Development
 
-* [[TODO list|TODO List]]
-* [[Wish list|Wish List]]
-* [[2.0 Goals]]
-
-# Upgrading
-
-* [[0.10 upgrade|0.10 upgrade]]
-* [[0.10 release|missing:old/0.10_release/index.markdown]]
+  * [[TODO list|TODO List]]
+  * [[Wish list|Wish List]]
+  * [[2.0 Goals]]
+  * [[Record Hacks|record-hacks]]
 
 
 
