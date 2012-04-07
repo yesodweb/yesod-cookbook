@@ -1,14 +1,14 @@
 # Packages
 
-[http://hackage.haskell.org/package/yesod-auth-zendesk](zendesk)
-[http://hackage.haskell.org/package/yesod-comments](yesod-comments)
-[http://hackage.haskell.org/package/yesod-paginate](yesod-paginate)
-[http://hackage.haskell.org/package/yesod-markdown](yesod-markdown)
-[http://hackage.haskell.org/package/yesod-rst](yesod-rst)
-[http://hackage.haskell.org/package/yesod-goodies](yesod-goodies)
-[http://hackage.haskell.org/package/yesod-tableview](yesod-tableview)
-[https://github.com/Tarrasch/timed-repeating](timed-repeating)
-[https://github.com/maxcan/yesod-generate](yesod-generate<)
+[zendesk](http://hackage.haskell.org/package/yesod-auth-zendesk)
+[yesod-comments](http://hackage.haskell.org/package/yesod-comments)
+[yesod-paginate](http://hackage.haskell.org/package/yesod-paginate)
+[yesod-markdown](http://hackage.haskell.org/package/yesod-markdown)
+[yesod-rst](http://hackage.haskell.org/package/yesod-rst)
+[yesod-goodies](http://hackage.haskell.org/package/yesod-goodies)
+[yesod-tableview](http://hackage.haskell.org/package/yesod-tableview)
+[timed-repeating](https://github.com/Tarrasch/timed-repeating)
+[yesod-generate](https://github.com/maxcan/yesod-generate)
 
 
 See also;- <a href="http://hackage.haskell.org/package/#cat:yesod">hackage.haskell.org category: yesod</a>
