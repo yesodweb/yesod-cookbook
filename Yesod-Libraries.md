@@ -8,6 +8,7 @@
 * [yesod-tableview](http://hackage.haskell.org/package/yesod-tableview)
 * [timed-repeating](https://github.com/Tarrasch/timed-repeating)
 * [yesod-generate](https://github.com/maxcan/yesod-generate)
+* [yesod-auth-zendesk](http://hackage.haskell.org/package/yesod-auth-zendesk)
 
 
 See also;- <a href="http://hackage.haskell.org/package/#cat:yesod">hackage.haskell.org category: yesod</a>
