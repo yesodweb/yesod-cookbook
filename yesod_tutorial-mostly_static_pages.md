@@ -14,60 +14,63 @@ The routing configuration can be found in `config/routes`. It looks like:
 
     /static StaticR Static getStatic
     /auth   AuthR   Auth   getAuth
-
+     
     /favicon.ico FaviconR GET
     /robots.txt RobotsR GET
+     
+    / HomeR GET POST
 
-    / RootR GET
+The last line creates a resource, named HomeR, which accepts GET and POST requests at the root (/) of our application. Yesod sees this resource declaration, and determines to call the handler function `getHomeR`  whenever it receives a GET request for HomeR and accordingly for `postHomeR` for POST. The function name follows the simple pattern of request method, in lowercase, followed by the resource name.
 
-The last line creates a resource, named RootR, which accepts GET requests at the root (/) of our application. Yesod sees this resource declaration, and determines to call the handler function `getRootR`  whenever it receives a GET request for RootR. The function name follows the simple pattern of request method, in lowercase, followed by the resource name.
+The handlers for the resources are defined in `Handler/`. The handler function `getHomeR` is defined in `Handler/Home.hs`. The code below shows the first part, the rest of it defines `postHomeR` and a formular. On line 13, you can find its definition. Lines 15 and 16 are needed for the sample form. There is [a chapter on forms](http://www.yesodweb.com/book/forms) in the Yesod book. Line 17 is just a constant that is refered to in a template. We don't want that for now, so let's remove the lines.
 
-The handlers for the resources are defined in `Handler/`. The handler function `getRootR` is defined in `Handler/Root.hs`. See the code below. On line 13, you can find its definition. Line 15 is needed when the scaffolded authentication/authorization is wanted. There is [a chapter on authentication and authorization](http://www.yesodweb.com/book/authentication-and-authorization) in the Yesod book. We don't want it for now, so let's remove the line.
-
-    {-# LANGUAGE TemplateHaskell, QuasiQuotes, OverloadedStrings #-}
-    module Handler.Root where
-    
-    import Micropost
-    
-    -- This is a handler function for the GET request method on the RootR
+    {-# LANGUAGE TupleSections, OverloadedStrings #-}
+    module Handler.Home where
+     
+    import Import
+     
+    -- This is a handler function for the GET request method on the HomeR
     -- resource pattern. All of your resource patterns are defined in
     -- config/routes
     --
     -- The majority of the code you will write in Yesod lives in these handler
     -- functions. You can spread them across multiple files if you are so
     -- inclined, or create a single monolithic file.
-    getRootR :: Handler RepHtml
-    getRootR = do
-        mu <- maybeAuth
+    getHomeR :: Handler RepHtml
+    getHomeR = do
+        (formWidget, formEnctype) <- generateFormPost sampleForm
+        let submission = Nothing :: Maybe (FileInfo, Text)
+            handlerName = "getHomeR" :: Text
         defaultLayout $ do
-            h2id <- lift newIdent
-            setTitle "micropost homepage"
-            addWidget $(widgetFile "homepage")
+            aDomId <- lift newIdent
+            setTitle "Welcome To Yesod!"
+            $(widgetFile "homepage")
+
+     …
 
 The next lines combines different parts on how and what will be displayed on the root/homepage. First of all, there's `defaultLayout`. This will come back later, but this is where site-wide layout is defined.
 
 Before I continue, it is necessary to know that Yesod uses four templating systems: Hamlet (HTML), Cassius (CSS), Lucius (CSS) and Julius (Javascript). Read the [Templates chapter](http://www.yesodweb.com/book/templates).
 
-Next there's `h2id <- lift newIdent`. This does something with the javascript in the file `julius/homepage.julius`. `newIdent` generates unique identifiers.
+Next there's `aDomId <- lift newIdent`. This does something with the javascript in the file `julius/homepage.julius`. `newIdent` generates unique identifiers.
 
 TODO: A better explanation on this and on newIdent.
 see: [Book: Generate IDs](http://www.yesodweb.com/book/widgets#file277-generate-ids)
 
-`setTitle "micropost homepage"` is easy: it sets the title of the web page.
+`setTitle "Welcome To Yesod!"` is easy: it sets the title of the web page.
 
-Last but not least `addWidget $(widgetFile "homepage")`. The chapter about [widgets](http://www.yesodweb.com/book/widgets) will make many things clear. `widgetFile` is defined in `config/Settings.hs` and combines - if they exist - `hamlet/homepage.hamlet, cassius/homepage.cassius, julius/homepage.julius` and `lucius/homepage.lucius`. It is in these files that we write our html, css and javascript.
+Last but not least `$(widgetFile "homepage")`. The chapter about [widgets](http://www.yesodweb.com/book/widgets) will make many things clear. `widgetFile` is defined in `config/Settings.hs` and combines - if they exist - `templates/homepage.hamlet, templates/homepage.cassius, templates/homepage.julius` and `templates/homepage.lucius`. It is in these files that we write our html, css and javascript.
 
-Okay, time to adjust the default homepage! We want to change our title to "Yesod Tutorial Micropost | Home". Change the title in `Handler/Root.hs`. The function `getRootR` will look like this:
+Okay, time to adjust the default homepage! We want to change our title to "Yesod Tutorial Micropost | Home". Change the title in `Handler/Home.hs`. The function `getHomeR` will look like this:
 
-    getRootR :: Handler RepHtml
-    getRootR = do
-        mu <- maybeAuth
+    getHomeR :: Handler RepHtml
+    getHomeR = do
         defaultLayout $ do
-            h2id <- lift newIdent
+            aDomId <- lift newIdent
             setTitle "Yesod Tutorial Micropost | Home"
-            addWidget $(widgetFile "homepage")
+            $(widgetFile "homepage")
 
-Next, edit `hamlet/homepage.hamlet` and change it into:
+Next, edit `templates/homepage.hamlet` and change it into:
 
     <h1>Micropost
     <p>This is the homepage for the #
@@ -88,7 +91,7 @@ Refresh the browser on url `localhost:3000` and you'll get:
 
 ### Contact
 
-Now our contact-page. We have to define our resource in `config/routes`, create a handler file for the resource `Handler/Contact.hs`, get the handler-file in scope, write a .hamlet-file in `hamlet/` and add the handler to the cabal-file.
+Now our contact-page. We have to define our resource in `config/routes`, create a handler file for the resource `Handler/Contact.hs`, get the handler-file in scope, write a .hamlet-file in `templates/` and add the handler to the cabal-file.
 
 Edit `config/routes` and add the line:
 
@@ -96,30 +99,30 @@ Edit `config/routes` and add the line:
 
 Next, create a file `Handler/Contact.hs` and paste this code into it:
 
-    {-# LANGUAGE TemplateHaskell, QuasiQuotes, OverloadedStrings #-}
+    {-# LANGUAGE OverloadedStrings #-}
     module Handler.Contact where
 
-    import Foundation
+    import Import
 
     getContactR :: Handler RepHtml
     getContactR = do
         defaultLayout $ do
             setTitle "Yesod Tutorial Micropost | Contact"
-            addWidget $(widgetFile "contact")
+            $(widgetFile "contact")
 
 This handler-file should be imported in `Application.hs` so it gets in scope. Add `import Handler.Contact` under these lines:
 
     -- Import all relevant handler modules here.
-    import Handler.Root
+    import Handler.Home
 
-Almost there... Create the file `hamlet/contact.hamlet` with this content:
+Almost there... Create the file `templates/contact.hamlet` with this content:
 
     <h1>Contact
     <p>Contact Yesod Tutorial at the #
         <a href="http://www.haskell.org/mailman/listinfo/web-devel"> Haskell web-devel mailing-list
         \.
 
-And finally, you need to add this line to your `micropost.cabal`-file, at section `other-modules` and under `Handler.Root`, so that cabal includes this file in the project:
+And finally, you need to add this line to your `micropost.cabal`-file, at section `other-modules` and under `Handler.Home`, so that cabal includes this file in the project:
 
     Handler.Contact
 
@@ -150,18 +153,33 @@ Now that we've created some static pages, you might have noticed that we've been
 
 If this is the default structure of the title on any page, it should be made default. In every handler, we saw `defaultLayout`. This function does different things, it also applies the default .hamlet, .cassius, .lucius and .julius. These files are named `default-layout.*`.
 
-The content of `hamlet/default-layout.hamlet` is shown below. You'll notice the structure out-line of every .html-document (in .hamlet syntax). There are some special variables (#, ^ and $). #, ^ and also @ are interpolation characters and are always followed by the variable inside braces. The hash is used for variable interpolation, at-sign (@) for URL interpolation, and caret (^) for embedding. $ allows control structures inside hamlet. Read [the Template chapter](http://www.yesodweb.com/book/templates).
+The first part of the content of `templates/default-layout-wrapper.hamlet` is shown below. You'll notice the structure out-line of every .html-document (in .hamlet syntax). There are some special variables (#, ^ and $). #, ^, * and also @ are interpolation characters and are always followed by the variable inside braces. The hash is used for variable interpolation, at-sign (@) for URL interpolation, star (*) for attributes, and caret (^) for embedding. $ allows control structures inside hamlet. Read [the Template chapter](http://www.yesodweb.com/book/templates).
 
-    !!!
-    <html
-        <head
+    \<!doctype html>
+    \<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+    \<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+    \<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+    \<!--[if gt IE 8]><!-->
+    <html class="no-js" lang="en"> <!--<![endif]-->
+        <head>
+            <meta charset="UTF-8">
+     
             <title>#{pageTitle pc}
-            <link rel="stylesheet" href=@{StaticR css_normalize_css}>
+            <meta name="description" content="">
+            <meta name="author" content="">
+     
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+     
             ^{pageHead pc}
-        <body
-            $maybe msg <- mmsg
-                <div #message>#{msg}
-            ^{pageBody pc}
+     
+            \<!--[if lt IE 9]>
+            \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+            \<![endif]-->
+     
+            <script>
+              document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+        <body>
+            …
 
 To achieve our goal, we only need to change title line into
 
