@@ -19,45 +19,48 @@ First we need to create a new Yesod project, let's call it `micropost`:
     What do you want to call your project? We'll use this for the cabal name.
 
     Project name: micropost
-    Great, we'll be creating micropost today, and placing it in micropost.
-    What's going to be the name of your foundation datatype? This name must
-    start with a capital letter.
-
-    Foundation: Micropost
     Yesod uses Persistent for its (you guessed it) persistence layer.
-    This tool will build in either SQLite or PostgreSQL support for you.
+    This tool will build in either SQLite or PostgreSQL or MongoDB support for you.
     We recommend starting with SQLite: it has no dependencies.
 
-    We have another option: a tiny project with minimal dependencies. In particular: no database and no authentication.
+        s     = sqlite
+        p     = postgresql
+        mongo = mongodb
+        mysql = MySQL (experimental)
 
-    So, what'll it be? s for sqlite, p for postgresql, t for tiny: s
+    So, what'll it be? s
     That's it! I'm creating your files now...
     Generating deploy/Procfile
     Generating config/sqlite.yml
     Generating config/settings.yml
     Generating main.hs
+    Generating devel.hs
+    Generating micropost.cabal
     Generating micropost.cabal
     Generating .ghci
     Generating LICENSE
     Generating Foundation.hs
+    Generating Import.hs
     Generating Application.hs
-    Generating Handler/Root.hs
+    Generating Handler/Home.hs
     Generating Model.hs
     Generating Settings.hs
     Generating Settings/StaticFiles.hs
-    Generating cassius/default-layout.cassius
-    Generating hamlet/default-layout.hamlet
-    Generating hamlet/boilerplate-layout.hamlet
-    Generating static/css/normalize.css
-    Generating hamlet/homepage.hamlet
+    Generating static/css/bootstrap.css
+    Generating templates/default-layout.hamlet
+    Generating templates/default-layout-wrapper.hamlet
+    Generating templates/normalize.lucius
+    Generating templates/homepage.hamlet
     Generating config/routes
-    Generating cassius/homepage.cassius
-    Generating julius/homepage.julius
+    Generating templates/homepage.lucius
+    Generating templates/homepage.julius
     Generating config/models
+    Generating messages/en.msg
+    Generating tests/main.hs
 
     ---------------------------------------
-
-                         ___
+    
+                             ___
                                 {-)   |\
                            [m,].-"-.   /
           [][__][__]         \(/\__/\)/
@@ -67,29 +70,31 @@ First we need to create a new Yesod project, let's call it `micropost`:
           [][__][__][__][__][]| || |  
       ejm [__][__][__][__][__]__,__,  \__/
 
-
+    
     ---------------------------------------
-
-    The foundation for your site has been laid.
-
-
+    
+    The foundation for your web application has been built.
+    
+    
     There are a lot of resources to help you use Yesod.
     Start with the book: http://www.yesodweb.com/book
     Take part in the community: http://yesodweb.com/page/community
-
-
-    Start your project:
-
-       cd micropost && cabal install && yesod devel
     
-A Yesod project is created with `yesod init` command. Yesod init asks 4 questions and here are the answers I gave:
+    
+    Start your project:
+    
+       cd micropost && cabal install && yesod devel
+     
+    or if you use cabal-dev:
+    
+       cd micropost && cabal-dev install && yesod --dev devel
+
+    
+A Yesod project is created with `yesod init` command. Yesod init asks 3 questions and here are the answers I gave:
 
 1. Your name - davidbe
 2. Project name - micropost
-3. Foundation name - Micropost
-4. Database-backend - s for sqlite
-
-The Foundation is explained in the [Yesod book](http://www.yesodweb.com/book/basics).
+3. Database-backend - s for sqlite
 
 After answering those questions, Yesod init will create several files. An explanation of all those files can be found in the [Yesod Web Framework Book](http://www.yesodweb.com/book) on [Scaffolding and the Site Template](http://www.yesodweb.com/book/scaffolding), but in this tutorial we will touch the most important ones.
 
@@ -103,14 +108,8 @@ Let's try the scaffolded code out:
 
 When the console prints:
 
-    Starting app
+    Devel application launched: http://localhost:3000
 
-point the browser to `http://localhost:3000/`. A web-page with the following text will appear:
-
-    Hello
-
-    Added from JavaScript
-
-    You are not logged in. Login now.
+point the browser to `http://localhost:3000/`. A web-page with explaining the first steps with Yesod will appear.
 
 If that works, you know that everything is wired up correctly.
