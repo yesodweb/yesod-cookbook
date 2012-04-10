@@ -7,7 +7,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
-* [Orange Roster](http://www.orangeroster.com/): Open source, privacy-centric shared address book.
+* [Who Saw That Coming](http://whosawthatcoming.com/): Make predictions online.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
 * [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
 * [Pagan Books](http://paganbooks.eu/): a small bookstore.
