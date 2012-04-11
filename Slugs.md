@@ -100,11 +100,8 @@ openConnectionCount = 10
 main :: IO ()
 main = withSqlitePool "slug.db3" openConnectionCount $ \pool -> do
      runSqlPool (runMigration migrateAll) pool
-     -- We delete all previously existing posts so that we don't get an error
-     -- when we restart our app. Just a convenient call.
-     runSqlPool (deleteWhere ([] :: [Filter Post])) pool
      -- Inserting some posts...
-     runSqlPool (insert $ Post "My post" "My post <em>content</em>" (Slug "my-post")) pool
-     runSqlPool (insert $ Post "Another post" "tl;dr" (Slug "another-post")) pool
+     runSqlPool (insertBy $ Post "My post" "My post <em>content</em>" (Slug "my-post")) pool
+     runSqlPool (insertBy $ Post "Another post" "tl;dr" (Slug "another-post")) pool
      warpDebug 3000 $ YesodBlog pool
 ```           
