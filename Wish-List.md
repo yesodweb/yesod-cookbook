@@ -22,6 +22,14 @@ See the [TODO list](/page/todo) for tasks that will be implemented. Below is a l
     getFoo id bar = do ...
 ~~~
 
+## Key/value stores and caching
+
+There is a proposal to improve the per-request cache in ticket #268, based on a `Typeable` type-tagged key map. This type of keys could be used for typesafe storage in a modular way in more places, without polluting everything with type variables, for example:
+
+* Generalize sessions, instead of a Map Text ByteString, make something akin to `(Typeable key, Serializable a) => Map key a`, the current `lookupSession` and `setSession` session map could then just be stored under one key. This would make it easier to make an `addMessage` that builds a list of messages to be displayed, and also for subsites or widgets to store their session things under their own key.
+* Per request storage: store widgets or database lookup results in a cache: one could define cacheable entities that get automatically cached during the whole request, with optional parameters.
+* Flexible general-purpose caching: a bit more complex than per-request cache because of the longer lifetime: use the API for making caches (preferred storage location: foundation type?) with a longer lifetime, for caching things like RSS feeds, updates from remote sites, that only need to be regenerated once in a while. API functions for automatically expiring cache items after a fixed amount of time, or explicitly expiring.
+
 ## Persistent
 
 There are a lot of potential tasks here, including plenty of relatively green field coding opportunities (implement a new backend), or even API redesign.
