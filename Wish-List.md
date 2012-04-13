@@ -56,3 +56,9 @@ There are a lot of potential tasks here, including plenty of relatively green fi
 
 * a version of the hamlet template package that allows arbitrary haskell code in the templates. (might be easy using haskell-src-extra)
 * a simple pass-through html template (easy)
+* more configurable javascript minifier (for example no minification, or running an external minifier)
+* a javascript template language that knows more about javascript, making it safer to insert interpolated values? (`language-javascript` or `jmacro` perhaps)
+
+## sprites
+
+* Make some reusable subsite or route, that takes a directory of images, generates a combined sprite image at compile time and a widget to insert them, something like `^{sprite SpriteR my_image_png}`
