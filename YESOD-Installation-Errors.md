@@ -1,7 +1,7 @@
 #Silvester 2011:
 surfed through Hackage, did "cabal install filepath", then "cabal install yesod" fails, because the filepath package is too new. result of "ghc-pkg list" (where is formatting doc for this wiki? bye):
 
-<code>
+<pre>
 root@aguy:/home/aguy# ghc-pkg list
 /var/lib/ghc-6.12.1/package.conf.d
    Cabal-1.8.0.2
@@ -76,4 +76,4 @@ root@aguy:/home/aguy# ghc-pkg list
    network-2.2.1.7
    parsec-3.1.2
    pkcs1-1.0.2
-</code>
+</pre>
