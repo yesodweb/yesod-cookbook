@@ -10,7 +10,7 @@ See the [TODO list](/page/todo) for tasks that will be implemented. Below is a l
 * Proxy subsite. Could be useful for cross-domain Ajax.
 * Extend the current benchmark suite to run against Erlang, Nginx Perl module, and maybe that one Lua contender and Lift. Based on [this](http://steve.vinoski.net/blog/2011/05/09/erlang-web-server-benchmarking/), for Erlang, We may need to benchmark against both Yaws and mistulin. [Here is an article](http://www.mnot.net/blog/2011/05/18/http_benchmark_rules) on doing http benchmarking and [another](http://www.ostinelli.net/a-comparison-between-misultin-mochiweb-cowboy-nodejs-and-tornadoweb/)
 
-* integrate Yesod's forms with digestive-functors forms or otherwise improve forms
+* integrate Yesod's forms with [reform](http://www.happstack.com/docs/crashcourse/Reform.html) or otherwise improve forms
 * file uploading plugin configurable for different storage methods and providers (like Ruby's carrierwave + fog)
 * reusable wiki sub-site. there are now a few Yesod wiki applications.
 * A Yesod installer script
