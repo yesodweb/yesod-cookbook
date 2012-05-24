@@ -3,6 +3,7 @@
 # Other resources
 
 * [TFoo Heroku deployment](http://nbartlomiej.com/2012/03/29/deploying-tfoo-and-other-haskell-applications-to-heroku/)
+* [Deploy from a Vagrant VM](http://brianmckenna.org/blog/haskell_on_heroku)
 * Heroku also has [buildpacks](https://devcenter.heroku.com/articles/buildpacks) to let them compile the code on deploy. I actually found a [WIP haskell buildpack](https://github.com/mbbx6spp/cabal-heroku-buildpack). This would make deploy much more convenient for non-ubuntu hosts.
 
 # Introduction
@@ -203,4 +204,3 @@ being deployed to heroku.
 
 After pushing the deploy branch checkout the original branch and keep working on your
 application.
-
