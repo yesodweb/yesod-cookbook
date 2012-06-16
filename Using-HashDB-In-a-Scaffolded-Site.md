@@ -6,11 +6,12 @@
      field for the password hash, and a field for the password salt. Example:
 
 	     -- in config/models
-	     Person
-		 email Text
-		 passwd Text
-		 salt Text
-		 UniqueEmail email
+
+ 	     Person
+ 	         email Text
+ 	         passwd Text
+ 	         salt Text
+ 	         UniqueEmail email 
 
      In this example, 'email' will be the unique identifier.
 
@@ -23,19 +24,19 @@
 
           -- in Model.hs
           instance HashDBUser (PersonGeneric backend) where
-          userPasswordHash = personPassword
-          userPasswordSalt = personSalt
-          setUserHashAndSalt s h p = p { personSalt     = s
-                                       , personPasswd = h
-                                       }
+              userPasswordHash = personPassword
+              userPasswordSalt = personSalt
+              setUserHashAndSalt s h p = p { personSalt     = s
+                                           , personPasswd = h
+                                           }
 
  3.  Now, in Foundation.hs, we hook Auth.HashDB into your foundation. You must
      add an import of Yesod.Auth.HashDB, of course, and then modify the YesodAuth
      instance like so:
 
-	     -- in Foundation.hs
-	     instance YesodAuth <MySite> where
-		 type AuthId <MySite> = PersonId
-		 -- ... loginDest, etc.
-		 getAuthId creds = getAuthIdHashDB AuthR (Just . UniqueEmail) creds
-		 authPlugins = [authHashDB (Just . UniqueEmail)]
+          -- in Foundation.hs
+          instance YesodAuth <MySite> where
+              type AuthId <MySite> = PersonId
+              -- ... loginDest, etc.
+              getAuthId creds = getAuthIdHashDB AuthR (Just . UniqueEmail) creds
+              authPlugins = [authHashDB (Just . UniqueEmail)]
