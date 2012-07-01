@@ -1,4 +1,25 @@
-# Changelog for Yesod 1.0
+# Changelog
+
+# Yesod 1.1 (not yet released)
+
+## Yesod
+
+* Upgrade to conduit 0.5
+* Hierarchical routing.
+
+## Shakespeare
+
+* Hamlet defaults to newlines being added between tags.
+
+## WAI
+
+* Upgrade to conduit 0.5
+* Warp flushes request body after processing response body. This allows you to process the request body while generating the response. While this can be useful, be warned that this can cause deadlocks with some HTTP clients.
+* simple-sendfile now sends headers in the same system call as the sendfile itself, resulting in much better performance for static file serving.
+* Simplified wai-extra's request body parsing, uses standard `conduit` types instead of special `BackEnd` type.
+* Drastically cleaned up wai-app-static (both internals and the user-facing API).
+
+# Yesod 1.0
 
 ## Yesod
 
