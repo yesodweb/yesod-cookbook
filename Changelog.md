@@ -11,6 +11,11 @@
 
 * Hamlet defaults to newlines being added between tags.
 
+## Persistent
+
+* Upgrade to conduit 0.5
+* Sum types
+
 ## WAI
 
 * Upgrade to conduit 0.5
