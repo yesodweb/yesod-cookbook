@@ -6,6 +6,8 @@
 
 * Upgrade to conduit 0.5
 * Hierarchical routing.
+* Control of sitewide Hamlet settings in the scaffolding.
+* Easily add additional template languages in `Settings.hs`.
 
 ## Shakespeare
 
