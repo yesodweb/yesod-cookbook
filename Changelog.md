@@ -26,6 +26,7 @@
 * simple-sendfile now sends headers in the same system call as the sendfile itself, resulting in much better performance for static file serving.
 * Simplified wai-extra's request body parsing, uses standard `conduit` types instead of special `BackEnd` type.
 * Drastically cleaned up wai-app-static (both internals and the user-facing API).
+* `warp-tls` automatically sniffs the request and determines whether to serve over HTTP or HTTPS.
 
 # Yesod 1.0
 
