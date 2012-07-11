@@ -20,6 +20,7 @@
 
 * Upgrade to conduit 0.5
 * Sum types
+* Support for `sqltype=...` attribute.
 
 ## WAI
 
