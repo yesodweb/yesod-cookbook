@@ -36,6 +36,4 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
   * [[Wish list|Wish List]]
   * [[2.0 Goals]]
   * [[Record Hacks|record-hacks]]
-
-
-
+  * [[Developer tools]]
