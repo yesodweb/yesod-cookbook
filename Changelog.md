@@ -9,6 +9,7 @@
 * Control of sitewide Hamlet settings in the scaffolding.
 * Easily add additional template languages in `Settings.hs`.
 * `yesod add-handler` automates the process of adding a new route, creating the handler module, creating stub handler functions, and updating `Application.hs` and the cabal file.
+* `yesod keter` builds a keter bundle. With a config setting, it will also upload it for you.
 
 ## Shakespeare
 
