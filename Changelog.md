@@ -22,7 +22,7 @@
 * Sum types
 * Support for `sqltype=...` attribute.
 
-## WAI
+## WAI (1.3)
 
 * Upgrade to conduit 0.5
 * Warp flushes request body after processing response body. This allows you to process the request body while generating the response. While this can be useful, be warned that this can cause deadlocks with some HTTP clients.
@@ -30,6 +30,7 @@
 * Simplified wai-extra's request body parsing, uses standard `conduit` types instead of special `BackEnd` type.
 * Drastically cleaned up wai-app-static (both internals and the user-facing API).
 * `warp-tls` automatically sniffs the request and determines whether to serve over HTTP or HTTPS.
+* Split off the `mime-types` package from `wai-app-static`.
 
 # Yesod 1.0
 
