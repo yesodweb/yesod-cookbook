@@ -15,6 +15,7 @@
 
 * Hamlet defaults to newlines being added between tags.
 * Tuple literal support (thanks @qnikst)
+* Added back (and fixed) infix operators.
 
 ## Persistent
 
