@@ -1,17 +1,21 @@
 ```haskell
 {-# LANGUAGE QuasiQuotes, TypeFamilies, GeneralizedNewtypeDeriving, FlexibleContexts #-}
 {-# LANGUAGE TemplateHaskell, OverloadedStrings, GADTs, MultiParamTypeClasses #-}
+{-# LANGUAGE NamedFieldPuns, RecordWildCards #-}
 
 import Yesod
-import Data.Text
+import Yesod.Form.Jquery
 import Text.Blaze (preEscapedToMarkup)
+import Data.Text
 import Database.Persist
 import Database.Persist.Store
 import Database.Persist.Sqlite
 import Database.Persist.TH
+import Control.Monad.Error
+import Control.Applicative ((<$>), (<*>))
 
 -- Our foundation type.
-data YesodBlog = YesodBlog ConnectionPool
+data YesodBlog = YesodBlog {dbPool :: ConnectionPool}
 
 -- Using a new type for Slug. Simply a wrapper around a text value.
 newtype Slug = Slug {unSlug :: Text}
@@ -48,7 +52,7 @@ newtype Slug = Slug {unSlug :: Text}
 --          fromPersistValue v = case v of
 --                           PersistText text -> Right $ Slug text
 --                           _ -> Left "Not a PersistText value"
-                          
+
 --          -- sqlType :: Slug -> SqlType
 --          sqlType _ = SqlString                
 
@@ -64,15 +68,67 @@ Post
 mkYesod "YesodBlog" [parseRoutes|
 / RootR GET
 /post/#Slug PostR GET
+/admin/posts/new NewPostR GET POST
 |]
 
 instance Yesod YesodBlog
+instance RenderMessage YesodBlog FormMessage where
+    renderMessage _ _ = defaultFormMessage
+
 instance YesodPersist YesodBlog where
     type YesodPersistBackend YesodBlog = SqlPersist
     runDB action = do
         YesodBlog pool <- getYesod
         runSqlPool action pool
 
+isEmpty :: Text -> Bool
+isEmpty = const False
+
+slugField :: (RenderMessage master FormMessage) => Field sub master Slug
+slugField = Field
+            { fieldParse = \rawVals -> case rawVals of
+                                   [s] 
+                                       | isEmpty s -> return $ Left "Empty slug forbidden"
+                                       | otherwise -> return $ Right $ Just $ Slug s
+                                   _ -> return $ Left "A value must be provided"
+            , fieldView = \idAttr nameAttr attrs eResult isReq ->
+                          (fieldView textField) idAttr nameAttr attrs (eResult >>= return . unSlug) isReq
+            }
+
+postForm :: Html -> MForm YesodBlog YesodBlog (FormResult Post, Widget)
+postForm = renderDivs $ Post
+           <$> areq textField "Title" Nothing
+           <*> areq textField "Content" Nothing
+           <*> areq slugField "Slug" Nothing
+      
+
+getNewPostR :: Handler RepHtml
+getNewPostR = do
+  (w, enctype) <- generateFormPost postForm
+  defaultLayout [whamlet|
+<h1>Create Post
+<form method=post action=@{NewPostR} enctype=#{enctype}>
+      ^{w}
+      <input type="submit">
+|]
+
+postNewPostR :: Handler RepHtml
+postNewPostR = do
+  ((result, widget), enctype) <- runFormPost postForm
+  case result of
+    FormSuccess post@Post {postSlug, ..} -> do
+                 pool <- fmap dbPool getYesod
+                 Yesod.lift $ runSqlPool (insertBy post) pool
+                 defaultLayout [whamlet|
+<p>Post added !
+<a href=@{PostR postSlug}>Click here to read.
+|]
+    _ -> defaultLayout [whamlet|
+<p>Failed to add post.
+<form method=post action=@{NewPostR} enctype=#{enctype}>
+    ^{widget}
+    <input type=submit>
+|]
 
 getRootR :: Handler RepHtml
 getRootR = do
@@ -83,15 +139,19 @@ getRootR = do
     $forall Entity id post <- posts
             <li>
                 <a href=@{PostR $ postSlug post}>#{postTitle post}
+<hr>
+<a href=@{NewPostR}>Click here to add posts
 |]
 
 getPostR :: Slug -> Handler RepHtml
 getPostR slug = do
-         Entity key post <- runDB $ getBy404 $ UniqueSlug slug
+         Entity _ Post {postTitle, postContent, ..} <- runDB $ getBy404 $ UniqueSlug slug
          defaultLayout [whamlet|
-<h1>#{postTitle post}
+<h1>#{postTitle}
 <div #post-content>
-     #{preEscapedToMarkup $ postContent post}
+     #{preEscapedToMarkup postContent}
+<hr>
+<a href=@{RootR}>List of posts
 |]
 
 openConnectionCount :: Int
