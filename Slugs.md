@@ -4,7 +4,7 @@
 
 import Yesod
 import Data.Text
-import Text.Blaze (preEscapedText)
+import Text.Blaze (preEscapedToMarkup)
 import Database.Persist
 import Database.Persist.Store
 import Database.Persist.Sqlite
@@ -91,7 +91,7 @@ getPostR slug = do
          defaultLayout [whamlet|
 <h1>#{postTitle post}
 <div #post-content>
-     #{preEscapedText $ postContent post}
+     #{preEscapedToMarkup $ postContent post}
 |]
 
 openConnectionCount :: Int
