@@ -7,15 +7,17 @@ There is prior art for Julius: [jmacro](http://hackage.haskell.org/package/jmacr
 * [Montage](http://hackological.com/blog/?p=5)
 
 
-We are still hoping someone will figure out a satisfactory way to have strongly typed Javascript. Here are the options:
 
 ## Compile Haskell
+
+We are still hoping someone will figure out a satisfactory way to have strongly typed Javascript. Here are the options:
 
 * [Fay, Haskell code translated to JS](http://fay-lang.org/). Upside: produces a small amount of understandable javascript. Downside: only a subset of Haskell is supported.
 * [UHC js compiler](http://www.haskell.org/haskellwiki/The_JavaScript_Problem#UHC). Downsides: alpha, not completely integrated with cabal, not GHC.
 * [ghcjs](https://github.com/pedromartins/ghcjs) - [example Yesod app](https://github.com/hamishmack/yesod-slides) - directly compile ghc core to javascript. Downside: produces large amounts of javascript.
 
-## Alternative experimental Haskell compilers
+
+### Alternative experimental ways to compile Haskell
 
 * [Emscripten](https://github.com/kripken/emscripten) — compiles LLVM/Clang output to JavaScript. If you use features of the GHC runtime you also have to compile it, which nobody has made an effort to figure out.
 * [PNaCL](http://www.chromium.org/nativeclient/pnacl) - run native code on Google Chrome with NaCL. PNaCL is the next generation that will run LLVM byte code. Won't work on other browsers.
