@@ -29,9 +29,12 @@ Fay is a new alternative that we would love to hear some experience reports abou
 
 ## A Haskell-like language that only compiles to Javascript
 
-* [Elm](http://elm-lang.org/) - Haskell inspired language that also offers an FRP GUI.
-* [Roy](http://roy.brianmckenna.org/)
+We would really like to hear about your experience with Elm or Roy, which are 2 nice options with Yesod integration.
+
+* [Elm](http://elm-lang.org/) - Yesod integration available. Haskell inspired language that also offers an FRP GUI. Downside: not quite Haskell, not Javascript.
+* [Roy](http://roy.brianmckenna.org/) - Yesod integration (Roy templates) available. Javascripty semantics with Haskelly features. Project is starting to mature. Upside: should be easier to use with existing JS than many other alternatives. Downside: not Haskell.
 * [lambdascript](https://github.com/valderman/lambdascript)
+
 
 ## Haskell code that explicitly generates Javascript
 
