@@ -1,8 +1,11 @@
-Yesod by default gives you Shakespeare-Javascript, also known as Julius. It is just Javascript that you can insert haskell values into. Also Shakespeare-Coffee, which is Coffeescript you can insert haskell values into. Coffeescript is a thin veneer that papers over Javascript to make a convenient and consistent language, but there is still no type system. These can easily be used with any existing javascript code.
+Yesod by default gives you Shakespeare-Javascript, also known as Julius. It is just Javascript that you can insert haskell values into. Also Shakespeare-Coffee, which is Coffeescript you can insert haskell values into. Coffeescript is a thin veneer that papers over Javascript to make a convenient and consistent language, but there is still no type system. These solutions can easily be used with any existing javascript code.
 
 There is prior art for Julius: [jmacro](http://hackage.haskell.org/package/jmacro-0.5.1) has QQ value insertion, but also supports a haskell-ish version of javascript.
 
+
 ## Using Javascript Frameworks
+
+The most robust and portable approach is to use one of the above javascript template tools and integrate with an existing javascript framework.
 
 * [Montage](http://hackological.com/blog/?p=5)
 
@@ -10,7 +13,7 @@ There is prior art for Julius: [jmacro](http://hackage.haskell.org/package/jmacr
 
 ## Compile Haskell
 
-We are still hoping someone will figure out a satisfactory way to have strongly typed Javascript. Here are the options:
+Fay is a new alternative that we would love to hear some experience reports about.
 
 * [Fay, Haskell code translated to JS](http://fay-lang.org/). Upside: produces a small amount of understandable javascript. Downside: only a subset of Haskell is supported.
 * [UHC js compiler](http://www.haskell.org/haskellwiki/The_JavaScript_Problem#UHC). Downsides: alpha, not completely integrated with cabal, not GHC.
@@ -23,6 +26,7 @@ We are still hoping someone will figure out a satisfactory way to have strongly 
 * [PNaCL](http://www.chromium.org/nativeclient/pnacl) - run native code on Google Chrome with NaCL. PNaCL is the next generation that will run LLVM byte code. Won't work on other browsers.
 * [JS Haskell interpreter](https://github.com/johang88/haskellinjavascript)
 
+
 ## A Haskell-like language that only compiles to Javascript
 
 * [Elm](http://elm-lang.org/) - Haskell inspired language that also offers an FRP GUI.
@@ -31,10 +35,11 @@ We are still hoping someone will figure out a satisfactory way to have strongly 
 
 ## Haskell code that explicitly generates Javascript
 
+* [Reactive-banana](http://apfelmus.nfshost.com/blog/2012/05/15-frp-banana-0-6.html) - an FRP GUI framework can now output html/javascript
 * [Panther-Ajax](http://osdir.com/ml/general/2011-06/msg41431.html) Experimental library to write server side code that accesses the dom and uses continuations.
 * [Ji](https://github.com/chrisdone/ji) - experimental library not currently working with Yesod. Same as Panther-Ajax, but under active development.
 * [HJScript](http://hackage.haskell.org/package/HJScript-0.5.0) - javascript DSL.
-* [yesod-js](https://github.com/snoyberg/yesod-js.git) - currently stalled while investigating more promising alternatives
+* [yesod-js](https://github.com/snoyberg/yesod-js.git) - currently stalled while investigating Fay/Elm/ghc-js
 
 
 ## Add better typing to Coffeescript
