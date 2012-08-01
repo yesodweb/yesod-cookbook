@@ -10,7 +10,7 @@
 * Easily add additional template languages in `Settings.hs`.
 * `yesod add-handler` automates the process of adding a new route, creating the handler module, creating stub handler functions, and updating `Application.hs` and the cabal file.
 * `yesod keter` builds a keter bundle. With a config setting, it will also upload it for you.
-* `fullyEvaluateBody` avoids empty responses when pure code sends an exception.
+* By default, response bodies are now fully evaluated before sending to avoid empty responses when pure code throws an exception. `DontFullyEvaluate` is provided to override this default.
 
 ## Shakespeare
 
