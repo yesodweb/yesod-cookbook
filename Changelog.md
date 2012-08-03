@@ -11,6 +11,7 @@
 * `yesod add-handler` automates the process of adding a new route, creating the handler module, creating stub handler functions, and updating `Application.hs` and the cabal file.
 * `yesod keter` builds a keter bundle. With a config setting, it will also upload it for you.
 * By default, response bodies are now fully evaluated before sending to avoid empty responses when pure code throws an exception. `DontFullyEvaluate` is provided to override this default.
+* Better control of uploaded file handling, defaulting to temporary file system storage.
 
 ## Shakespeare
 
