@@ -15,7 +15,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Personal site of Patrick Brisbin](http://pbrisbin.com/) ([github](https://github.com/pbrisbin/devsite)), might be of interest for those wanting to create a blog.
-* [Personal site of Blake Rain](http://meadowstalk.com/post/new-blog)
+* [Personal site of Blake Rain](http://meadowstalk.com/)
 * [Personal site of Pascal Wittmann](https://www.pascal-wittmann.de/) ([github](https://github.com/pSub/pascal-wittmann.de))
 * [Personal site of Corey O'Connor](http://www.corebotllc.com/)
 * [Personal site of Suhail Shergill](http://blog.shergill.su)
