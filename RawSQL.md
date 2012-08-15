@@ -35,3 +35,5 @@ main = withSqliteConn ":memory:" $ runSqlConn $ do
                     $= CL.map fromPersistValues $$ CL.consume
          liftIO $ print (rights persons::[Person])
 ~~~
+
+The compiler complains about the last line: No instance for (Show (PersonGeneric SqlPersist)) arising from a use of `print'
