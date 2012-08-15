@@ -44,3 +44,8 @@ This example was orginal posted by Michael Snoyman, see [http://permalink.gmane.
 	 
 	main :: IO ()
 	main = warpDebug 3000 File
+
+
+***
+
+This code does not run out of the box. The compiler complains about approot and Form (Not in scope: type constructor or class `Form').
