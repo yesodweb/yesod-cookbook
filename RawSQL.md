@@ -19,6 +19,7 @@ import Data.Text (Text)
 share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persist|
 Person
     name Text
+    deriving Show
 |]
 
 main :: IO ()
@@ -35,5 +36,3 @@ main = withSqliteConn ":memory:" $ runSqlConn $ do
                     $= CL.map fromPersistValues $$ CL.consume
          liftIO $ print (rights persons::[Person])
 ~~~
-
-The compiler complains about the last line: No instance for (Show (PersonGeneric SqlPersist)) arising from a use of `print'
