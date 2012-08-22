@@ -1,5 +1,5 @@
 You will need to use the raw driver with Persistent to deal with embedded fields.
-Note also that `toInsertFields` and `entityToFields` are available to help with embedded documents.
+Note also that persistent-mongoDB exposes `toInsertFields` and `entityToFields` are available to help with embedded documents.
 
 ``` haskell
 import Database.MongoDB((=:))
