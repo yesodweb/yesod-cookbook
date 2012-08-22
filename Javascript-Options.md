@@ -47,7 +47,7 @@ We would really like to hear about your experience with Elm or Roy, which are 2 
 
 ## Add better typing to Coffeescript
 
-[contracts.coffee](http://disnetdev.com/contracts.coffee/) not types, but contracts. Well maintained, easy to use. Firefox only (for development, in production contracts are turned off anyways).
+[contracts.coffee](http://disnetdev.com/contracts.coffee/) not types, but contracts. Well maintained, easy to use.
 [Uberscript](https://github.com/jstrachan/coffee-script/blob/master/TypeAnnotations.md) requires Google Closure compiler for its type-checking. A great idea, but this is a fork of coffeescript that has now fallen behind coffeescript by almost a year.
 
 
