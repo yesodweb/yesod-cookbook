@@ -11,24 +11,23 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
     * Update the configuration file Vagrantfile so it contains `:ghc_version => '7.4.2'`.
     * Do `vagrant up` - this will download all required packages and takes a looooooooong time.
     * Do `vagrant ssh`. You are now in Linux Ubuntu in the home folder.
-1. Once you are inside the box, install additional tools and packages:
+1. Once you are inside the box (from now on we call it "guest"; your work machine is "host"), install additional tools and packages:
     * Do `sudo apt-get update` to update the package list.
     * Do `sudo apt-get upgrade` to update installed packages.
     * `sudo apt-get install git-core`
     * If you prefer vim above vi: `sudo apt-get install vim`
     * Getting the right Postgresql is explained in a separate wiki page.
-1. In The VirtualBox app you can set shared folders. I put the Yesod project in the shared folder, so I can access it from my working machine as well. The path from Linux is `/vagrant/<project name>/`.
+1. In The VirtualBox app you can set shared folders. I put the Yesod project in the shared folder, so I can access it from my host machine as well. The path from guest is `/vagrant/<project name>/`.
 1. Cabal and Yesod:
-    * Do `cabal update` and inside the Yesod project folder `cabal install`.
+    * Do `cabal update` and inside the Yesod project folder (in guest) `cabal install`.
     * Yesod is not automatically recognized. At the end of `~/.profile` write `PATH="$HOME/.cabal/bin:$PATH"`.
     * `yesod devel` will not yet work because Postgresql still needs to be installed and configured. That instruction page needs to be written.
 
 
 ## Viewing `yesod devel` in the browser
-* To compile from Linux and see the result on my working machine, I use the network setting NAT (see VirtualBox > Settings > Network).
-* Edit the file Vagrantfile in the shared folder and add the line: `config.vm.network :bridged`.
-* Do `vagrant reload`. At "Available bridged network interfaces" choose either Ethernet or Wi-Fi.
-* Then do `ifconfig` from Linux, at the first item (eth0) grab the IP at `inet addr`. 
+* To compile from guest and see the result on my host, edit Vagrantfile in the shared folder and add the line: `config.vm.network :bridged`.
+* Do `vagrant reload`. At "Available bridged network interfaces" choose either Ethernet or Wi-Fi (I choose Wi-Fi).
+* Then in guest do `ifconfig`, at the first item (eth0) grab the IP at `inet addr`. 
 * Run `yesod devel`, enter the IP in a browser and add the port `:3000`.
 
 
