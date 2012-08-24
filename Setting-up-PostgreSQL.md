@@ -1,8 +1,8 @@
-We assume you have followed the instructions in [[Setting up a virtual machine, using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]]. If you use a different system, you will probably have a newer version of Postgresql.
+We assume you have followed the instructions in [[Setting up a virtual machine, using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]]. If you use a different system, you will probably have a newer version of PostgreSQL.
 
 We refer to the working machine as "host" and the Ubuntu client inside the virtual Vagrant box as "client".
 
-1. Install Postgresql: `sudo apt-get install postgresql`. This will install version 8.4.
+1. Install PostgreSQL: `sudo apt-get install postgresql`. This will install version 8.4.
 1. Create a user account for the postgres deamon: `sudo adduser postgres` and enter a new password for this user.
 1. Initialize postgres to use UTF8 instead of Latin1. Do this inside the new postgres user session (note the hyphen after `su`):<pre>
     sudo su - postgres
@@ -20,7 +20,7 @@ We refer to the working machine as "host" and the Ubuntu client inside the virtu
     \q</pre>
 1. In another window ssh to the client. Go to the Yesod project folder (likely in a shared folder, like `/vagrant/<project name>/`.
 1. Install pgconfig (part of libpq): `sudo apt-get install libpq-dev`.
-1. Install the Haskell lib for Postgresql: `cabal clean & cabal install`.
+1. Automatically install the Haskell lib for PostgreSQL using `cabal clean & cabal install`.
 1. Test run Yesod: `yesod devel`. If all is well, you'll see something like:<pre>
     Devel application launched: http://localhost:3000
     Migrating: CREATE TABLE "user"</pre>
