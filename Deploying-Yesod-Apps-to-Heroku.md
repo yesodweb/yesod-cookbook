@@ -8,12 +8,12 @@ Heroku doesn't run Haskell or Yesod but it runs binaries. For deploying your Yes
 1. Set up a virtual machine to compile your local app. See the step by step guides on this wiki:
     * [[Setting up a virtual machine using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]] helps to create a machine that matches Heroku's servers
     * [[Setting up PostgreSQL|Setting-up-PostgreSQL]] because that is what Heroku uses
-1. Set up for Heroku
+1. Set up Heroku
 1. Deploy to Heroku
 
 This guide assumes you have some working experience with Yesod and Git.
 
-## Set up for Heroku
+## Set up Heroku
 ### Set up your account
 1. [[Create a free developer account on Heroku|https://api.heroku.com/signup]]
 1. Install the Heroku command line tool. This is included in the virtual machine setup of step 1; otherwise do `wget -qO- https://toolbelt.heroku.com/install.sh | sh`
