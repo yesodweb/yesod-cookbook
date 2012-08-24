@@ -26,8 +26,8 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
 The easiest way to view your Yesod site from guest on your host machine is to use port forwarding.
 1. Shut down your guest if it is running with `vagrant halt`.
 1. Let's say you want to use port 4567. In Vagrantfile, add the setting:<pre>
-# Forward guest port 3000 to host port 4567
-config.vm.forward_port 3000, 4567</pre>
+    # Forward guest port 3000 to host port 4567
+    config.vm.forward_port 3000, 4567</pre>
 1. In `config/settings.yml` change `approot: "http://localhost:3000"` to `approot: "http://localhost:4567"`.
 1. Restart guest with `vagrant up`.
 1. `vagrant ssh` and start PostgreSQL and Yesod again.
