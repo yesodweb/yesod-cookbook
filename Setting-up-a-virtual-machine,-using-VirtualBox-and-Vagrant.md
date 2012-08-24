@@ -1,6 +1,6 @@
 If you are deploying your Yesod app on a remote webserver that is a different platform than your working machine (most of the time it is), it is necessary to build on a virtual machine that matches the webserver environment.
 
-For deploying to Heroku you need to compile on a machine with Ubuntu 10.04 Lucid Lynx (64 bit). As of March 2012 Heroku uses Linux servers with glibc version 2.11.1, same as Ubuntu 10.04. Also: Heroku uses 64 bit architecture, hence the Virtual Machine has to be 64 bit too.
+For deploying to Heroku for instance, you need to compile on a machine with Ubuntu 10.04 Lucid Lynx (64 bit). As of March 2012 Heroku uses Linux servers with glibc version 2.11.1, same as Ubuntu 10.04. Also: Heroku uses 64 bit architecture, hence the Virtual Machine has to be 64 bit too.
 
 This guide provides step by step instructions in creating a virtual machine for Heroku deployments.
 
