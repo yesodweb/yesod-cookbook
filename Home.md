@@ -16,6 +16,7 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
 
 # Deployment
   * [[Deploying to Heroku|Deploying-Yesod-Apps-to-Heroku]]
+      * [[Setting up a virtual machine, using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]]
   * [[Powered by|Powered by Yesod]] Yesod
 
 # Client side
