@@ -37,4 +37,4 @@ There are also other ways, for example using NAT. [[Converting a VirtualBox gues
 
 ## Troubleshooting
 
-Occasionally I get the error "SSH connection was refused!". See [http://vagrant.wikia.com/wiki/Usage](http://vagrant.wikia.com/wiki/Usage) for a solution.
+Occasionally on starting up the guest I get the error "SSH connection was refused!". See [http://vagrant.wikia.com/wiki/Usage](http://vagrant.wikia.com/wiki/Usage) for a solution.
