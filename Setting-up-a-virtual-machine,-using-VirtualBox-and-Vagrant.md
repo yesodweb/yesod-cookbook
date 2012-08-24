@@ -23,10 +23,17 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
 
 
 ## Viewing `yesod devel` in the browser
-* To compile from guest and see the result on my host, edit Vagrantfile in the shared folder and add the line: `config.vm.network :bridged`.
-* Do `vagrant reload` or `vagrant up`. At the prompt "Available bridged network interfaces" choose either Ethernet or Wi-Fi (I choose Wi-Fi, 'en1').
-* Then in guest do `ifconfig`, at the first item (eth0) grab the IP at `inet addr`. 
-* Run `yesod devel`, enter the IP in a browser and add the port `:3000`.
+The easiest way to view your Yesod site from guest on your host machine is to use port forwarding.
+1. Shut down your guest if it is running with `vagrant halt`.
+1. Let's say you want to use port 4567. In Vagrantfile, add the setting:<pre>
+# Forward guest port 3000 to host port 4567
+config.vm.forward_port 3000, 4567</pre>
+1. In `config/settings.yml` change `approot: "http://localhost:3000"` to `approot: "http://localhost:4567"`.
+1. Restart guest with `vagrant up`.
+1. `vagrant ssh` and start PostgreSQL and Yesod again.
+1. On your host machine open a new browser window and visit http://localhost:4567.
+
+There are also other ways, for example using NAT. [[https://blogs.oracle.com/fatbloke/entry/converting_a_virtualbox_nat_client|Converting a VirtualBox guest from a client (NAT) to a server (Host Interface Networking)]] might be a starting point (I haven't tried it).
 
 
 ## Troubleshooting
