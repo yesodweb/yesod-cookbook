@@ -6,7 +6,7 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
 
 ## Installation
 1. Download [VirtualBox from Oracle](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a general-purpose full virtualizer for x86 hardware. Targeted at server, desktop and embedded use, it is a professional-quality virtualization solution that is also open source software. VirtualBox runs on Windows, Mac OS X, Linux, and Solaris.
-1. Download [Vagrant](http://downloads.vagrantup.com/). Vagrant has excellent [support documentation](http://vagrantup.com/v1/docs/getting-started/index.html) (but watch out for the `vagrant destroy` command, you'll have to redo everything).
+1. Download [Vagrant](http://downloads.vagrantup.com/). Vagrant uses Oracle’s VirtualBox to build configurable, lightweight, and portable virtual machines dynamically. Vagrant has excellent [support documentation](http://vagrantup.com/v1/docs/getting-started/index.html) (but watch out for the `vagrant destroy` command, you'll have to redo everything).
 1. Get the [vagrant-haskell-heroku box project on Bitbucket](https://bitbucket.org/puffnfresh/vagrant-haskell-heroku) (create an account to download it). This `lucid64` box contains automated download+install "recipes" for the Haskell Platform and Heroku Toolbelt.
     * Do `vagrant up` - this will download all required packages and takes a looooooooong time.
     * Do `vagrant ssh`. You are now in Linux Ubuntu in the home folder.
