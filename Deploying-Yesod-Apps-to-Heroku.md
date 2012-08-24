@@ -1,65 +1,91 @@
-# Deploying to Heroku
+## Introduction
+[[Heroku|http://www.heroku.com/]] is a cloud platform as a service (PAAS) for building, deploying, and running cloud apps using Ruby and other languages. Their business is in removing the hassle from deploying applications. See [[Heroku Isn't for Idiots|http://rdegges.com/heroku-isnt-for-idiots]] for a non-objective but nonetheless informative blog post.
 
-# Other resources
+Heroku doesn't run Haskell or Yesod but it runs binaries. For deploying your Yesod (or any Haskell) app to Heroku you will compile the executable and use git to move it on their servers. Once the setup is done, this becomes an easy process.
 
-* [TFoo Heroku deployment](http://nbartlomiej.com/2012/03/29/deploying-tfoo-and-other-haskell-applications-to-heroku/)
-* [Deploy from a Vagrant VM](http://brianmckenna.org/blog/haskell_on_heroku)
-* Heroku also has [buildpacks](https://devcenter.heroku.com/articles/buildpacks) to let them compile the code on deploy. I actually found a [WIP haskell buildpack](https://github.com/mbbx6spp/cabal-heroku-buildpack). This would make deploy much more convenient for non-ubuntu hosts.
+### 3-step guide
 
-# Introduction
+1. Set up a virtual machine to compile your local app. See the step by step guides on this wiki:
+    * [[Setting up a virtual machine using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]] helps to create a machine that matches Heroku's servers
+    * [[Setting up PostgreSQL|Setting-up-PostgreSQL]] because that is what Heroku uses
+1. Set up for Heroku
+1. Deploy to Heroku
 
-This is not meant to be a tutorial about [git][2], [heroku][3], or
-[Yesod][4], if you don't feel comfortable with the tools while following along
-you may want to find their respective documentation.
+This guide assumes you have some working experience with Yesod and Git.
 
-This tutorial also assumes that you already have Yesod, git, and [the heroku
-command line tool][5] installed.  The heroku tool is
-probably in your package manager, if not there are instructions for installation
-on the linked site.
+## Set up for Heroku
+### Set up your account
+1. [[Create a free developer account on Heroku|https://api.heroku.com/signup]]
+1. Install the Heroku command line tool. This is included in the virtual machine setup of step 1; otherwise do `wget -qO- https://toolbelt.heroku.com/install.sh | sh`
+1. Login: `heroku login`. This will also read and otherwise create a public SSH key on your machine.
 
-Also, you *must* be working on 64 bit Linux with a version of libc
-compatible with the Heroku hosts.  See the [GLIBC version errors](#addendum)
-section for more details.
+If you already have an account, and are working on a different virtual machine, you can pass your public SSH keys to Heroku: `heroku keys:add ~/.ssh/id_rsa.pub`. If this doesn't work (Permission denied error), let Heroku create a new key: `heroku keys:clear`, `rm ~/.ssh/id_rsa.pub`, `heroku keys:add`.
 
-[2]: http://git-scm.com/
-[3]: http://www.heroku.com/
-[4]: http://www.yesodweb.com/
-[5]: http://devcenter.heroku.com/categories/command-line
+### Set up Git
+If you've worked with Git this will be familiar. Otherwise read [[Git for beginners|http://ryanflorence.com/git-for-beginners/]] first.
 
-# Create your Yesod App
-Execute `yesod init` to create your Yesod application, select PostgreSQL as the
-database back end.  Next follow the instructions in the Procfile in `deploy/Procfile`
-to modify your application to work on Heroku.
+1. Store your name and email in git config:<pre>
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+</pre>
+1. Go to your project folder and do:
+<pre>
+git init
+git add .
+git commit -m "init"
+</pre>
 
-# Create your Heroku App
+The next steps will also create the remote Git repository.
 
-To host a Yesod app on Heroku create an application on the Cedar
-stack and add the free shared PostgreSQL database.
+### Set up your Heroku app
+1. Go to your project folder, for instance `cd /vagrant/appname/`.
+1. Create your project on the Heroku server: `heroku apps:create appname`.
+1. Add the free "Dev Plan" postgresql add-on: `heroku addons:add heroku-postgresql`. More details at [[Getting Started with the Heroku Postgres Add-on|https://devcenter.heroku.com/articles/heroku-postgres-addon]].
+1. Connect your Heroku app to your database, see [[the instructions on the "Getting Started" page|https://devcenter.heroku.com/articles/heroku-postgres-addon#retrieve-your-database-credentials-and-connect]].
+1. Assign your database to the `DATABASE_URL` environment variable in your application: [[Promote your database|https://devcenter.heroku.com/articles/heroku-postgres-addon#promote-your-database-and-begin-using-it]].
+   * If you created your database through Heroku's web interface, follow [[this help from Stackoverflow|http://stackoverflow.com/a/11803478/505157]].
 
-    heroku apps:create --stack cedar [NAME]
-    heroku addons:add shared-database:5mb
+### Make changes to your Yesod project
 
-Change the Production approot URL in `config/settings.yml` to match the
-URL of your Heroku application.
+1. Go to your project folder.
+1. In `config/settings.yml` change the `approot` setting in section Production to the URL of your Heroku application, for instance `approot: "http://appname.herokuapp.com"`.
+1. Move `deploy/Procfile` to the root of the project folder: `mv deploy/Procfile ./`.
+1. It needs to contain only this one line:<pre>
+web: ./dist/build/appname/appname production -p $PORT
+</pre>
+1. Create a package.json file:<pre>
+echo '{ "name": "appname", "version": "0.0.1", "dependencies": {} }' >> package.json
+</pre>
+1. Add the changes to git: `git add .` and `git commit -m "heroku setup"`.
 
-# Build your App for Heroku
 
-Once you're ready to push the application to Heroku build the binary and
-add it to the git repository. Next push your branch to the heroku remote.
-(The *heroku* remote should have been added by the `heroku apps:create` step.)
-See [Advanced git Usage](#advanced) for an alternative git workflow that avoids leaving
-binaries in your history.
+## Deploy to Heroku
 
-    cabal clean && cabal configure && cabal build
-    git add dist/build/appname/appname
-    git push -f deploy:master
+Instructions to push your app to Heroku without committing the large binary, **from your virtual machine**.
 
-# Resolve any outstanding library issues.
+Login to Heroku if you haven't: `heroku login`.
 
-You'll now have a Yesod app on Heroku but it will most likely not work
-due to missing shared libraries.  Even an empty scaffold site requires
-a library (libgmp) that is not on Heroku by default.  If you view the logs
-for your heroku app you'll likely see something like this:
+Repeat these steps to deploy:
+
+    git checkout -b deploy
+    cabal clean && cabal configure -fproduction && cabal build
+    git add -f dist/build/appname/appname
+    git commit -m "binary"
+    git push -f heroku deploy:master
+    git checkout <original branch>
+    git branch -D deploy
+
+The critical thing to note is the creation of a new branch before commiting the binary. I do this every time I push to Heroku, after the branch is pushed I delete it so it can be garbage collected by Git (and more importantly, will never make its way out of my local repository). This requires the use of `push -f` because the branch on Heroku will never be an ancestor of the commit being deployed to heroku.
+
+After pushing the deploy branch checkout the original branch and keep working on your
+application.
+
+-----
+
+## Random tips
+### Resolve any outstanding library issues.
+
+You'll now have a Yesod app on Heroku but dependent on your app it will not work yet due to missing shared libraries.  Even an empty scaffold site requires a library (libgmp) that is not on Heroku by default.  If you view the logs for your heroku app you'll likely see something like this:
 
     $ heroku logs
     2012-03-08T20:08:55+00:00 heroku[api]: Add-on add logging:basic by user@email.com
@@ -79,13 +105,9 @@ for your heroku app you'll likely see something like this:
     2012-03-08T20:11:35+00:00 heroku[web.1]: State changed from created to starting
 
 Note the line labeld `app[web.1]` that says "error while loading shared libraries: libgmp.so.10".
-This means that when the application was compiled it referenced libgmp
-which can not be found on the Heroku host.  To resolve this create a libs directory
-under in the project, copy the local shared libraries there, and then push them to Heroku.
+This means that when the application was compiled it referenced libgmp which can not be found on the Heroku host. To resolve this create a libs directory under in the project, copy the local shared libraries there, and then push them to Heroku.
 
-First find out if there are any other missing libraries.  Run the command
-`heroku run ldd dist/build/appname/appname`.  ldd will display a list of all
-the shared libraries a binary depends on along with the path to that library.
+First find out if there are any other missing libraries. Run the command `heroku run ldd dist/build/appname/appname`. ldd will display a list of all the shared libraries a binary depends on along with the path to that library.
 
     $ heroku run ldd dist/build/appname/appname
     Running ldd dist/build/appname/appname attached to terminal... up, run.1
@@ -100,23 +122,14 @@ the shared libraries a binary depends on along with the path to that library.
 	libdl.so.2 => /lib/libdl.so.2 (0x00007f54841c0000)
     .... SNIP ....
 
-Note the line that ends in `=> not found`.  Any libraries that are missing on
-the Heroku host will show up as lines like this.
-For your application to work on Heroku you'll need to make a copy
-of your local libraries available to the Heroku host.  Do this
-by creating a libs directory on the deploy branch and adding your
-local libraries there.
+Note the line that ends in `=> not found`.  Any libraries that are missing on the Heroku host will show up as lines like this. For your application to work on Heroku you'll need to make a copy of your local libraries available to the Heroku host. Do this by creating a libs directory on the deploy branch and adding your local libraries there.
 
     mkdir libs
     $ heroku config:add LD_LIBRARY_PATH=./libs
     Adding config vars and restarting app... done, v5
     LD_LIBRARY_PATH => ./libs
 
-The command `heroku config:add ...` sets the `LD_LIBRARY_PATH` environment
-variable to `./libs`.  This tells the dynamic linker on the Heroku host to
-look in the libs directory when searching for shared libraries.
-Next find where the missing libraries on your local host.  To do this use the same command
-(ldd) locally that you used on Heroku previously.
+The command `heroku config:add ...` sets the `LD_LIBRARY_PATH` environment variable to `./libs`.  This tells the dynamic linker on the Heroku host to look in the libs directory when searching for shared libraries. Next find where the missing libraries on your local host. To do this use the same command (ldd) locally that you used on Heroku previously.
 
     $ ldd dist/build/appname/appname
 	linux-vdso.so.1 =>  (0x00007fff7ffff000)
@@ -129,22 +142,19 @@ Next find where the missing libraries on your local host.  To do this use the sa
 	librt.so.1 => /lib/x86_64-linux-gnu/librt.so.1 (0x00007f4b9be42000)
     .... SNIP ....
 
-Note where the missing `libgmp` is located (`/usr/lib/libgmp.so.10` on my machine)
-and copy it into your libs directory.
+Note where the missing `libgmp` is located (`/usr/lib/libgmp.so.10` on my machine) and copy it into your libs directory.
 
     cp /usr/lib/libgmp.so.10 ./libs/
 
-Repeat this step for any other missing libraries then commit and push your libraries
-to the heroku remote.  You should now have a working Yesod app on Heroku.
+Repeat this step for any other missing libraries then commit and push your libraries to the heroku remote.  You should now have a working Yesod app on Heroku.
 
 -----
 
-# <a name="addendum"></a>GLIBC version errors
+### <a name="addendum"></a>GLIBC version errors
 
 If you use a rolling release Linux distribution like I do your version of libc
 may be newer than the version on Heroku.  In that case you'll get errors that
 look something like the following.
-
 
     2011-12-28T01:31:23+00:00 app[web.1]: ./dist/build/appname/
     appname: /lib/libc.so.6: version `GLIBC_2.15' not found
@@ -156,10 +166,9 @@ look something like the following.
     2011-12-28T01:31:25+00:00 heroku[web.1]: Process exited
 
 There are apparently [several ways to fix this][1] but the simplest I've
-found is to build on a distro that has an older version of libc.
-I use a 64bit Ubuntu virtual machine
-as a build host and simply deploy from there.  If you want to compare libc
-versions you can run the following commands.
+found is to build on a distro that has an older version of libc, which is described in step 1 above.
+
+If you want to compare libc versions you can run the following commands.
 
     $ heroku run --app appname 'ldd --version'
     Running ldd --version attached to terminal... up, run.1
@@ -175,32 +184,12 @@ versions you can run the following commands.
     warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
     Written by Roland McGrath and Ulrich Drepper.
 
-As I'm writing this Heroku is running Ubuntu with libc version 2.11.1 while my
-local machine running ArchLinux has libc version 2.15
+As I'm writing this Heroku is running Ubuntu with libc version 2.11.1 while my local machine running ArchLinux has libc version 2.15
 
 [1]: http://stackoverflow.com/a/8658468/166732
 
-# <a name="advanced"></a>Advanced git Usage
-
-Committing the application binary can be unwieldy because your repository
-can quickly become very large.  This wastes disk space and will cause
-push, fetch, and clone commands to take much longer.  The alternative
-git workflow looks like this:
-
-    # ready to push the current branch to heroku
-    git checkout -b deploy
-    cabal clean && cabal configure && cabal build
-    git add dist/build/appname/appname
-    git commit -m "binary"
-    git push -f heroku deploy:master
-    git checkout <original branch>
-
-The critical thing to note is the creation of a new branch before commiting
-the binary.  I do this every time I push to heroku, after the branch is pushed
-I delete it so it can be garbage collected by git (and more importantly, will
-never make its way out of my local repository).  This requires the use of
-`push -f` because the branch on heroku will never be an ancestor of the commit
-being deployed to heroku.
-
-After pushing the deploy branch checkout the original branch and keep working on your
-application.
+-----
+### Other how-to resources
+* [TFoo Heroku deployment](http://nbartlomiej.com/2012/03/29/deploying-tfoo-and-other-haskell-applications-to-heroku/)
+* [Deploy from a Vagrant VM](http://brianmckenna.org/blog/haskell_on_heroku)
+* Heroku also has [buildpacks](https://devcenter.heroku.com/articles/buildpacks) to let them compile the code on deploy. I actually found a [WIP haskell buildpack](https://github.com/mbbx6spp/cabal-heroku-buildpack). This would make deploy much more convenient for non-ubuntu hosts.
