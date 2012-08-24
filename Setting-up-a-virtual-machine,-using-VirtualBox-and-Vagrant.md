@@ -1,8 +1,8 @@
 If you are deploying your Yesod app on a remote webserver that is a different platform than your working machine (most of the time it is), it is necessary to build on a virtual machine that matches the webserver environment.
 
-For example, if you deploy to Heroku you need to compile on a Linux 64-bit with Ubuntu 10.04.
+For deploying to Heroku you need to compile on a machine with Ubuntu 10.04 Lucid Lynx (64 bit). As of March 2012 Heroku uses Linux servers with glibc version 2.11.1, same as Ubuntu 10.04. Also: Heroku uses 64 bit architecture, hence the Virtual Machine has to be 64 bit too.
 
-This guide provides instructions in creating a virtual machine for Heroku deployments.
+This guide provides step by step instructions in creating a virtual machine for Heroku deployments.
 
 ## Installation
 1. Download [VirtualBox from Oracle](https://www.virtualbox.org/wiki/Downloads). VirtualBox is a general-purpose full virtualizer for x86 hardware. Targeted at server, desktop and embedded use, it is a professional-quality virtualization solution that is also open source software. VirtualBox runs on Windows, Mac OS X, Linux, and Solaris.
