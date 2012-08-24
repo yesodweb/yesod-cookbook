@@ -14,9 +14,9 @@ We refer to the working machine as "host" and the Ubuntu client inside the virtu
     /usr/lib/postgresql/8.4/bin/pg_ctl -D /var/lib/postgresql/8.4/main status</pre>
 1. Start the server. Create a database user and a new database with the same names as in your `config/postgresql.yml` file (or modify this file later to make it correspond again):<pre>
     psql template1
-    CREATE USER <name> WITH PASSWORD '<pwd>';
-    CREATE DATABASE <dbname>;
-    GRANT ALL PRIVILEGES ON DATABASE <name> TO <dbname>;
+    CREATE USER &lt;name&gt; WITH PASSWORD '&lt;pwd&gt;';
+    CREATE DATABASE &lt;dbname&gt;;
+    GRANT ALL PRIVILEGES ON DATABASE &lt;dbname> TO &lt;name&gt;;
     \q</pre>
 1. In another window ssh to the client. Go to the Yesod project folder (likely in a shared folder, like `/vagrant/<project name>/`.
 1. Install pgconfig (part of libpq) that is : `sudo apt-get install libpq-dev`.
