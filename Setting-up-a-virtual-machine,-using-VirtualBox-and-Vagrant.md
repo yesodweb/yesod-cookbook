@@ -19,21 +19,20 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
 1. Cabal and Yesod:
     * Do `cabal update` and inside the Yesod project folder (in guest) `cabal install`.
     * Yesod is not automatically recognized. At the end of `~/.profile` write `PATH="$HOME/.cabal/bin:$PATH"`.
-    * `yesod devel` will not yet work because Postgresql still needs to be installed and configured. See: [[Setting up Postgresql|Setting-up-Postgresql]].
+    * `yesod devel` will not yet work because PostgreSQL still needs to be installed and configured. See: [[Setting up PostgreSQL|Setting-up-Postgresql]].
 
 
-## Viewing `yesod devel` in the browser
+## Viewing your Yesod site in the host browser
 The easiest way to view your Yesod site from guest on your host machine is to use port forwarding.
+
 1. Shut down your guest if it is running with `vagrant halt`.
-1. Let's say you want to use port 4567. In Vagrantfile, add the setting:<pre>
-    # Forward guest port 3000 to host port 4567
-    config.vm.forward_port 3000, 4567</pre>
+1. Let's say you want to use port 4567. In Vagrantfile, add the setting: `config.vm.forward_port 3000, 4567` (to forward guest port 3000 to host port 4567).
 1. In `config/settings.yml` change `approot: "http://localhost:3000"` to `approot: "http://localhost:4567"`.
-1. Restart guest with `vagrant up`.
-1. `vagrant ssh` and start PostgreSQL and Yesod again.
+1. Restart guest with `vagrant up` and do `vagrant ssh`.
+1. Start PostgreSQL and Yesod again.
 1. On your host machine open a new browser window and visit http://localhost:4567.
 
-There are also other ways, for example using NAT. [[https://blogs.oracle.com/fatbloke/entry/converting_a_virtualbox_nat_client|Converting a VirtualBox guest from a client (NAT) to a server (Host Interface Networking)]] might be a starting point (I haven't tried it).
+There are also other ways, for example using NAT. [[Converting a VirtualBox guest from a client (NAT) to a server (Host Interface Networking)|https://blogs.oracle.com/fatbloke/entry/converting_a_virtualbox_nat_client]] might be a starting point (I haven't tried it).
 
 
 ## Troubleshooting
