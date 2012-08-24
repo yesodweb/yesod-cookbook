@@ -26,7 +26,7 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
 
 ## Viewing `yesod devel` in the browser
 * To compile from guest and see the result on my host, edit Vagrantfile in the shared folder and add the line: `config.vm.network :bridged`.
-* Do `vagrant reload`. At "Available bridged network interfaces" choose either Ethernet or Wi-Fi (I choose Wi-Fi).
+* Do `vagrant reload` or `vagrant up`. At the prompt "Available bridged network interfaces" choose either Ethernet or Wi-Fi (I choose Wi-Fi, 'en1').
 * Then in guest do `ifconfig`, at the first item (eth0) grab the IP at `inet addr`. 
 * Run `yesod devel`, enter the IP in a browser and add the port `:3000`.
 
