@@ -15,7 +15,7 @@ This guide provides step by step instructions in creating a virtual machine for 
     * Do `sudo apt-get upgrade` to update installed packages.
     * `sudo apt-get install git-core`
     * If you prefer vim above vi: `sudo apt-get install vim`
-1. In The VirtualBox app you can set shared folders. I put the Yesod project in the shared folder, so I can access it from my host machine as well. The path from guest is `/vagrant/<project name>/`.
+1. In The VirtualBox app you can set shared folders. I put the Yesod project in the shared folder, so I can access it from my host machine as well. The path from guest is `/vagrant/appname/`.
 1. Cabal and Yesod:
     * Do `cabal update` and inside the Yesod project folder (in guest) `cabal install`.
     * Yesod is not automatically recognized. At the end of `~/.profile` write `PATH="$HOME/.cabal/bin:$PATH"`.
@@ -30,7 +30,7 @@ The easiest way to view your Yesod site from guest on your host machine is to us
 1. In `config/settings.yml` change `approot: "http://localhost:3000"` to `approot: "http://localhost:4567"`.
 1. Restart guest with `vagrant up` and do `vagrant ssh`.
 1. Start PostgreSQL and Yesod again.
-1. On your host machine open a new browser window and visit http://localhost:4567.
+1. On your host machine open a new browser window and visit [[http://localhost:4567|http://localhost:4567]].
 
 There are also other ways, for example using NAT. [[Converting a VirtualBox guest from a client (NAT) to a server (Host Interface Networking)|https://blogs.oracle.com/fatbloke/entry/converting_a_virtualbox_nat_client]] might be a starting point (I haven't tried it).
 
