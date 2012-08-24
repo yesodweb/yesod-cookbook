@@ -15,7 +15,6 @@ This guide provides instructions in creating a virtual machine for Heroku deploy
     * Do `sudo apt-get upgrade` to update installed packages.
     * `sudo apt-get install git-core`
     * If you prefer vim above vi: `sudo apt-get install vim`
-    * Getting the right Postgresql is explained in [[Setting up Postgresql|Setting-up-Postgresql]].
 1. In The VirtualBox app you can set shared folders. I put the Yesod project in the shared folder, so I can access it from my host machine as well. The path from guest is `/vagrant/<project name>/`.
 1. Cabal and Yesod:
     * Do `cabal update` and inside the Yesod project folder (in guest) `cabal install`.
