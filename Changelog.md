@@ -1,6 +1,6 @@
 # Changelog
 
-# Yesod 1.1 (not yet released)
+# Yesod 1.1
 
 ## Yesod
 
