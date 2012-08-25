@@ -7,7 +7,7 @@ The Yesod team uses (and has built) quite a number of tools to make our jobs eas
 * [cabal-meta](http://hackage.haskell.org/package/cabal-meta) is another cabal wrapper, but helps with setting up simultaneous builds. This can help prevent dependency hell in many circumstances. It is also compatible with cabal-dev.
 * [cabal-src](https://github.com/yesodweb/cabal-src/blob/master/README.md) essentially deploys a package to a local repo (you could think of it as a local alternative to Hackage). This is used internally by the Yesod build scripts. It's very convenient when working on a large number of updated dependencies that have not yet been released to Hackage.
 * [mega-sdist](https://github.com/snoyberg/mega-sdist#readme) helps deal with mega-repos, or repositories containing a number of packages as subfolders. It will automatically create tarballs of each package and compare it to the version available on Hackage, letting you know if you need to bump any version numbers.
-* [[Virtual machine using VirtualBox and Vagrant|Setting-up-a-virtual-machine%2C-using-VirtualBox-and-Vagrant]]
+* [[Virtual machine using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]]
 * [packdeps](http://hackage.haskell.org/package/packdeps) (and [website](http://packdeps.haskellers.com/)) lets you know when dependencies on a package are out-of-date.
 
 ## Text editors
