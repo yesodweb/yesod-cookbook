@@ -1,5 +1,6 @@
 The Yesod team uses (and has built) quite a number of tools to make our jobs easier. This page is meant to give a comprehensive list of the tools available and the problems they solve. It is not intended to give a deep explanation of how to use them.
 
+## Build tools
 * Obviously GHC is our most important tool. These days, we recommend users- and therefore developers- to start off directly with the [Haskell Platform](http://hackage.haskell.org/platform/). Yesod is always officially supported on the current Haskell Platform, though in reality we try to make it work with the previous HP release and any release candidates of GHC.
 * [Cabal](http://www.haskell.org/cabal/) is the standard Haskell build system. It's a combination of a library and a command line tool (known as cabal-install, though the executable is just cabal). All packages in the Yesod project are cabalized (i.e., they are built via cabal).
 * [cabal-dev](http://hackage.haskell.org/package/cabal-dev) is a wrapper around cabal which provides for build sandboxes. This lets you experiment with different versions of packages without destroying existing installs. Highly recommended in general. (Alternatively, there is [virthualenv](http://hackage.haskell.org/package/virthualenv), which serves much the same purpose.)
@@ -8,3 +9,8 @@ The Yesod team uses (and has built) quite a number of tools to make our jobs eas
 * [mega-sdist](https://github.com/snoyberg/mega-sdist#readme) helps deal with mega-repos, or repositories containing a number of packages as subfolders. It will automatically create tarballs of each package and compare it to the version available on Hackage, letting you know if you need to bump any version numbers.
 * [vagrant virtual machine with the Haskell Platform](http://www.yesodweb.com/blog/2012/10/haskell-vm).
 * [packdeps](http://hackage.haskell.org/package/packdeps) (and [website](http://packdeps.haskellers.com/)) lets you know when dependencies on a package are out-of-date.
+
+## Text editors
+* [TextWrangler](http://www.barebones.com/products/TextWrangler/) is a free code editor for Mac.
+    * [BBEdit Codeless Language Module for Haskell](http://code.google.com/p/bbedit-haskell/) can be used as syntax coloring script
+
