@@ -63,8 +63,6 @@ echo '{ "name": "appname", "version": "0.0.1", "dependencies": {} }' >> package.
 
 Instructions to push your app to Heroku without committing the large binary, **from your virtual machine**.
 
-Login to Heroku if you haven't: `heroku login`.
-
 Repeat these steps to deploy:
 
     git checkout -b deploy
