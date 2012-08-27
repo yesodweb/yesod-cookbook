@@ -25,7 +25,7 @@
 	
 	import Yesod
 	import Yesod.Form.I18n.Swedish
-	import Control.Applicative ((<;$>), (<*>))
+	import Control.Applicative ((<$>), (<*>))
 	import Data.Text (Text)
 	
 	
