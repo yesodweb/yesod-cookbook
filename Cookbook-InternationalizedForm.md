@@ -25,7 +25,7 @@
 	
 	import Yesod
 	import Yesod.Form.I18n.Swedish
-	import Control.Applicative ((&lt;$&gt;), (&lt;*&gt;))
+	import Control.Applicative ((<;$>), (<*>))
 	import Data.Text (Text)
 	
 	
@@ -86,12 +86,12 @@
 	-- In our form we use our messages Model and Year as field labels.
 	carAForm :: AForm MyApp MyApp Car
 	carAForm = Car
-	    &lt;$&gt; areq textField (fs Model) Nothing
-	    &lt;*&gt; areq intField  (fs Year)  Nothing
+	    <$> areq textField (fs Model) Nothing
+	    <*> areq intField  (fs Year)  Nothing
 	    where
 		fs msg = FieldSettings msg Nothing Nothing Nothing
 	
-	carForm :: Html -&gt; Form MyApp MyApp (FormResult Car, Widget)
+	carForm :: Html -> Form MyApp MyApp (FormResult Car, Widget)
 	carForm = renderTable carAForm
 	
 	
@@ -99,13 +99,13 @@
 	-- Here we also use the Please message.
 	getRootR :: Handler RepHtml
 	getRootR = do
-	    ((_, widget), enctype) &lt;- runFormGet carForm
+	    ((_, widget), enctype) <- runFormGet carForm
 	    defaultLayout [whamlet|
-		&lt;p&gt;_{Please}
-		&lt;form method=get action=@{RootR} enctype=#{enctype}&gt;
-		    &lt;table
+		<p>_{Please}
+		<form method=get action=@{RootR} enctype=#{enctype}>
+		    <table>
 			^{widget}
-		    &lt;p&gt;&lt;input type=submit&gt;
+		    <p><input type=submit>
 		|]
 	
 	
