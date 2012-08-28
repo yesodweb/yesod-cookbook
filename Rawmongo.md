@@ -1,5 +1,9 @@
 You will need to use the raw driver with Persistent to deal with embedded fields.
-Note also that persistent-mongoDB exposes `toInsertFields` and `entityToFields` are available to help with embedded documents.
+Note also that persistent-mongoDB exposes functions to help with converting between a document and an entity: `toInsertFields`, `entityToFields`, `docToEntityEither`, and `docToEntityThrow`.
+
+[Persistent's test case](https://github.com/yesodweb/persistent/blob/master/persistent-test/PersistentTest.hs#L600)
+
+`runDB` is still the MongoDB Action monad, so just run MongoDB queries as normal.
 
 ``` haskell
 import Database.MongoDB((=:))
