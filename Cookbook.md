@@ -2,10 +2,6 @@
 
 The Yesod Cookbook contains small snippets of code for solving practical problems with Yesod. If you have some code to share, please create a wiki page and link to it in the appropriate section.
 
-## Templates
-
-* [[Compile Coffeescript once to Javascript|CompileCoffeescript]]
-
 ## Forms
 
 * [[Change the order of form fields|OrderFormFields]]
