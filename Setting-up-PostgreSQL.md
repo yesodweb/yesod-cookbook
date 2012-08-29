@@ -18,6 +18,8 @@ We refer to the working machine as "host" and the Ubuntu client inside the virtu
     CREATE DATABASE &lt;dbname&gt;;
     GRANT ALL PRIVILEGES ON DATABASE &lt;dbname> TO &lt;name&gt;;
     \q</pre>
+Later you can edit the database using:<pre>
+    psql &lt;dbname></pre>
 1. In another window ssh to the client. Go to the Yesod project folder (likely in a shared folder, like `/vagrant/appname/`.
 1. Install pgconfig (part of libpq): `sudo apt-get install libpq-dev`.
 1. Automatically install the Haskell lib for PostgreSQL using `cabal clean & cabal install`.
