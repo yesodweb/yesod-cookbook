@@ -1,3 +1,7 @@
+Example of a product list where each product optionally "has" a category.
+
+This example shows how to fill a dropdown select box with values from the Category table, and use the selected value to create a new Product.
+
     {-# LANGUAGE TypeFamilies, TemplateHaskell, MultiParamTypeClasses,
     GADTs, QuasiQuotes, OverloadedStrings, FlexibleContexts #-}
     import Yesod
