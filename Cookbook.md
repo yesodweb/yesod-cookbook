@@ -10,6 +10,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 * [[Password confirm field|Password Confirm Field]]
 * [[Multi-field validation|Cookbook/Multi-field validation]]
 * [[Select field populated from database|Select-field-populated-from-database]]
+* [[Multi-select field populated from database|Multi-select-field-populated-from-database]]
 * [[File upload|Cookbook/File upload]]
 
 ## Persistence
