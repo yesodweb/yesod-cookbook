@@ -1,4 +1,4 @@
-Example of a product list where each product optionally "has" a category.
+Example of a product list where each product optionally "has" a category (a one-to-one relationship).
 
 This example shows how to fill a dropdown select box with values from the Category table, and use the selected value to create a new Product.
 
