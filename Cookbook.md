@@ -9,6 +9,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 * [[Custom form layout|CustomFormLayout]]
 * [[Password confirm field|Password Confirm Field]]
 * [[Multi-field validation|Cookbook/Multi-field validation]]
+* [[Select field populated from database|SelectFieldPopulatedFromDatabase]]
 * [[File upload|Cookbook/File upload]]
 
 ## Persistence
