@@ -1,3 +1,7 @@
+Example of a product list where each product optionally has multiple categories (through a many-to-many relationship, using a linker table.
+
+This example shows how to fill a multi select box with values from the Category table, and use the selected values to create a new Product.
+
     {-# LANGUAGE TypeFamilies, TemplateHaskell, MultiParamTypeClasses,
     GADTs, QuasiQuotes, OverloadedStrings, FlexibleContexts #-}
     import Yesod
