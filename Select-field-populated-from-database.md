@@ -69,7 +69,7 @@
     |]
     
     productsAndCategories :: GHandler App App [(Product, Maybe Category)]
-    productsAndCategories = runDB $ selectList [ProductName !=. ""] [Asc ProductName] >>= mapM (\(Entity _ p) -> do
+    productsAndCategories = runDB $ selectList [] [Asc ProductName] >>= mapM (\(Entity _ p) -> do
         category <- case (productCategory p) of
             Just c -> do
                 get c
