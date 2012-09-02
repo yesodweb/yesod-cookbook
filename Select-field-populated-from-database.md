@@ -75,30 +75,27 @@
                 get c
             Nothing -> return Nothing
         return (p, category))                                       
-                                           
+    
     postHomeR :: Handler RepHtml
     postHomeR = do
         ((result, _), _) <- runFormPostNoToken $ productForm Nothing
         case result of 
-            FormSuccess p -> do
-                _ <- runDB $ insert p
+            FormSuccess product -> do
+                _ <- runDB $ insert product
                 redirect HomeR
             _ -> do
                 setMessage "Failure adding"
                 redirect HomeR
-                       
-    productAForm :: Maybe Product -> AForm App App Product
-    productAForm mproduct = Product
+    
+    productForm :: Maybe Product -> Html -> MForm App App (FormResult Product, Widget)
+    productForm mproduct = renderBootstrap $ Product
         <$> areq textField "Name" (productName <$> mproduct)
         <*> aopt (selectField categories) "Category" (productCategory <$> mproduct)
         where
+            categories :: GHandler App App (OptionList CategoryId)
             categories = do
                 entities <- runDB $ selectList [] [Asc CategoryName]
                 optionsPairs $ Prelude.map (\cat -> (categoryName $ entityVal cat, entityKey cat)) entities
-            categories :: GHandler App App (OptionList CategoryId)
-    
-    productForm :: Maybe Product -> Html -> MForm App App (FormResult Product, Widget)
-    productForm = renderBootstrap . productAForm
     
     openConnectionCount :: Int
     openConnectionCount = 10
@@ -107,22 +104,22 @@
     main = withSqlitePool ":memory:" openConnectionCount $ \pool -> do
         flip runSqlPool pool $ do
             runMigration migrateAll
-            
+    
             -- add some example data
             home <- insert $ Category "Home, Garden & Tools"
             insert $ Product "Vinyl chair" (Just home)
-        
+    
             kitchen <- insert $ Category "Kitchen & Dining"
             insert $ Product "Coffeemaker" (Just kitchen)
-            
+    
             toys <- insert $ Category "Toys & Games"
             insert $ Product "Nerf Blaster" (Just toys)
-        
+    
             clothing <- insert $ Category "Clothing"
             insert $ Product "Urban Sprawl Print Hi-low Dress" (Just clothing)
-            
+    
             insert $ Product "Milkshake" Nothing
-            
+    
             return ()
-            
+    
         warpDebug 3000 $ App pool
