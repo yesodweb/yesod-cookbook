@@ -1,5 +1,6 @@
 This is an optimized version of [Multi select field populated from database](Multi select field populated from database), using the new [esqueleto](http://hackage.haskell.org/packages/archive/esqueleto/latest/doc/html/Database-Esqueleto.html) library for Persistent.
 
+Created with esqueleto v.0.2.4.
 ***
 
 Example of a product list where each product optionally has multiple categories (through a many-to-many relationship, using a linker table.
