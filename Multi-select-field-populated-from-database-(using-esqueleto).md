@@ -106,7 +106,7 @@ This example shows how to fill a multi select box with values from the Category 
                         <td>
                             #{productName eProduct}
                         <td>
-                            #{Data.Text.concat $ intersperse ", " (Prelude.map categoryName $ eCategories)}
+                            #{Data.Text.concat $ intersperse ", " (Prelude.map categoryName $ sort $ eCategories)}
     |]
                            
     postHomeR :: Handler RepHtml
@@ -131,9 +131,10 @@ This example shows how to fill a multi select box with values from the Category 
             categories = do
                 entities <- runDB $ select $
                                     from $ \cat -> do
-                                    orderBy [asc (cat ^. CategoryName)]
-                                    return cat
-                optionsPairs $ Prelude.map (\cat -> (categoryName $ entityVal cat, entityKey cat)) entities
+                                        let name = cat ^. CategoryName
+                                        orderBy [asc name]
+                                        return (name, cat ^. CategoryId)
+                optionsPairs $ Prelude.map (\(Value name, Value key) -> (name, key)) entities
             categories :: GHandler App App (OptionList CategoryId)
     
     openConnectionCount :: Int
