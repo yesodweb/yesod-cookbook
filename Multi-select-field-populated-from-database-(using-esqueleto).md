@@ -69,7 +69,7 @@ This example shows how to fill a multi select box with values from the Category 
         return (p, mc)
     
     keyValuesToMap :: (Ord k) => [(k, a)] -> Map.Map k [a]  
-    keyValuesToMap xs = Map.fromListWith (++) $ map (\(k,v) -> (k,[v])) xs
+    keyValuesToMap = Map.fromListWith (++) . map (\(k,v) -> (k,[v]))
     
     productsAndCategoriesToValues :: [(Entity Product, [Maybe (Entity Category)])] -> [(Product, [Category])]
     productsAndCategoriesToValues = map toValues
