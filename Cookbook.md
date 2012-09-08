@@ -11,7 +11,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 * [[Multi-field validation|Cookbook/Multi-field validation]]
 * [[Select field populated from database|Select-field-populated-from-database]]
 * [[Multi-select field populated from database|Multi-select-field-populated-from-database]]
-* [[Multi-select field populated from database (esqueleto)|Multi-select-field-populated-from-database-esqueleto]]
+* [[Multi-select field populated from database (esqueleto)|Multi-select-field-populated-from-database-(using-esqueleto)]]
 * [[File upload|Cookbook/File upload]]
 
 ## Persistence
