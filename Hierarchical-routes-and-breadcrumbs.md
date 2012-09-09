@@ -86,7 +86,7 @@
                 #breadcrumbs span {
                     margin: 0 .5em 0 0;
                 }
-                ^{pageHead pc}
+            ^{pageHead pc}
         <body>
             <nav #breadcrumbs>
                 <span>
