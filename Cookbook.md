@@ -30,6 +30,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 
 ## Routing
 
+* [[Hierarchical routes and breadcrumbs|Hierarchical-routes-and-breadcrumbs]]
 * [[Domain-based routing|Domain-based routing]]
 * [subdomain (www) redirect](/show/topic/536)
 * [[Pure-Haskell static subdomains|Pure-Haskell static subdomains]]
