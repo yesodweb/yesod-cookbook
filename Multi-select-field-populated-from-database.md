@@ -2,8 +2,14 @@ Example of a product list where each product optionally has multiple categories 
 
 This example shows how to fill a multi select box with values from the Category table, and use the selected values to create a new Product.
 
-    {-# LANGUAGE TypeFamilies, TemplateHaskell, MultiParamTypeClasses,
-    GADTs, QuasiQuotes, OverloadedStrings, FlexibleContexts #-}
+    {-# LANGUAGE FlexibleContexts
+               , GADTs
+               , MultiParamTypeClasses
+               , OverloadedStrings
+               , QuasiQuotes
+               , TemplateHaskell
+               , TypeFamilies
+     #-}
     import Yesod
     import Database.Persist
     import Database.Persist.Sqlite
@@ -12,16 +18,15 @@ This example shows how to fill a multi select box with values from the Category 
     import Data.List (intersperse)
     
     share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persist|
-    Category
+    Product
         name Text
         deriving Show
-    Product
+    Category
         name Text
         deriving Show
     ProductCategory
         product ProductId
         category CategoryId
-        UniqueProductCategory product category
         deriving Show
     |]
     
@@ -82,13 +87,13 @@ This example shows how to fill a multi select box with values from the Category 
         let categoryIds = Prelude.map (productCategoryCategory . entityVal) categoryProducts
         categoryEntities <- selectList [CategoryId <-. categoryIds] []
         return (p, Prelude.map entityVal categoryEntities))                                       
-                                           
+    
     postHomeR :: Handler RepHtml
     postHomeR = do
         ((result, _), _) <- runFormPostNoToken $ productForm Nothing
         case result of 
-            FormSuccess (name, maybeCategories) -> do
-                p <- runDB $ insert $ Product name
+            FormSuccess (product, maybeCategories) -> do
+                p <- runDB $ insert product
                 case maybeCategories of
                     Just c -> mapM_ (\c' -> runDB $ insert $ ProductCategory p c') c 
                     Nothing -> return ()
@@ -96,16 +101,20 @@ This example shows how to fill a multi select box with values from the Category 
             _ -> do
                 setMessage "Failure adding"
                 redirect HomeR
-                       
-    productForm :: Maybe Product -> Html -> MForm App App (FormResult (Text, Maybe [CategoryId]), Widget)
+    
+    productForm :: Maybe Product -> Html -> MForm App App (FormResult (Product, Maybe [CategoryId]), Widget)
     productForm mproduct = renderBootstrap $ (,)
-        <$> areq textField "Name" (productName <$> mproduct)
-        <*> aopt (multiSelectField categories) "Categories" Nothing
+        <$> product
+        <*> mcategories
         where
-            categories = do
-                entities <- runDB $ selectList [CategoryName !=. ""] [Asc CategoryName]
-                optionsPairs $ Prelude.map (\cat -> (categoryName $ entityVal cat, entityKey cat)) entities
-            categories :: GHandler App App (OptionList CategoryId)
+            product = Product
+                <$> areq textField "Name" (productName <$> mproduct)
+            mcategories = aopt (multiSelectField categories) "Categories" Nothing
+                where
+                    categories = do
+                        entities <- runDB $ selectList [CategoryName !=. ""] [Asc CategoryName]
+                        optionsPairs $ Prelude.map (\cat -> (categoryName $ entityVal cat, entityKey cat)) entities
+                    categories :: GHandler App App (OptionList CategoryId)
     
     openConnectionCount :: Int
     openConnectionCount = 10
@@ -114,9 +123,9 @@ This example shows how to fill a multi select box with values from the Category 
     main = withSqlitePool ":memory:" openConnectionCount $ \pool -> do
         flip runSqlPool pool $ do
             runMigration migrateAll
-            
+    
             -- add some example data
-            
+    
             -- categories
             home <- insert $ Category "Home, Garden & Tools"
             kitchen <- insert $ Category "Kitchen & Dining"
@@ -126,21 +135,21 @@ This example shows how to fill a multi select box with values from the Category 
             -- products
             chair <- insert $ Product "Vinyl chair"
             insert $ ProductCategory chair home
-            
+    
             coffeemaker <- insert $ Product "Coffeemaker"
             insert $ ProductCategory coffeemaker kitchen
             -- and the second category:
             insert $ ProductCategory coffeemaker home
-            
+    
             nerf <- insert $ Product "Nerf Blaster"
             insert $ ProductCategory nerf toys
-            
+    
             dress <- insert $ Product "Urban Sprawl Print Hi-low Dress"
             insert $ ProductCategory dress clothing
-            
+    
             insert $ Product "Milkshake"
             -- no category
-            
+    
             return ()
-            
+    
         warpDebug 3000 $ App pool
