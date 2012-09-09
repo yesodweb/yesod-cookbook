@@ -60,8 +60,8 @@ This example shows how to fill a multi select box with values from the Category 
     addStyle :: Widget
     addStyle = addStylesheetRemote "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css"
     
-    getProductsAndCategoriesFromDatabase :: GHandler App App [(Entity Product, Maybe (Entity Category))]
-    getProductsAndCategoriesFromDatabase = runDB $ select $
+    getProductsAndCategories :: GHandler App App [(Entity Product, Maybe (Entity Category))]
+    getProductsAndCategories = runDB $ select $
         from    $ \(p `LeftOuterJoin` mpc `LeftOuterJoin` mc) -> do
         on      $      mc ?. CategoryId ==. mpc ?. ProductCategoryCategory
         on      $ just (p ^. ProductId) ==. mpc ?. ProductCategoryProduct
@@ -78,7 +78,7 @@ This example shows how to fill a multi select box with values from the Category 
     
     getHomeR :: Handler RepHtml
     getHomeR = do
-        pcs <- getProductsAndCategoriesFromDatabase
+        pcs <- getProductsAndCategories
         let rows = sort . productsAndCategoriesToValues . Map.toList . keyValuesToMap $ pcs
     
         ((result, formWidget), enctype) <- runFormGet $ productForm Nothing
