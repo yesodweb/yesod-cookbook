@@ -1,3 +1,18 @@
+This is a simple, single-page example of using hierarchical routes. Note that if you are using a scaffolded site, you should export the hierarchical route. For example (in Foundation.hs):
+```
+module Foundation
+    ( App (..)
+    , Route (..)
+    , AppMessage (..)
+    , NLR (..)
+    , UKR (..)
+    , AdminR (..)
+```
+
+In the single-page app exporting is not necessary.
+
+The following code also shows how to use breadcrumbs.
+
     {-# LANGUAGE QuasiQuotes
                , TypeFamilies
                , MultiParamTypeClasses
