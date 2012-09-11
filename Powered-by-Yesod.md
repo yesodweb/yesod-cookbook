@@ -10,7 +10,6 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Who Saw That Coming](http://whosawthatcoming.com/): Make predictions online.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
 * [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
-* [Pagan Books](http://paganbooks.eu/): a small bookstore.
 * [Buccaneer Battle](http://pirates.dyndns-free.com/): A multi-player game in the browser: as the captain of a pirate ship, try to sink your opponent!
 * [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
