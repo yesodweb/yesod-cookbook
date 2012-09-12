@@ -102,7 +102,7 @@ This example shows how to fill a dropdown select box with values from the Catego
                 optionsPairs $ Prelude.map (\cat -> (categoryName $ entityVal cat, entityKey cat)) entities
     
     openConnectionCount :: Int
-    openConnectionCount = 10
+    openConnectionCount = 1 -- when using 'memory', otherwise higher, f.i. 10
     
     main :: IO ()
     main = withSqlitePool ":memory:" openConnectionCount $ \pool -> do
