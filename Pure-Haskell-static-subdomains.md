@@ -1,5 +1,7 @@
 Static subdomains are also provided in the scaffolded site.
 
+To make this example run, create a folder "static" and save a file "image.png" in it.
+
     {-# LANGUAGE QuasiQuotes, TemplateHaskell, OverloadedStrings, TypeFamilies, MultiParamTypeClasses #-}
     import Yesod
     import Yesod.Static
