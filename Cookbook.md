@@ -33,5 +33,6 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 * [[Hierarchical routes and breadcrumbs|Hierarchical-routes-and-breadcrumbs]]
 * [[Domain-based routing|Domain-based routing]]
 * [subdomain (www) redirect](/show/topic/536)
+* [[Static file subsite Hello World|Static-file-subsite-Hello-World]]
 * [[Pure-Haskell static subdomains|Pure-Haskell static subdomains]]
 * [[Slugs]]
