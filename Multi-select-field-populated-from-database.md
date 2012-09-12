@@ -117,7 +117,7 @@ This example shows how to fill a multi select box with values from the Category 
                     categories :: GHandler App App (OptionList CategoryId)
     
     openConnectionCount :: Int
-    openConnectionCount = 10
+    openConnectionCount = 1 -- when using 'memory', otherwise higher, f.i. 10
     
     main :: IO ()
     main = withSqlitePool ":memory:" openConnectionCount $ \pool -> do
