@@ -1,4 +1,6 @@
-Static subdomains are also provided in the scaffolded site.
+Q. Can anyone provide a simple example of running a warp serving static pages from the same code as main application. I want to get rid of nginx, but also do not want sessions overhead on static pages.
+
+A. To use different ports, you'd instead want to have two Warp processes running and skip the vhost. I kept the example with vhost because it's the recommended approach.
 
 To make this example run, create a folder "static" and save a file "image.png" in it.
 
