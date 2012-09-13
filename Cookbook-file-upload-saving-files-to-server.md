@@ -168,10 +168,8 @@ This example shows how to upload image files to the server and manage the upload
         -- TODO: make url-safe
         let filename = unpack $ fileName file
             path = imageFilePath filename
-        -- get lazy byte chuncks
-        lbs <- lift $ DBL.fromChunks <$> (fileSource file $$ consume)
-        -- write file to server
-        liftIO $ DBL.writeFile path lbs
+        -- move file to its final location
+        liftIO $ fileMove file path
         return filename
     
     imageFilePath :: String -> FilePath
