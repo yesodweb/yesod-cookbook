@@ -147,7 +147,7 @@ This example shows how to upload image files to the server and manage the upload
                 setMessage "Something went wrong"
                 redirect ImagesR
     
-    deleteImageR :: ImageId -> GHandler App App ()
+    deleteImageR :: ImageId -> Handler ()
     deleteImageR imageId = do
         image <- runDB $ get404 imageId
         let filename = imageFilename image
@@ -163,7 +163,7 @@ This example shows how to upload image files to the server and manage the upload
                 setMessage "Image has been deleted."
                 redirect ImagesR
         
-    writeToServer :: FileInfo -> GHandler App App FilePath
+    writeToServer :: FileInfo -> Handler FilePath
     writeToServer file = do
         -- TODO: make url-safe
         let filename = unpack $ fileName file
