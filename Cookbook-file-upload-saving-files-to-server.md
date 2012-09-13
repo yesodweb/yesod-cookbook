@@ -12,7 +12,6 @@ This example shows how to upload image files to the server and manage the upload
     import Data.Text (unpack)
     import qualified Data.ByteString.Lazy as DBL
     import Data.Conduit.List (consume)
-    import qualified Data.String.Utils as DSU
     import Database.Persist
     import Database.Persist.Sqlite
     import Data.Time (getCurrentTime) 
@@ -149,8 +148,8 @@ This example shows how to upload image files to the server and manage the upload
                 redirect ImagesR
     
     deleteImageR :: ImageId -> GHandler App App ()
-    deleteImageR id = do
-        image <- runDB $ get404 id
+    deleteImageR imageId = do
+        image <- runDB $ get404 imageId
         let filename = imageFilename image
             path = imageFilePath filename
         liftIO $ removeFile path
@@ -160,7 +159,7 @@ This example shows how to upload image files to the server and manage the upload
         case (not stillExists) of 
             False  -> redirect ImagesR
             True -> do
-                runDB $ delete id
+                runDB $ delete imageId
                 setMessage "Image has been deleted."
                 redirect ImagesR
         
