@@ -1,5 +1,6 @@
 This example was orginal posted by Michael Snoyman, see [http://permalink.gmane.org/gmane.comp.lang.haskell.yesod/323](http://permalink.gmane.org/gmane.comp.lang.haskell.yesod/323)
 
+See also the extended cookbook [[File upload saving files to server|Cookbook/File upload saving files to server]].
 
     {-# LANGUAGE OverloadedStrings, QuasiQuotes, TemplateHaskell,
              TypeFamilies, MultiParamTypeClasses, FlexibleContexts #-}
