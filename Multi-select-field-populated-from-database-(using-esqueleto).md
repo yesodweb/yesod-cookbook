@@ -60,7 +60,7 @@ This example shows how to fill a multi select box with values from the Category 
     addStyle :: Widget
     addStyle = addStylesheetRemote "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css"
     
-    getProductsAndCategories :: GHandler App App [(Entity Product, Maybe (Entity Category))]
+    getProductsAndCategories :: Handler [(Entity Product, Maybe (Entity Category))]
     getProductsAndCategories = runDB $ select $
         from    $ \(p `LeftOuterJoin` mpc `LeftOuterJoin` mc) -> do
         on      $      mc ?. CategoryId ==. mpc ?. ProductCategoryCategory
@@ -139,7 +139,7 @@ This example shows how to fill a multi select box with values from the Category 
                                                 orderBy [asc name]
                                                 return (name, cat ^. CategoryId)
                         optionsPairs $ Prelude.map (\(Value name, Value key) -> (name, key)) entities
-                    categories :: GHandler App App (OptionList CategoryId)
+                    categories :: Handler (OptionList CategoryId)
     
     openConnectionCount :: Int
     openConnectionCount = 1 -- when using 'memory', otherwise higher, f.i. 10
