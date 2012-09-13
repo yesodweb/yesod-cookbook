@@ -34,7 +34,7 @@ This example shows how to upload image files to the server and manage the upload
     
     mkYesod "App" [parseRoutes|
     / ImagesR GET POST
-    /#ImageId ImageR DELETE
+    /image/#ImageId ImageR DELETE
     /!static StaticR Static getStatic
     |]
     
@@ -77,8 +77,8 @@ This example shows how to upload image files to the server and manage the upload
         function deleteImage(link) {
             $.ajax({
                 type: "DELETE",
-                url: link.attr("data-img-id"),
-            }).done(function( msg ) {
+                url: link.attr("data-img-url"),
+            }).done(function(msg) {
                 link.closest("tr").remove();
             });
         }
@@ -128,7 +128,7 @@ This example shows how to upload image files to the server and manage the upload
                             <td>
                                 #{show $ imageDate image}
                             <td>
-                                <a href=# .delete data-img-id=@{ImageR imageId}>
+                                <a href=# .delete data-img-url=@{ImageR imageId}>
                                     delete
                                 
     |]
