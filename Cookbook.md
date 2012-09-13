@@ -13,6 +13,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 * [[Multi-select field populated from database|Multi-select-field-populated-from-database]]
 * [[Multi-select field populated from database (esqueleto)|Multi-select-field-populated-from-database-(using-esqueleto)]] - this is the optimized version
 * [[File upload|Cookbook/File upload]]
+* [[File upload saving files to server|Cookbook/File upload saving files to server]]
 
 ## Persistence
 
