@@ -79,7 +79,6 @@ This example shows how to upload image files to the server and manage the upload
                 type: "DELETE",
                 url: link.attr("data-img-id"),
             }).done(function( msg ) {
-                console.log(msg);
                 link.closest("tr").remove();
             });
         }
