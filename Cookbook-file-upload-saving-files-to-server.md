@@ -35,7 +35,7 @@ This example shows how to upload image files to the server and manage the upload
     mkYesod "App" [parseRoutes|
     / ImagesR GET POST
     /image/#ImageId ImageR DELETE
-    /!static StaticR Static getStatic
+    /static StaticR Static getStatic
     |]
     
     instance Yesod App
