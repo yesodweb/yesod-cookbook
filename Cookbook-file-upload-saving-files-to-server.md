@@ -138,6 +138,7 @@ This example shows how to upload image files to the server and manage the upload
         ((result, widget), enctype) <- runFormPost uploadForm
         case result of
             FormSuccess (file, info, date) -> do
+                -- TODO: check if image already exists
                 -- save to image directory
                 filename <- writeToServer file
                 _ <- runDB $ insert (Image filename info date)
