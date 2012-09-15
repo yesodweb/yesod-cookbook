@@ -4,4 +4,4 @@ Generic useful pieces of code
 
 ## Dates
 
-* [[Formatting dates|Formattingdates]]
+* [[Formatting dates|Formatting-dates]]
