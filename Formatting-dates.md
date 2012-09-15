@@ -10,13 +10,13 @@ Add old-locale to .cabal.
     dateTimeFormat = "%e %b %Y %H:%M:%S"
     dateTimeFormat :: String
     
-    formatDate :: String -> String
-    formatDate dateString = formatTime defaultTimeLocale dateTimeFormat t
+    formatDateStr :: String -> String
+    formatDateStr dateString = formatTime defaultTimeLocale dateTimeFormat t
         where 
             t = read dateString
             t :: UTCTime
         
-    main = print $ formatDate "2012-09-15 00:07:31.874712 UTC"
+    main = print $ formatDateStr "2012-09-15 00:07:31.874712 UTC"
 
 # Formatting day values
 Useful when you use a Day field and jQuery date picker.
