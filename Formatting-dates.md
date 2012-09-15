@@ -1,3 +1,5 @@
+Add old-locale to .cabal.
+
     import Data.Time.Format (formatTime)
     import System.Locale (defaultTimeLocale)
     import Data.Time.Clock (UTCTime) 
