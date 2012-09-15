@@ -12,7 +12,6 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
 
   * [[FAQ|faq]]
   * [[Cookbook|Cookbook]]
-  * [[Snippets|Snippets]]
   * [[Yesod Tutorial|yesod_tutorial]]: Learn by example
 
 # Deployment
@@ -26,13 +25,12 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
   * [[Serving julius files|Rendering Javascript from a Handler]]
   * [[Javascript Options|Javascript Options]]
 
+# Handy code
+  * [[Snippets|Useful snippets]]
 
 # Find Code
   * [[Libraries|Yesod Libraries]]
   * [[Other web frameworks that use WAI|WAI web frameworks]]
-
-
-
 
 # Development
 
