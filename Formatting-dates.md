@@ -16,7 +16,7 @@ Add old-locale to .cabal.
 
 
 # Formatting day values
-
+Useful when you use a Day field and jQuery date picker.
 
     import Data.Time
     import Data.Time.Format (formatTime)
