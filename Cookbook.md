@@ -2,6 +2,8 @@
 
 The Yesod Cookbook contains small snippets of code for solving practical problems with Yesod. If you have some code to share, please create a wiki page and link to it in the appropriate section.
 
+For non-Yesod code, see also [[Snippets|Snippets]]
+
 ## Forms
 
 * [[Change the order of form fields|OrderFormFields]]
