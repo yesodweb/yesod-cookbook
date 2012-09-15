@@ -26,7 +26,7 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
   * [[Javascript Options|Javascript Options]]
 
 # Handy code
-  * [[Snippets|Useful snippets]]
+  * [[Useful snippets|Snippets]]
 
 # Find Code
   * [[Libraries|Yesod Libraries]]
