@@ -12,6 +12,7 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
 
   * [[FAQ|faq]]
   * [[Cookbook|Cookbook]]
+  * [[Snippets|Snippets]]
   * [[Yesod Tutorial|yesod_tutorial]]: Learn by example
 
 # Deployment
