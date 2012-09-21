@@ -2,3 +2,4 @@
 * [Learning Yesod 1 - Typesafe URLs](http://www.youtube.com/watch?v=O6fGJ6AE42U&feature=plcp)
 * [Learning Yesod 2 - Widgets](http://www.youtube.com/watch?v=OK-CswvXMdM&feature=youtu.be)
 * [Learning Yesod 3 - Passing an argument to an Handler](http://www.youtube.com/watch?v=OrrHBK0i9JM&feature=youtu.be)
+* [Learning Yesod 4 -  Forms](http://youtu.be/OlSPstCygOU)
