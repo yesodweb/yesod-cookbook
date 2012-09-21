@@ -63,7 +63,7 @@ addStyle = do
     -- Twitter Bootstrap
     addStylesheetRemote "http://netdna.bootstrapcdn.com/twitter-bootstrap/2.1.0/css/bootstrap-combined.min.css"
     -- message style
-    toWidget [lucius|.message { margin: 0; padding: 10px; background: #ffffed; } |]
+    toWidget [lucius|.message { padding: 10px 0; background: #ffffed; } |]
     -- jQuery
     addScriptRemote "http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"
     -- delete function
@@ -79,7 +79,12 @@ $(function(){
             type: "DELETE",
             url: link.attr("data-img-url"),
         }).done(function(msg) {
+            var table = link.closest("table");
             link.closest("tr").remove();
+            var rowCount = $("td", table).length;
+            if (rowCount === 0) {
+                table.remove();
+            }
         });
     }
     $("a.delete").click(function() {
@@ -93,9 +98,14 @@ getImagesR :: Handler RepHtml
 getImagesR = do
     ((_, widget), enctype) <- runFormPost uploadForm
     images <- runDB $ selectList [ImageFilename !=. ""] [Desc ImageDate]
+    mmsg <- getMessage
     defaultLayout $ do
         addStyle
         [whamlet|$newline never
+$maybe msg <- mmsg
+    <div .message>
+        <div .container>
+            #{msg}
 <div .container>
     <div .row>
         <h2>
@@ -105,8 +115,6 @@ getImagesR = do
                 ^{widget}
                 <input .btn type=submit value="Upload">
         $if not $ null images
-            <h2>
-                All images
             <table .table>
                 <tr>
                     <th>
@@ -166,10 +174,8 @@ deleteImageR imageId = do
 
 writeToServer :: FileInfo -> Handler FilePath
 writeToServer file = do
-    -- TODO: make url-safe
     let filename = unpack $ fileName file
         path = imageFilePath filename
-    -- move file to its final location
     liftIO $ fileMove file path
     return filename
 
