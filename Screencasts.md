@@ -3,3 +3,4 @@
 * [Learning Yesod 2 - Widgets](http://www.youtube.com/watch?v=OK-CswvXMdM&feature=youtu.be)
 * [Learning Yesod 3 - Passing an argument to an Handler](http://www.youtube.com/watch?v=OrrHBK0i9JM&feature=youtu.be)
 * [Learning Yesod 4 -  Forms](http://www.youtube.com/watch?v=0WY0KWCraxI)
+* [Learning Yesod 5 - Basic Form Validation](http://youtu.be/WdyibSXzhpw)
