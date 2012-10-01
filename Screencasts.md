@@ -5,3 +5,6 @@
 * [Learning Yesod 4 -  Forms](http://www.youtube.com/watch?v=0WY0KWCraxI)
 * [Learning Yesod 5 - Basic Form Validation](http://youtu.be/WdyibSXzhpw)
 * [Learning Yesod 6 - Sessions](http://youtu.be/B2xrvJcnIuI)
+* [Learning Yesod 7 - RepJson](http://youtu.be/qJJ9MSoDRoc)
+* [Learning Yesod 8 - Authentication](http://youtu.be/p8qK4rCk3Lo)
+* [Learning Yesod 9 - Authorization](http://youtu.be/o-r7TC_vM5A)
