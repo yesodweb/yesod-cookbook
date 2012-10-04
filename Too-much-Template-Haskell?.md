@@ -23,3 +23,19 @@ So coming back to the three points listed above, let's try and give them some an
 * __Since you program in these DSLs so much, it's not longer real Haskell.__ The DSL usage is limited to specific cases. The majority of your code really is normal Haskell code. (I'll grant that typical "hello world" examples give a different impression on this.) But even inside these DSLs, there's still a fair amount of Haskell (e.g., variable interpolation in Shakespeare).
 * __TH code is very difficult to understand.__ It might be difficult to *create* TH code, but *using* it is simple. In fact, I will argue that in every case where we use it, the TH code is simpler to write and understand than the corresponding non-TH code.
 * __You have to learn lots of different syntaxes.__ You have to learn a routing syntax. I think most people learn that in under five minutes. Hamlet is mostly a simplification of HTML, and our most common comment on it is "I wish HTML worked like this instead." Lucius and Julius are essentially raw CSS and Javascript. The Persistent entities have an incredibly simple syntax as well, I'd be surprised if any user was ever stumped by them.
+
+* * *
+
+And since apparently now the cool thing to talk about is specialized syntaxes instead of "acceptable" TH:
+
+I'm frankly getting very bored with constantly hearing the same complaints against Yesod and its use of specialized syntaxes. I'm going to just put together the most important points here, once, and be done with it. Anyone should feel free to just link to this post.
+
+The fact is: you're not required to use any QQ at all for Yesod. On the extreme side, you could completely ditch TH as well (http://www.haskell.org/pipermail/web-devel/2011/001220.html). Note that that specific project never got off the ground due to lack of interest.
+
+Alternatively, you can keep all the niceness of type-safe URLs and just ditch the QQ syntax for the raw datatypes (https://gist.github.com/3835314).  Clearly we could build combinators on top of those types to make it easier to use, but the point is that everything is available to you now. It's just a choice for the user whether he/she prefers to use a simplified syntax or not.
+
+I get it that many of you don't want to use Yesod. That's OK: we have (at least) two other great frameworks in the Haskell world. Use them if you prefer them. But popping up on every Reddit discussion about Yesod to say that it uses TH and QQ is just a waste of time. All it serves to do is make our community look like one that likes to sit around and bicker instead of just everyone using the tools they each prefer.
+
+And *if* you're going to insist on continuing these comments, please at least try to bring up the caliber a bit. Making general comments about specialized syntaxes being bad is not convincing. Show cases where a specialized syntax in Yesod prevents you from doing something useful. Then we can have an actual discussion about it, and users can make an informed decision whether the trade-off is worth it.
+
+PS: I only addressed the routing syntax in those two links. The exact same solutions work for Persistent. As for Shakespeare: you can easily swap blaze-builder for hamlet, or raw Builder (from text) usage for Lucius and Julius (though a CSS combinator library would be a cool project if anyone is interested).
