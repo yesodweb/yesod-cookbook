@@ -9,7 +9,7 @@ This guide provides step by step instructions in creating a virtual machine for 
 1. Download [Vagrant](http://downloads.vagrantup.com/). Vagrant uses Oracle’s VirtualBox to build configurable, lightweight, and portable virtual machines dynamically. Vagrant has excellent [support documentation](http://vagrantup.com/v1/docs/getting-started/index.html) (but watch out for the `vagrant destroy` command, you'll have to redo everything).
 1. Get the [vagrant-haskell-heroku box project on Bitbucket](https://bitbucket.org/puffnfresh/vagrant-haskell-heroku) (create an account to download it). This `lucid64` box contains automated download+install "recipes" for the Haskell Platform and Heroku Toolbelt.
     * Do `vagrant up` - this will download all required packages and takes a looooooooong time.
-        * I had to do `vagrant ssh` first to finish install `sudo apt-get install libglc-dev`.
+        * I had to do `vagrant ssh` first to update `sudo apt-get update` and install `sudo apt-get install libglc-dev`.
     * Do `vagrant ssh`. You are now in Linux Ubuntu in the home folder.
 1. Once you are inside the box (from now on we call it "guest"; your work machine is "host"), install additional tools and packages:
     * Do `sudo apt-get update` to update the package list.
