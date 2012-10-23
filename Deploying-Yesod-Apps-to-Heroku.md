@@ -16,7 +16,7 @@ This guide assumes you have some working experience with Yesod and Git.
 ## Set up Heroku
 ### Set up your account
 1. [[Create a free developer account on Heroku|https://api.heroku.com/signup]]
-1. Install the Heroku command line tool. This is included in the virtual machine setup of step 1; otherwise do `wget -qO- https://toolbelt.heroku.com/install.sh | sh`
+1. Install the Heroku command line tool. This is included in the virtual machine setup of step 1; otherwise do `wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh`
 1. Login: `heroku login`. This will also read and otherwise create a public SSH key on your machine.
 
 If you already have an account, and are working on a different virtual machine, you can pass your public SSH keys to Heroku: `heroku keys:add ~/.ssh/id_rsa.pub`. If this doesn't work (Permission denied error), let Heroku create a new key: `heroku keys:clear`, `rm ~/.ssh/id_rsa.pub`, `heroku keys:add`.
