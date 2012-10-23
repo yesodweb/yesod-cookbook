@@ -19,5 +19,6 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Personal site of Corey O'Connor](http://www.corebotllc.com/)
 * [Personal site of Suhail Shergill](http://blog.shergill.su)
 * [Personal site of Toby Goodwin](http://paganbooks.eu/software/)
+* [Personal and Project site of Chris Swires](http://christopherswires.com/): Includes some simple tutorials.
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
 * [BayesHive](http://bayeshive.com): Web application for statistical computing (blog only for now)
