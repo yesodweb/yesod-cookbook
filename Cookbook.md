@@ -39,3 +39,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Static file subsite Hello World|Static-file-subsite-Hello-World]]
 * [[Pure-Haskell static subdomains|Pure-Haskell static subdomains]]
 * [[Slugs]]
+
+## Template Haskell
+
+* [[Creating String Based Enums Using Template Haskell|Create-String-Based-Enums-With-Template-Haskell]]
