@@ -42,4 +42,4 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Template Haskell
 
-* [[Creating String Based Enums Using Template Haskell|Create-String-Based-Enums-With-Template-Haskell]]
+* [[Creating string based enums using Template Haskell|Create-String-Based-Enums-With-Template-Haskell]]
