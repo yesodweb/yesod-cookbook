@@ -1,4 +1,4 @@
-> Note: this page describes the method of compiling the yesod app locally and uploading it to Heroku's servers. The alternative approach is to use a [Haskell Buildpack for Heroku](http://brianmckenna.org/blog/haskell_buildpack_heroku).
+> Note: this page describes the method of compiling the yesod app locally and uploading it to Heroku's servers. The alternative (and preferred) approach is to use a [Haskell Buildpack for Heroku](http://brianmckenna.org/blog/haskell_buildpack_heroku).
 
 ## Introduction
 [[Heroku|http://www.heroku.com/]] is a cloud platform as a service (PAAS) for building, deploying, and running cloud apps using Ruby and other languages. Their business is in removing the hassle from deploying applications. See [[Heroku Isn't for Idiots|http://rdegges.com/heroku-isnt-for-idiots]] for a non-objective but nonetheless informative blog post.
