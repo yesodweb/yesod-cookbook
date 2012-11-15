@@ -1,5 +1,23 @@
 This is a port of the code in the [Sphinx  Search case study blog post](http://www.yesodweb.com/blog/2011/09/case-study-sphinx) by Michael Snoyman. It has been updated to work with Yesod 0.10 with Conduits 0.2, Persistent 0.8
 
+The latest version of sphinx uses the Text data type: to make this work with the latest just remove all the to from text conversions.
+
+~~~ {.haskell}
+  build-depends: base
+               , yesod
+               , persistent-sqlite
+               , persistent
+               , sphinx
+               , xml-conduit
+               , http-types
+               , wai 
+               , xml-types
+               , conduit
+               , blaze-markup
+               , text
+               , bytestring
+~~~
+
 ~~~ {.haskell}
 {-# LANGUAGE OverloadedStrings, TypeFamilies, TemplateHaskell,
     QuasiQuotes, MultiParamTypeClasses, GADTs, FlexibleContexts
