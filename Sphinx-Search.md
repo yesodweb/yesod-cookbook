@@ -1,6 +1,9 @@
+Here is some example sphinx search code that works on Yesod 1.1 and Sphinx 0.6
+https://gist.github.com/4100838
+
 This is a port of the code in the [Sphinx  Search case study blog post](http://www.yesodweb.com/blog/2011/09/case-study-sphinx) by Michael Snoyman. It has been updated to work with Yesod 0.10 with Conduits 0.2, Persistent 0.8
 
-The latest version of sphinx uses the Text data type: to make this work with the latest just remove all the to from text conversions.
+The latest version of sphinx uses the Text data type instead of String/ByteString: to make this work with the latest just remove all the  Text conversions.
 
 ~~~ {.haskell}
   build-depends: base
