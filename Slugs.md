@@ -164,4 +164,4 @@ main = withSqlitePool "slug.db3" openConnectionCount $ \pool -> do
      runSqlPool (insertBy $ Post "My post" "My post <em>content</em>" (Slug "my-post")) pool
      runSqlPool (insertBy $ Post "Another post" "tl;dr" (Slug "another-post")) pool
      warpDebug 3000 $ YesodBlog pool
-```           
+```
