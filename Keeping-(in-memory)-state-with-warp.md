@@ -28,7 +28,7 @@ Then, any request that is processed by the application can access the state in a
 
 # Example: Counting requests
 
-Take a look at this code listing. "-- (n)" indicates that you can find an explanation
+Take a look at this code listing. "-- (n)" indicates that you can find an explanation below
 
     {-# LANGUAGE OverloadedStrings #-}
     import Network.Wai (responseLBS, Request, Response)
