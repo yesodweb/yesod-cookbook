@@ -30,40 +30,42 @@ Then, any request that is processed by the application can access the state in a
 
 Take a look at this code listing. "-- (n)" indicates that you can find an explanation below
 
-    {-# LANGUAGE OverloadedStrings #-}
-    import Network.Wai (responseLBS, Request, Response)
-    import Network.Wai.Handler.Warp (run)
-    import Network.HTTP.Types (status200)
-    import Control.Monad.Trans (liftIO, lift)
-    import Data.IORef (IORef, newIORef, atomicModifyIORef)
-    import Data.Conduit (ResourceT)
-    import Data.ByteString.Lazy as B (concat, ByteString, append)
-    import Data.ByteString.Lazy.UTF8 (fromString)
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+import Network.Wai (responseLBS, Request, Response)
+import Network.Wai.Handler.Warp (run)
+import Network.HTTP.Types (status200)
+import Control.Monad.Trans (liftIO, lift)
+import Data.IORef (IORef, newIORef, atomicModifyIORef)
+import Data.Conduit (ResourceT)
+import Data.ByteString.Lazy as B (concat, ByteString, append)
+import Data.ByteString.Lazy.UTF8 (fromString)
 
-    application :: (Num a, Show a) => IORef a -> Request -> ResourceT IO Response
-    application counter request = do  -- (3)
-      count <- lift $ incCount counter  -- (5)
-      liftIO $ printCount count -- (6)
-      let responseText = makeResponseText count -- (7)
-      return $ responseLBS status200 [("Content-type", "text/html")] $ responseText -- (8)
+application :: (Num a, Show a) => IORef a -> Request -> ResourceT IO Response
+application counter request = do  -- (3)
+  count <- lift $ incCount counter  -- (5)
+  liftIO $ printCount count -- (6)
+  let responseText = makeResponseText count -- (7)
+  return $ responseLBS status200 [("Content-type", "text/html")] $ responseText -- (8)
 
-    makeResponseText :: (Show a) => a -> B.ByteString
-    makeResponseText s = "<h1>Hello World " `append` (toByteString s) `append` "</h1>\n"
+makeResponseText :: (Show a) => a -> B.ByteString
+makeResponseText s = "<h1>Hello World " `append` (toByteString s) `append` "</h1>\n"
 
-    toByteString :: (Show a) => a -> B.ByteString
-    toByteString s = fromString $ show s
+toByteString :: (Show a) => a -> B.ByteString
+toByteString s = fromString $ show s
 
-    printCount :: (Show a) => a -> IO ()
-    printCount count = do 
-      putStrLn $ "Sending Response " ++ show count
+printCount :: (Show a) => a -> IO ()
+printCount count = do 
+  putStrLn $ "Sending Response " ++ show count
 
-    incCount :: (Num a, Show a) => IORef a -> IO a
-    incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (4)
+incCount :: (Num a, Show a) => IORef a -> IO a
+incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (4)
 
-    main = do 
-      putStrLn $ "Listening on port " ++ show 3000
-      counter <- newIORef 0 -- (1)
-      run 3000 $ application counter -- (2)
+main = do 
+  putStrLn $ "Listening on port " ++ show 3000
+  counter <- newIORef 0 -- (1)
+  run 3000 $ application counter -- (2)
+```
 
 So what is happening here?
 1. We are creating a new `IORef` called `counter` that contains the Integer 0
