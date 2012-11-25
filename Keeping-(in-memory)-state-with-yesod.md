@@ -16,35 +16,37 @@ It's actually very simply: Just put it into the yesod foundation type. Your Hand
 
 As we did with [[Keeping (in memory) state with warp]], let's count the number of requests using an IORef. For that, we only need to slightly modify the [Hello World Example](http://www.yesodweb.com/book/basics). "-- (n)" indicates a that there's something that I want to comment on below.
 
-    {-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,
-                 TemplateHaskell, OverloadedStrings #-}
-    import Data.IORef (IORef, newIORef, atomicModifyIORef)             
-    import Yesod
+```haskell
+{-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,
+             TemplateHaskell, OverloadedStrings #-}
+import Data.IORef (IORef, newIORef, atomicModifyIORef)             
+import Yesod
 
-    data HelloWorld = HelloWorld {
-        counter :: IORef Integer -- (1)
-    }
+data HelloWorld = HelloWorld {
+    counter :: IORef Integer -- (1)
+}
 
-    mkYesod "HelloWorld" [parseRoutes|
-    / CounterR GET -- (4)
-    |]
+mkYesod "HelloWorld" [parseRoutes|
+/ CounterR GET -- (4)
+|]
 
-    instance Yesod HelloWorld
+instance Yesod HelloWorld
 
-    incCount :: (Num a, Show a) => IORef a -> IO a
-    incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (6)
+incCount :: (Num a, Show a) => IORef a -> IO a
+incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (6)
 
-    getCounterR :: Handler RepHtml
-    getCounterR = do 
-        yesod <- getYesod -- (5)
-        count <- liftIO $ incCount $ counter yesod -- (7)
-        liftIO $ putStrLn $ "Sending Response " ++ show count -- (8)
-        defaultLayout [whamlet|Hello World #{count}|] -- (9)
+getCounterR :: Handler RepHtml
+getCounterR = do 
+    yesod <- getYesod -- (5)
+    count <- liftIO $ incCount $ counter yesod -- (7)
+    liftIO $ putStrLn $ "Sending Response " ++ show count -- (8)
+    defaultLayout [whamlet|Hello World #{count}|] -- (9)
 
-    main :: IO ()
-    main = do
-        counter <- newIORef 0 -- (2)
-        warpDebug 3000 $ HelloWorld { counter = counter } -- (3)
+main :: IO ()
+main = do
+    counter <- newIORef 0 -- (2)
+    warpDebug 3000 $ HelloWorld { counter = counter } -- (3)
+```
 
 So let's go through this step by step:
 
