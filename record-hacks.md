@@ -1,14 +1,14 @@
 Basic type class
 
-~~~~~{.haskell}
+```haskell
 class EmailString a where
        email :: a -> String
        setEmail :: a -> String -> a
-~~~~~
+```
 
 Functional Dependencies
 
-~~~~~{.haskell}
+```haskell
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE FunctionalDependencies #-}
 {-# LANGUAGE TypeSynonymInstances #-}
@@ -25,11 +25,11 @@ instance EmailString User String where
 
 instance EmailString Account String where
     email = accountEmail
-~~~~~~~~~
+```
 
 Type Families
 
-~~~~~{.haskell}
+```haskell
 {-# LANGUAGE NoMonomorphismRestriction #-}
 {-# LANGUAGE TypeFamilies #-}
 
@@ -58,11 +58,11 @@ getFieldFromRecord3 :: Record3 -> Int
 getFieldFromRecord1 = field1
 getFieldFromRecord2 = field1
 getFieldFromRecord3 = field1
-~~~~~~~~~
+```
 
 Associated Type Families
 
-~~~~~{.haskell}
+```haskell
 {-# LANGUAGE NoMonomorphismRestriction #-}
 {-# LANGUAGE TypeFamilies #-}
 module FieldExample where
@@ -90,4 +90,4 @@ getFieldFromRecord3 :: Record3 -> Int
 getFieldFromRecord1 = field1
 getFieldFromRecord2 = field1
 getFieldFromRecord3 = field1
-~~~~~~~~~
+```
