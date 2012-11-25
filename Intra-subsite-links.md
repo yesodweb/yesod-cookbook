@@ -2,7 +2,9 @@ If you copy the [“Hello world” subsite from the book](http://www.yesodweb.co
 
 However, as soon as you insert a link inside the subsite, everything goes terribly awry. For instance, if you replace the definition of `getSubRootR` with:
 
-    getSubRootR = defaultLayout [whamlet|<a href=@{SubRootR}>Link to self|]
+```haskell
+getSubRootR = defaultLayout [whamlet|<a href=@{SubRootR}>Link to self|]
+```
 
 You are liable to get something like: 
 
@@ -26,9 +28,11 @@ You are liable to get something like:
 
 This is because `SubRootR` is of type `Route HelloSub`, but Yesod is expecting the routes to be the same type as `master`. One way to fix this problem is to use [`getRouteToMaster`](http://hackage.haskell.org/packages/archive/yesod-core/1.0.1.2/doc/html/Yesod-Handler.html#v:getRouteToMaster) to transform `SubRootR` into type `Route master`: 
 
-    getSubRootR = do
-      toMaster <- getRouteToMaster
-      defaultLayout [whamlet|<a href=@{toMaster SubRootR}>Link to self|]
+```haskell
+getSubRootR = do
+  toMaster <- getRouteToMaster
+  defaultLayout [whamlet|<a href=@{toMaster SubRootR}>Link to self|]
+```
 
 ---
 
