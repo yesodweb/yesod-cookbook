@@ -67,12 +67,19 @@ Take a look at this code listing. "-- (n)" indicates a comment below
 
 So what is happening here?
 1. We are creating a new IORef called counter that contains the Integer 0
+
 2. We are then running the application and *curry* that counter into it. The function that results from the currying has exactly the type required by `run'.
+
 3. Application is called on every request. As we curried the counter into it, it have be the same (mutable) IORef for every request.
+
 4. We first call incCounter to return the current count and increment the counter by one: incCount uses atomicModifyIORef to modify the IORef in a thread-safe way. The function passed to atomicModifyIORef is very simple: It returns a tuple, as expected by atomicModifyIORef: The first element of the tuple is the new state, the second element of the tuple is the state returned. Here, it is the count before incementing. Thus, for the first request this returns 0, for the second 1, for the third it returns 2, etc.
+
 5. incCount returns an IORef Integer, but we want to treat it just like an int. Thus, we need to use <- to treat it like an Integer inside the monad. In order to use <-, we first need to lift it to ResourceT IO Integer.
+
 6. Now, we can call printCount, which would accept an Integer but not an IO Integer. The printCount function is very straightforward. However, notice that we need to lift his too, so that it is properly used in the monad. If we wrote `let _ = printCount count', the compiler would optimize it away.
+
 7. This is really straightforward: Let's make a bytestring our of the result of `Show count' and surround it with some HTML
+
 8. This should also be straighforward: We write the generated text into the response. (Note that you can easily combine 7. and 8. into one line)
 
 You should be able to compile & run this program using (assuming it's called warp-counter.hs):
@@ -87,7 +94,7 @@ This should display:
 
 Now if you point a web browser to http://localhost:3000/ that browser should display "Hello World 0" and the command line should say
 
-   Sending Response 0
+    Sending Response 0
 
 Every page reload should increase the counter by one.
 
