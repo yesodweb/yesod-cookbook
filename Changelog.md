@@ -102,10 +102,10 @@ The vast majority of the changes listed below are not part of the "yesod" packag
 ## Forms
 * Removed polymorphic forms. In general, the forms API has been drastically improved. If you don't use the scaffold to upgrade you will need to add this instance (used for Internationalization):
 
-~~~~~~~~~~~~~~{.haskell}
+```haskell
 instance RenderMessage ~sitearg~ FormMessage where
     renderMessage _ _ = defaultFormMessage
-~~~~~~~~~~~~~~
+```
 
 * add check and checkM for easy custom validations
 
@@ -117,9 +117,9 @@ instance RenderMessage ~sitearg~ FormMessage where
     * For updates, we use the =. operators: update myId [PersonAge =. 26]
 * Persistent now has support for AND and OR filters, instead of just AND. For example:
 
-~~~~~~ {.haskell}
+```haskell
 selectList ([PersonName ==. "Michael", PersonAge >=. 25] ||. [PersonAge <. 30]) []
-~~~~~~~
+```
 
 * Support for arbitrary filter operators. That means you can now do LIKE queries for SQL.
 * printMigration (for performing manual migrations) now prints out semi-colons at the end of its statements.
