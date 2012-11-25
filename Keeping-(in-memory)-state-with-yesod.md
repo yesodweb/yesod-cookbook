@@ -22,29 +22,29 @@ As we did with [[Keeping (in memory) state with warp]], let's count the number o
     import Yesod
 
     data HelloWorld = HelloWorld {
-        counter :: IORef Integer -- (0)
+        counter :: IORef Integer -- (1)
     }
 
     mkYesod "HelloWorld" [parseRoutes|
-    / CounterR GET -- (3)
+    / CounterR GET -- (4)
     |]
 
     instance Yesod HelloWorld
 
     incCount :: (Num a, Show a) => IORef a -> IO a
-    incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (5)
+    incCount counter = atomicModifyIORef counter (\c -> (c+1, c)) -- (6)
 
     getCounterR :: Handler RepHtml
     getCounterR = do 
-        yesod <- getYesod -- (4)
-        count <- liftIO $ incCount $ counter yesod -- (6)
-        liftIO $ putStrLn $ "Sending Response " ++ show count -- (7)
-        defaultLayout [whamlet|Hello World #{count}|] -- (8)
+        yesod <- getYesod -- (5)
+        count <- liftIO $ incCount $ counter yesod -- (7)
+        liftIO $ putStrLn $ "Sending Response " ++ show count -- (8)
+        defaultLayout [whamlet|Hello World #{count}|] -- (9)
 
     main :: IO ()
     main = do
-        counter <- newIORef 0 -- (1)
-        warpDebug 3000 $ HelloWorld { counter = counter } -- (2)
+        counter <- newIORef 0 -- (2)
+        warpDebug 3000 $ HelloWorld { counter = counter } -- (3)
 
 So let's go through this step by step:
 
