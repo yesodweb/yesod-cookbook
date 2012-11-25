@@ -25,8 +25,8 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## State
 
-* [[Keeping state with warp]]
-* [[Keeping state with yesod]]
+* [[Keeping (in-memory) state with warp]]
+* [[Keeping (in-memory) state with yesod]]
 
 ## Auth
 
