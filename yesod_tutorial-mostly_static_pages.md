@@ -24,29 +24,31 @@ The last line creates a resource, named HomeR, which accepts GET and POST reques
 
 The handlers for the resources are defined in `Handler/`. The handler function `getHomeR` is defined in `Handler/Home.hs`. The code below shows the first part, the rest of it defines `postHomeR` and a formular. On line 13, you can find its definition. Lines 15 and 16 are needed for the sample form. There is [a chapter on forms](http://www.yesodweb.com/book/forms) in the Yesod book. Line 17 is just a constant that is refered to in a template. We don't want that for now, so let's remove the lines.
 
-    {-# LANGUAGE TupleSections, OverloadedStrings #-}
-    module Handler.Home where
-     
-    import Import
-     
-    -- This is a handler function for the GET request method on the HomeR
-    -- resource pattern. All of your resource patterns are defined in
-    -- config/routes
-    --
-    -- The majority of the code you will write in Yesod lives in these handler
-    -- functions. You can spread them across multiple files if you are so
-    -- inclined, or create a single monolithic file.
-    getHomeR :: Handler RepHtml
-    getHomeR = do
-        (formWidget, formEnctype) <- generateFormPost sampleForm
-        let submission = Nothing :: Maybe (FileInfo, Text)
-            handlerName = "getHomeR" :: Text
-        defaultLayout $ do
-            aDomId <- lift newIdent
-            setTitle "Welcome To Yesod!"
-            $(widgetFile "homepage")
+```haskell
+{-# LANGUAGE TupleSections, OverloadedStrings #-}
+module Handler.Home where
+ 
+import Import
+ 
+-- This is a handler function for the GET request method on the HomeR
+-- resource pattern. All of your resource patterns are defined in
+-- config/routes
+--
+-- The majority of the code you will write in Yesod lives in these handler
+-- functions. You can spread them across multiple files if you are so
+-- inclined, or create a single monolithic file.
+getHomeR :: Handler RepHtml
+getHomeR = do
+    (formWidget, formEnctype) <- generateFormPost sampleForm
+    let submission = Nothing :: Maybe (FileInfo, Text)
+        handlerName = "getHomeR" :: Text
+    defaultLayout $ do
+        aDomId <- lift newIdent
+        setTitle "Welcome To Yesod!"
+        $(widgetFile "homepage")
 
-     …
+ …
+```
 
 The next lines combines different parts on how and what will be displayed on the root/homepage. First of all, there's `defaultLayout`. This will come back later, but this is where site-wide layout is defined.
 
@@ -63,19 +65,23 @@ Last but not least `$(widgetFile "homepage")`. The chapter about [widgets](http:
 
 Okay, time to adjust the default homepage! We want to change our title to "Yesod Tutorial Micropost | Home". Change the title in `Handler/Home.hs`. The function `getHomeR` will look like this:
 
-    getHomeR :: Handler RepHtml
-    getHomeR = do
-        defaultLayout $ do
-            aDomId <- lift newIdent
-            setTitle "Yesod Tutorial Micropost | Home"
-            $(widgetFile "homepage")
+```haskell
+getHomeR :: Handler RepHtml
+getHomeR = do
+    defaultLayout $ do
+        aDomId <- lift newIdent
+        setTitle "Yesod Tutorial Micropost | Home"
+        $(widgetFile "homepage")
+```
 
 Next, edit `templates/homepage.hamlet` and change it into:
 
-    <h1>Micropost
-    <p>This is the homepage for the #
-        <a href="http://www.yesodweb.com">Yesod tutorial
-        \ sample application.
+```html
+<h1>Micropost
+<p>This is the homepage for the #
+    <a href="http://www.yesodweb.com">Yesod tutorial
+    \ sample application.
+```
 
 This is Hamlet template code. It is very close to html, so it is all understandable. Some highlights:
 
@@ -99,28 +105,34 @@ Edit `config/routes` and add the line:
 
 Next, create a file `Handler/Contact.hs` and paste this code into it:
 
-    {-# LANGUAGE OverloadedStrings #-}
-    module Handler.Contact where
+```haskell
+{-# LANGUAGE OverloadedStrings #-}
+module Handler.Contact where
 
-    import Import
+import Import
 
-    getContactR :: Handler RepHtml
-    getContactR = do
-        defaultLayout $ do
-            setTitle "Yesod Tutorial Micropost | Contact"
-            $(widgetFile "contact")
+getContactR :: Handler RepHtml
+getContactR = do
+    defaultLayout $ do
+        setTitle "Yesod Tutorial Micropost | Contact"
+        $(widgetFile "contact")
+```
 
 This handler-file should be imported in `Application.hs` so it gets in scope. Add `import Handler.Contact` under these lines:
 
-    -- Import all relevant handler modules here.
-    import Handler.Home
+```haskell
+-- Import all relevant handler modules here.
+import Handler.Home
+```
 
 Almost there... Create the file `templates/contact.hamlet` with this content:
 
-    <h1>Contact
-    <p>Contact Yesod Tutorial at the #
-        <a href="http://www.haskell.org/mailman/listinfo/web-devel"> Haskell web-devel mailing-list
-        \.
+```html
+<h1>Contact
+<p>Contact Yesod Tutorial at the #
+    <a href="http://www.haskell.org/mailman/listinfo/web-devel"> Haskell web-devel mailing-list
+    \.
+```
 
 And finally, you need to add this line to your `micropost.cabal`-file, at section `other-modules` and under `Handler.Home`, so that cabal includes this file in the project:
 
@@ -155,35 +167,39 @@ If this is the default structure of the title on any page, it should be made def
 
 The first part of the content of `templates/default-layout-wrapper.hamlet` is shown below. You'll notice the structure out-line of every .html-document (in .hamlet syntax). There are some special variables (#, ^ and $). #, ^, * and also @ are interpolation characters and are always followed by the variable inside braces. The hash is used for variable interpolation, at-sign (@) for URL interpolation, star (*) for attributes, and caret (^) for embedding. $ allows control structures inside hamlet. Read [the Template chapter](http://www.yesodweb.com/book/templates).
 
-    \<!doctype html>
-    \<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
-    \<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
-    \<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
-    \<!--[if gt IE 8]><!-->
-    <html class="no-js" lang="en"> <!--<![endif]-->
-        <head>
-            <meta charset="UTF-8">
-     
-            <title>#{pageTitle pc}
-            <meta name="description" content="">
-            <meta name="author" content="">
-     
-            <meta name="viewport" content="width=device-width,initial-scale=1">
-     
-            ^{pageHead pc}
-     
-            \<!--[if lt IE 9]>
-            \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-            \<![endif]-->
-     
-            <script>
-              document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
-        <body>
-            …
+```html
+\<!doctype html>
+\<!--[if lt IE 7]> <html class="no-js ie6 oldie" lang="en"> <![endif]-->
+\<!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
+\<!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
+\<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+    <head>
+        <meta charset="UTF-8">
+ 
+        <title>#{pageTitle pc}
+        <meta name="description" content="">
+        <meta name="author" content="">
+ 
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+ 
+        ^{pageHead pc}
+ 
+        \<!--[if lt IE 9]>
+        \<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        \<![endif]-->
+ 
+        <script>
+          document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/,'js');
+    <body>
+        …
+```
 
 To achieve our goal, we only need to change title line into
 
-            <title>Yesod Tutorial Micropost | #{pageTitle pc}
+```html
+<title>Yesod Tutorial Micropost | #{pageTitle pc}
+```
 
 and remove, in every handler file we've written, `Yesod Tutorial Micropost | ` from the parameter of `setTitle` function, so it is as simple is `setTitle "Home"`.
 
