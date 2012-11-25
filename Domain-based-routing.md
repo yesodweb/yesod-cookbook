@@ -19,7 +19,7 @@ data Subdomain = Subdomain
 
 -- Here's the trick: the subdomain will be encoded as the first piece in the
 -- path. This gives us lots of flexibility; we can match explicitly against
--- some domains (e.g., www.mydomain.com), or use wildcards (e.g. &lt;username&gt;).
+-- some domains (e.g., www.mydomain.com), or use wildcards (e.g. <username>).
 -- This is a purposely simple example to be run on a localhost system without
 -- playing with your hosts file.
 mkYesod "Subdomain" [parseRoutes|
@@ -73,20 +73,20 @@ prependSubdomain app req =
 -- Just some standard handler functions. Notice how easy it is to link to the
 -- different domains.
 getOnetwosevenR = defaultLayout [whamlet|
-&lt;h1&gt;127.0.0.1
-&lt;p&gt;
-    &lt;a href=@{LocalhostR}&gt;localhost
+<h1>127.0.0.1
+<p>
+    <a href=@{LocalhostR}>localhost
 |]
 
 getLocalhostR = defaultLayout [whamlet|
-&lt;h1&gt;localhost
-&lt;p&gt;
-    &lt;a href=@{OnetwosevenR}&gt;127.0.0.1
+<h1>localhost
+<p>
+    <a href=@{OnetwosevenR}>127.0.0.1
 |]
 
 main :: IO ()
 main = do
-    app &lt;- toWaiApp Subdomain
+    app <- toWaiApp Subdomain
     -- Finally, just make sure to use the middleware.
     run 3000 $ prependSubdomain app
 ```
