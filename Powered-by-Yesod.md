@@ -7,7 +7,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
-* [Who Saw That Coming](http://whosawthatcoming.com/): Make predictions online.
+* [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
 * [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
 * [Buccaneer Battle](http://pirates.dyndns-free.com/): A multi-player game in the browser: as the captain of a pirate ship, try to sink your opponent!
@@ -22,3 +22,4 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Personal and Project site of Chris Swires](http://christopherswires.com/): Includes some simple tutorials.
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
 * [BayesHive](http://bayeshive.com): Web application for statistical computing (blog only for now)
+* [git-annex assistant](http://git-annex.branchable.com/assistant/)
