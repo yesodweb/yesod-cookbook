@@ -2,7 +2,7 @@
 
 Works with Persistent 0.7, 0.8
 
-~~~{.haskell}
+```haskell
 {-# LANGUAGE QuasiQuotes, TypeFamilies, GeneralizedNewtypeDeriving, TemplateHaskell, OverloadedStrings, FlexibleContexts, GADTs  #-}
 import Data.Conduit (($$), ($=), runResourceT)
 import qualified Data.Conduit.List as CL
@@ -35,4 +35,4 @@ main = withSqliteConn ":memory:" $ runSqlConn $ do
          persons <- runResourceT $ withStmt query ([]::[PersistValue])
                     $= CL.map fromPersistValues $$ CL.consume
          liftIO $ print (rights persons::[Person])
-~~~
+```
