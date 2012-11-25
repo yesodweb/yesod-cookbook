@@ -17,10 +17,10 @@ See the [TODO list](/page/todo) for tasks that will be implemented. Below is a l
 * use the numerals package for i18n numbers
 * type-safe parameters- an extension to type-safe urls. so /foo/2?bar is directed to
 
-~~~ {.haskell}
-    getFoo :: Int -> String -> RepHtml
-    getFoo id bar = do ...
-~~~
+```haskell
+getFoo :: Int -> String -> RepHtml
+getFoo id bar = do ...
+```
 
 ## Key/value stores and caching
 
