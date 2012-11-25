@@ -5,7 +5,7 @@ Below is a port of the code in the [Sphinx  Search case study blog post](http://
 
 The latest version of sphinx uses the Text data type instead of String/ByteString: to make this work with the latest just remove all the  Text conversions.
 
-~~~ {.haskell}
+```haskell
   build-depends: base
                , yesod
                , persistent-sqlite
@@ -19,9 +19,9 @@ The latest version of sphinx uses the Text data type instead of String/ByteStrin
                , blaze-markup
                , text
                , bytestring
-~~~
+```
 
-~~~ {.haskell}
+```haskell
 {-# LANGUAGE OverloadedStrings, TypeFamilies, TemplateHaskell,
     QuasiQuotes, MultiParamTypeClasses, GADTs, FlexibleContexts
   #-}
@@ -266,4 +266,4 @@ main :: IO ()
 main = withSqlitePool "searcher.db3" 10 $ \pool -> do
     runSqlPool (runMigration migrateAll) pool
     warpDebug 3000 $ Searcher pool
-~~~
+```
