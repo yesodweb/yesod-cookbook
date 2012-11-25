@@ -66,8 +66,8 @@ main = do
   counter <- newIORef 0 -- (1)
   run 3000 $ application counter -- (2)
 ```
-
 So what is happening here?
+
 1. We are creating a new `IORef` called `counter` that contains the Integer 0
 
 2. We are then running the application and *curry* that counter into it. The function that results from the currying has exactly the type required by `run'.
