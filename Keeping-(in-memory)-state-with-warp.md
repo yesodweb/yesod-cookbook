@@ -98,4 +98,4 @@ Now if you point a web browser to http://localhost:3000/ that browser should dis
 
 Every page reload should increase the counter by one.
 
-(On my machine, loading the page in Chrome increments the counter by two, but every other browser increments it by one. Don't know why)
+(On some browsers, loading the page increments the counter by two. This is because the browser makes two HTTP requests: One for `http://localhost:3000/` and one for `http://localhost:3000/favicon.ico`. As an exercise, try to modify the program so that it prints the request path in `printCount`. Hint: Use [rawPathInfo](http://hackage.haskell.org/packages/archive/wai/1.3.0.1/doc/html/Network-Wai.html))
