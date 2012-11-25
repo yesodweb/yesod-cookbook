@@ -10,7 +10,7 @@ Same as described in [[Keeping (in memory) state with warp]]. While you're there
 
 # How to inject state into yesod?
 
-It's actually very simply: Just put it into the yesod foundation type. You Handler can then access it using [getYesod or getYesodSub](http://hackage.haskell.org/packages/archive/yesod/0.4.1/doc/html/Yesod-Handler.html).
+It's actually very simply: Just put it into the yesod foundation type. Your Handler can then access it using [getYesod or getYesodSub](http://hackage.haskell.org/packages/archive/yesod/0.4.1/doc/html/Yesod-Handler.html).
 
 # Example: Counting requests
 
