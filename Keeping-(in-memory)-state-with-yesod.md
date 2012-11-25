@@ -58,7 +58,7 @@ So let's go through this step by step:
 
 4. The first thing `getCounterR` does is get the `HelloWorld` instance we created in `main`. As `getYesod` returns a Handler monad, we use `<-` to directly access the `HelloWorld` inside that monad.
 
-5. We then call `incCount` on the `counter` (which is an IORef Integer) stored in `HelloWorld`. This functions increment the counter by one and returns the old value. For that, it uses `atomicModifyIORef`, which does this modification in a thread-safe manner. The function returns a tuple: The first element of the tuple is the new state, the second element of the tuple is the state returned. Here, it is the count before incementing. Thus, for the first request this returns 0, for the second 1, for the third it returns 2, etc.
+5. We then call `incCount` on the `counter` (which is an IORef Integer) stored in `HelloWorld`. This functions increments the counter by one and returns the old value. For that, it uses `atomicModifyIORef`, which does this modification in a thread-safe manner. The function returns a tuple: The first element of the tuple is the new state, the second element of the tuple is the state returned. Here, it is the count before incrementing. Thus, for the first request this returns 0, for the second 1, for the third it returns 2, etc.
 
 6. The result of incCount is lifted into the `Handler` monad, so that we can call `<-` on it and treat it as an Integer inside the monad.
 
