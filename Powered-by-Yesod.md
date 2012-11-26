@@ -17,6 +17,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Personal site of Blake Rain](http://meadowstalk.com/)
 * [Personal site of Pascal Wittmann](https://www.pascal-wittmann.de/) ([github](https://github.com/pSub/pascal-wittmann.de))
 * [Personal site of Corey O'Connor](http://www.corebotllc.com/)
+* [Personal site of Peter Robinson](http://robinson.monoid.at/)
 * [Personal site of Suhail Shergill](http://blog.shergill.su)
 * [Personal site of Toby Goodwin](http://paganbooks.eu/software/)
 * [Personal and Project site of Chris Swires](http://christopherswires.com/): Includes some simple tutorials.
