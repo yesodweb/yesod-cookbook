@@ -8,7 +8,7 @@ So you want to keep state in your web server?
 * As some form of protection against multi-threading is required, the code will always be slower than if it was not stateful.
 * Two consecutive HTTP requests that depend on state might return different responses. Be aware of that and set caching headers appropriately.
 * If you web server crashes (whether the web servier itself, the underlying OS or the hardware) and the only place you stored the state was in memory, it will be lost forever.
-* If you introduce in-memory state to your web server, it will be much harder to scale vertically: A second instance of the web server will not share the state. Be aware of that. Of course, two instances could communicate somehow to synchronize their state, but that adds new problems. Distributed systems are hard.
+* If you introduce in-memory state to your web server, it will be much harder to scale horizontally: A second instance of the web server will not share the state. Be aware of that. Of course, two instances could communicate somehow to synchronize their state, but that adds new problems. Distributed systems are hard.
 
 The problems described above apply to all multi-threaded stateful web servers, independent of the underlying technology (C++ / Java / go / ...). If you use a single-threaded stateful web server (like node.js), you won't need to deal with the multi-threadedness, of course. But haskell's lightweight thread and smart solutions to dealing with multi-threaded state make that the smaller part of the problem.
 
