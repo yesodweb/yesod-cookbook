@@ -25,3 +25,5 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [BayesHive](http://bayeshive.com): Web application for statistical computing (blog only for now)
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
 * [Tutorial (spanish)](http://tutorial-yesod-haskell.computer-mind.com/): Yesod tutorial (in spanish), it cover all minimal functionalities to make a site. Has real production site and github repository.
+* [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
+* [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
