@@ -1,6 +1,6 @@
 # Wishlist
 
-See the [TODO list](/page/todo) for tasks that will be implemented. Below is a list of Yesod features that would be nice, but that we can continue to live without. Volunteers are welcome:
+See the [[TODO list]] for tasks that will be implemented. Below is a list of Yesod features that would be nice, but that we can continue to live without. Volunteers are welcome:
 
 * Solution for integration testing using webkit. funcunit.js has some good ideas, but they try to couple it to steal.js and I couldn't get it to get pages from my localhost. The Ruby project ghostbuster may be the easiest approach, but I found it a little buggy. capybara-webkit demonstrates how we could bind directly to webkit. 
 * Create a wai-handler-direct-fastcgi which uses the direct-fastcgi package instead of the C library. Discussion: https://github.com/snoyberg/wai-handler-fastcgi/commit/ca64674de3934ae8dd9a612487596db0cd049781
