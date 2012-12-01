@@ -14,7 +14,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [BayesHive](http://bayeshive.com): Web application for statistical computing (blog only for now)
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
-* [Eat Nutrients](http://eatnutrients.com/): Nutrition search & visualization site
+* [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
 * [Tutorial (spanish)](http://tutorial-yesod-haskell.computer-mind.com/): Yesod tutorial (in spanish), it cover all minimal functionalities to make a site. Has real production site and github repository.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
