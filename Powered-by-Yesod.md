@@ -6,7 +6,6 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
-
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
 * [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
