@@ -52,7 +52,7 @@ getHomeR = do
 
 The next lines combines different parts on how and what will be displayed on the root/homepage. First of all, there's `defaultLayout`. This will come back later, but this is where site-wide layout is defined.
 
-Before I continue, it is necessary to know that Yesod uses four templating systems: Hamlet (HTML), Cassius (CSS), Lucius (CSS) and Julius (Javascript). Read the [Templates chapter](http://www.yesodweb.com/book/templates).
+Before I continue, it is necessary to know that Yesod uses four templating systems: Hamlet (HTML), Cassius (CSS), Lucius (CSS) and Julius (Javascript). Read the [Templates chapter](http://www.yesodweb.com/book/shakespearean-templates).
 
 Next there's `aDomId <- lift newIdent`. This does something with the javascript in the file `julius/homepage.julius`. `newIdent` generates unique identifiers.
 
@@ -165,7 +165,7 @@ Now that we've created some static pages, you might have noticed that we've been
 
 If this is the default structure of the title on any page, it should be made default. In every handler, we saw `defaultLayout`. This function does different things, it also applies the default .hamlet, .cassius, .lucius and .julius. These files are named `default-layout.*`.
 
-The first part of the content of `templates/default-layout-wrapper.hamlet` is shown below. You'll notice the structure out-line of every .html-document (in .hamlet syntax). There are some special variables (#, ^ and $). #, ^, * and also @ are interpolation characters and are always followed by the variable inside braces. The hash is used for variable interpolation, at-sign (@) for URL interpolation, star (*) for attributes, and caret (^) for embedding. $ allows control structures inside hamlet. Read [the Template chapter](http://www.yesodweb.com/book/templates).
+The first part of the content of `templates/default-layout-wrapper.hamlet` is shown below. You'll notice the structure out-line of every .html-document (in .hamlet syntax). There are some special variables (#, ^ and $). #, ^, * and also @ are interpolation characters and are always followed by the variable inside braces. The hash is used for variable interpolation, at-sign (@) for URL interpolation, star (*) for attributes, and caret (^) for embedding. $ allows control structures inside hamlet. Read [the Template chapter](http://www.yesodweb.com/book/shakespearean-templates).
 
 ```html
 \<!doctype html>
