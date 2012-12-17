@@ -22,6 +22,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Run raw MongoDB|RawMongo]]
 * [[Run raw SQL|RawSQL]]
 * [[Sphinx Search|Sphinx Search]]
+* [[Non scaffolded MongoDB App|Non scaffolded MongoDB App]]
 
 ## State
 
