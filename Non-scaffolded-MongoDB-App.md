@@ -93,14 +93,16 @@ choiceForm = renderDivs $ Questionnaire
 {-                                 MAIN                                      -}
 {-===========================================================================-}
 
+
 main = do
-    dbconf <- withYamlEnvironment "./mongoDB-nonscaffold.yml" Development
+    dbconf <- withYamlEnvironment mongoConfFile Development
                 Database.Persist.Store.loadConfig >>=
               Database.Persist.Store.applyEnv
     pool <- Database.Persist.Store.createPoolConfig (dbconf)
     warpDebug 3000 $ App pool dbconf
+    where mongoConfFile = "./mongoDB-nonscaffold.yml" 
 ```
-The configuration file is just taken from a scaffolded site and changed to fit our needs. This route seemed the easiest for me at the time (although, had `MongoAuth` been exported from `Database.Persist.MongoDB`, I would have a hand-made `MongoConf` above).
+The configuration file is just taken from a scaffolded site and changed to fit our needs. This route seemed the easiest for me at the time (although, had `MongoAuth` been exported from `Database.Persist.MongoDB`, I would have a hand-made `MongoConf` above). It should be saved under whatever `mongoConfFile` contains in the source above (very last line!).
 ``` yaml
 Default: &defaults
   user: <usr>
