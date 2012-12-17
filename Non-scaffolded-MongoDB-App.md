@@ -43,6 +43,7 @@ mkYesod "App" [parseRoutes|
 {-===========================================================================-}
 {-                                  HANDLERS                                 -}
 {-===========================================================================-}
+appTitle :: Text
 appTitle = "Non-scaffolded MongoDB-driven App skeleton" :: Text
 
 getRootR :: Handler RepHtml
