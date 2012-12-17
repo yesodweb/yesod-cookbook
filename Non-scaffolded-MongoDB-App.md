@@ -87,7 +87,7 @@ choiceForm = renderDivs $ Questionnaire
                              (Question <$> areq textField fss Nothing)
                -- to append the list inside of the applicative
                -- context, i.e the `[Question]` - see type declaration
-               -- above for `questionAFormField`.
+               -- above for `questionAFormTextField`.
                applListAppend = liftA2 (++)
 
 {-===========================================================================-}
