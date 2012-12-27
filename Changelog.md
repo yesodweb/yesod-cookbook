@@ -1,5 +1,7 @@
 # Changelog
 
+Note: for a more technical, detailed set of information, see [[Detailed change list]]. This page mostly covers high-level features.
+
 # Yesod 1.1
 
 ## Yesod
