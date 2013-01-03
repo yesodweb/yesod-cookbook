@@ -1,3 +1,4 @@
+```haskell
 {-# LANGUAGE GeneralizedNewtypeDeriving #-}
 {-# LANGUAGE MultiParamTypeClasses      #-}
 {-# LANGUAGE OverloadedStrings          #-}
@@ -87,3 +88,4 @@ getPersonR pid = do
 
 main :: IO ()
 main = warpDebug 3000 App
+```
