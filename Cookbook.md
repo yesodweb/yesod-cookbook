@@ -45,6 +45,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Static file subsite Hello World|Static-file-subsite-Hello-World]]
 * [[Pure-Haskell static subdomains|Pure-Haskell static subdomains]]
 * [[Slugs]]
+* [[Using type-safe URLs from inside Javascript]]
 
 ## Template Haskell
 
