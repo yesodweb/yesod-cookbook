@@ -5,4 +5,4 @@ Yesod is not a single monolithic package with a single version. There are dozens
 
 The solution to both problems is simple: don't use the yesod package. It might seem surprising, but you can use Yesod perfectly well without the yesod package itself. The only trick is that without the yesod package, you can't import the Yesod module. Instead, you must import a few different modules manually, such as Yesod.Core and Yesod.Forms.
 
-It's probably easiest to just remove the yesod package from your cabal file and start building. If you want to see some prior art in this department, check out the [source code for this site](http://github.com/snoyberg/yesodwiki).
+It's probably easiest to just remove the yesod package from your cabal file and start building. If you want to see some prior art in this department, check out the [source code for a Yesod-based wiki](http://github.com/snoyberg/yesodwiki).
