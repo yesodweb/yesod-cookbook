@@ -1,6 +1,6 @@
 This demonstrates how to use WAI's ServerEvents together with the client-side code needed to enable full functionality of the feature. I've tried to make the code as tidy as possible, but in this as in much else YMMV. It is non-scaffolded to keep things simple and easily understandable.
 
-### Tested with:
+**Tested with**:
 * GHC 7.4.2, yesod-platform 1.1.6.1
 * Mozilla Firefox 17.0.1 (Mac OS X 10.7.5), Chrome  23.0.1271.101 (Mac OS X 10.7.5)
 
