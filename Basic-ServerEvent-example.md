@@ -2,7 +2,10 @@ This demonstrates how to use WAI's ServerEvents together with the client-side co
 
 ### Tested with:
 * GHC 7.4.2, yesod-platform 1.1.6.1
-* Mozilla Firefox 17.0.1, Chrome  23.0.1271.101 
+* Mozilla Firefox 17.0.1 (Mac OS X 10.7.5), Chrome  23.0.1271.101 (Mac OS X 10.7.5)
+
+Point your browser to http://localhost:3000/setup after running the app, since there is no "/"-route in this example. 
+
 ```haskell
 {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
   TemplateHaskell, FlexibleInstances, MultiParamTypeClasses,
