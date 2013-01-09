@@ -29,6 +29,9 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Keeping (in-memory) state with warp]]
 * [[Keeping (in-memory) state with yesod]]
 
+## HTML5 and Yesod
+* [[Basic ServerEvent example]]
+
 ## Auth
 
 * [[Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site]]
