@@ -131,7 +131,7 @@ talk ch n = do
                                  "" -> Nothing
                                  _  -> (Just $ fromText evName)
                   mEvId   = Just $ fromString $ show evId
-                  evPayload = return (fromText evData <> fromString (show evId))
+                  evPayload = [(fromText evData <> fromString (show evId))]
               in ServerEvent mEvName mEvId evPayload
                             
 main = do
