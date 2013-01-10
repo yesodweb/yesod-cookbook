@@ -22,9 +22,6 @@ import Blaze.ByteString.Builder.Char.Utf8 (fromText, fromString)
 import Network.Wai.EventSource (ServerEvent (..), eventSourceAppChan)
 import Data.Monoid ((<>))
 
-
-
--- our app datatype
 data App = App (Chan ServerEvent)
 
 pageTitleText = "EventSource Cookbook example" :: Text
