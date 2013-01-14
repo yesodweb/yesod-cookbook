@@ -40,32 +40,32 @@ The site navigation should be omnipresent and therefore added to `hamlet/default
 Change the content into:
 
     !!!
-    <html
-       <head
+    <html>
+       <head>
           <title>Yesod Tutorial Micropost | #{pageTitle pc}
           <link rel=stylesheet media=screen href=@{StaticR blueprint_screen_css}>
           <link rel=stylesheet media=print href=@{StaticR blueprint_print_css}>
           ^{pageHead pc}
-       <body
-          <div .container
-               <header
+       <body>
+          <.container>
+               <header>
                   <img border="0" src=@{StaticR img_yesod_png} alt="Sample App in Yesod" .round
-                  <nav .round
-                       <ul
-                          <li
-                             <a href=@{RootR}>Home
-                          <li
-                             <a href=@{HelpR}>Help
-                          <li
-                             <a href="#">Sign in
-               <section .round
-                        ^{pageBody pc}
-               <footer
                   <nav .round>
-                    <ul
-                       <li
+                       <ul>
+                          <li>
+                             <a href=@{RootR}>Home
+                          <li>
+                             <a href=@{HelpR}>Help
+                          <li>
+                             <a href="#">Sign in
+               <section .round>
+                        ^{pageBody pc}
+               <footer>
+                  <nav .round>
+                    <ul>
+                       <li>
                           <a href=@{AboutR}>About
-                       <li
+                       <li>
                           <a href=@{ContactR}>Contact
 
 This is pretty straightforward HTML5 in hamlet syntax, with some URL-interpolations. The link to "Sign in" isn't available yet.
