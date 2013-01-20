@@ -18,7 +18,7 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
 # Beginner's section
 
 After the first tutorials (the one above and the tutorial on the first page "tutorial-for-newbies"), you might have a lot of questions and also difficulties when trying to apply the examples from the book to your own cases. In the beginner's section we could try to collect helpful tips to make initial steps a bit easier.
-  * [[Why there is an extra header in html?|extra-headers-in-html]] Answer: defaultLayout is different from widgetToPageContent. Please, see the example. 
+  * [[Why there is an extra header in html?|extra-headers-in-html]] Answer: defaultLayout is different from hamletToRepHtml. Please, see the example. 
 
 # Deployment
   * [[Deploying to Heroku|Deploying-Yesod-Apps-to-Heroku]]
