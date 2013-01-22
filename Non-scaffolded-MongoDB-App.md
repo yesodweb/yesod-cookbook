@@ -103,7 +103,7 @@ main = do
     warpDebug 3000 $ App pool dbconf
     where mongoConfFile = "./mongoDB-nonscaffold.yml" 
 ```
-The configuration file is just taken from a scaffolded site and changed to fit our needs. This route seemed the easiest for me at the time (although, had `MongoAuth` been exported from `Database.Persist.MongoDB`, I would have a hand-made `MongoConf` above). It should be saved under whatever `mongoConfFile` contains in the source above, and contain the following:
+The configuration file is just taken from a scaffolded site and changed to fit our needs. This route seemed the easiest for me at the time (although, had `MongoAuth` been exported from `Database.Persist.MongoDB`, I would have a hand-made `MongoConf` above). It should be saved under whatever file `mongoConfFile` points to in the source above, and contain the following:
 ``` yaml
 Default: &defaults
   user: <usr>
