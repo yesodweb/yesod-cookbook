@@ -1,7 +1,7 @@
 This is to fill the lacuna in the Yesod Book in the non-scaffolded MongoDB-department. The issue was raised  [over at StackOverflow](http://bit.ly/RzrwDI), as well as encountered by personal forays in Yesod.
 
-Note: not working with yesod-platform 1.1.6.1. I am in the process of fixing it.
-
+~~Note: not working with yesod-platform 1.1.6.1. I am in the process of fixing it.~~<br>
+**Update**: now works with yesod-platform 1.1.6.1.
 
 ``` haskell
 {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
@@ -27,10 +27,7 @@ instance YesodPersist App where
         App pool conf <- getYesod
         runPool conf act pool
 
--- Is there any other way to get this working without having to resort
--- to Template Haskell?
-share [mkPersist (MkPersistSettings { mpsBackend = ConT ''Action }), 
-       mkMigrate "migrateAll"] [persist|
+share [mkPersist (mkPersistSettings (ConT ''MongoBackend)) { mpsGeneric = False }, mkMigrate "migrateAll"][persist|
 Questionnaire
   desc Text Maybe
   questions [Question]
