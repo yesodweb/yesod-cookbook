@@ -10,7 +10,7 @@ import Yesod
 import Yesod.Default.Config (DefaultEnv (..), withYamlEnvironment)
 import Data.Text (Text, pack)
 import Database.Persist.Store (runPool, createPoolConfig, loadConfig,applyEnv)
-import Database.Persist.MongoDB (MongoConf (..), Action, ConnectionPool (..))
+import Database.Persist.MongoDB (MongoConf (..), Action, ConnectionPool (..), MongoBackend)
 import Language.Haskell.TH.Syntax
 import Control.Applicative ((<$>), (<*>), liftA2, Applicative)
 
