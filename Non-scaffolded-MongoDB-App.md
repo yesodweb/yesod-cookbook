@@ -1,4 +1,8 @@
 This is to fill the lacuna in the Yesod Book in the non-scaffolded MongoDB-department. The issue was raised  [over at StackOverflow](http://bit.ly/RzrwDI), as well as encountered by personal forays in Yesod.
+
+Note: not working with yesod-platform 1.1.6.1. I am in the process of fixing it.
+
+
 ``` haskell
 {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
   TemplateHaskell, MultiParamTypeClasses, GADTs, FlexibleContexts #-}
