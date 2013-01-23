@@ -22,6 +22,7 @@ After the first tutorials (the one above and the tutorial on the first page "tut
 
 # Deployment
   * [[Deploying to Heroku|Deploying-Yesod-Apps-to-Heroku]]
+  * [[Deploying via Keter alongside Nginx|Deploying-via-Keter-alongside-Nginx]]
   * [[Setting up a virtual machine, using VirtualBox and Vagrant|Setting-up-a-virtual-machine,-using-VirtualBox-and-Vagrant]]
   * [[Setting up PostgreSQL|Setting-up-Postgresql]]
   * [[Powered by|Powered by Yesod]] Yesod
