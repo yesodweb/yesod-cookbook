@@ -34,7 +34,7 @@ args:
   - production
 
 # this will become APPROOT, if you have any absolute URLs, it 
-# it must be accurate
+# must be accurate
 host: example.com
 
 # however, the requests from nginx -> keter will not come to 
@@ -88,8 +88,8 @@ Depending on your situation, it's quite possible (and maybe easy) to let Keter b
 
 Keter can deploy any app you like as long as you can provide two things:
 
-1) A binary that uses the `PORT` environment variable to know where to listen
-2) A `config/keter.yaml` that specifies how to run that binary
+1. A binary that uses the `PORT` environment variable to know where to listen
+2. A `config/keter.yaml` that specifies how to run that binary
 
 In my case, I was using Nginx to provide some simple file browsers. I was able to put together a small python script using `SimpleHTTPRequestHandler` to serve a directory of my choosing. `tar`ring that together with a `keter.yaml` that specified the directory location as an argument to the script and placing that in `keter/incoming` was all I needed to get keter deploying those apps.
 
