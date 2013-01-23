@@ -44,7 +44,7 @@ extra-hosts:
   - "127.0.0.1:8000"
 ~~~
 
-## Deploy your app
+### Deploy your app
 
 Deploy your keter bundle and watch the logs to make sure there are no errors. You should now be able to see your site at http://127.0.0.1:8000.
 
