@@ -6,7 +6,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Basics
 * [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
-
+* [[JSON Object Create and Append | JSON-data-helpful-manipulations]]
 ## Forms
 
 * [[Change the order of form fields|OrderFormFields]]
