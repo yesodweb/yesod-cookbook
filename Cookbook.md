@@ -4,6 +4,9 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 
 For non-Yesod code, see also [[Snippets|Snippets]].
 
+## Basics
+* [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
+
 ## Forms
 
 * [[Change the order of form fields|OrderFormFields]]
