@@ -121,7 +121,7 @@ Yesod.Test gives us a way of getting at the *raw* response body.  Any decoding n
 
 We write two separate top-level specs, so that we can control the order - the ordering of the *it* specs within a single *describe* is probably not what you expect.
 
-```
+```haskell
 testdata = "A unicode string\x2122"
 url = "/clipboard/..."   -- In a real example, get this from the server
 
