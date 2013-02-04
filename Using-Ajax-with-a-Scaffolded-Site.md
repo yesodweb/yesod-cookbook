@@ -11,7 +11,7 @@ In what follows, I look at
 
 ## A caveat
 
-To give concrete examples, I have had to make choices about the way Ajax calls are done.  To be specific, I use *jQuery* in the about the simplest way possible, which means that:
+To give concrete examples, I have had to make choices about the way Ajax calls are done.  To be specific, I use *jQuery* in about the simplest way possible, which means that:
 
 * Data is sent to the server as a set of form fields, with one parameter for each top-level attribute of the JavaScript object being sent.
 * The response can be text or JSON, as long as it is consistent with the setting of the *dataType* in the Ajax call on the client side.
@@ -198,7 +198,7 @@ putClipboardR cbid = do
 
 There are a few things to notice here:
 
-* In the GET handler, the response is simply a utf-8 encoded string sent with type *text/plain* (*toContent* does the utf-8 encoding for Text).
+* In the GET handler, the response is simply a utf-8 encoded string sent with type _text/plain_ (*toContent* does the utf-8 encoding for Text).
 * The PUT handler uses an "Input Form" (see the [Forms chapter of the Yesod Book](http://www.yesodweb.com/book/forms)).  In this case there is a single parameter to decode as Text, but if we had sent a more complex structure on the JavaScript side, there would have been further form fields here.
 * Two errors can occur, both most likely caused by not following the official URL.  In a real application, the URL would have been provided by the server, so these errors should not occur unless a user types a URL by hand.
 
