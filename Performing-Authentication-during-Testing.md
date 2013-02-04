@@ -45,7 +45,7 @@ import Network.HTTP.Types (StdMethod(..), renderStdMethod)
 
 -- Adjust as necessary to the url prefix in the Testing configuration
 testRoot :: B.ByteString
-testRoot = "https://scylla.doynton.org/editor"
+testRoot = "https://test.host/"
 
 -- Force failure by swearing that black is white, and pigs can fly...
 assertFailure :: String -> OneSpec conn ()
