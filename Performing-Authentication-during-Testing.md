@@ -6,7 +6,7 @@ Here is some example code.  It is designed around the user/password authenticati
 
 The idea is to be able write test specs which go like this:
 
-```
+```haskell
 homeSpecs :: Specs
 homeSpecs = describe "The home page" $ do
     it "requires login" $ do
@@ -26,7 +26,7 @@ A few things may need changing for your particular usage:
 
 So with those caveats, here we are.  Use it as you wish!
 
-```
+```haskell
 {-# LANGUAGE OverloadedStrings #-}
 module TestTools (
     assertFailure,
