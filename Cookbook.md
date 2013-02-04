@@ -54,6 +54,14 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Slugs]]
 * [[Using type-safe URLs from inside Javascript]]
 
+## Ajax
+
+* [[Using Ajax with a Scaffolded Site|Using Ajax with a Scaffolded Site]]
+
+## Testing
+
+* [[Performing Authentication during Testing|Performing Authentication during Testing]]
+
 ## Template Haskell
 
 * [[Creating string based enums using Template Haskell|Create-String-Based-Enums-With-Template-Haskell]]
