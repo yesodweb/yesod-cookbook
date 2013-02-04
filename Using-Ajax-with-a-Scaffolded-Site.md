@@ -18,7 +18,7 @@ To give concrete examples, I have had to make choices about the way Ajax calls a
 * For an error response, with an HTTP error status, reading the body as text is an easy option for the client.
 * The requests include a header *"X-Requested-With: XMLHttpRequest"*.
 
-You may want to make different choices, such as sending JSON data in all requests and responses.  The details will change, but the main ponts I am talking about here will remain valid.
+You may want to make different choices, such as sending JSON data in all requests and responses.  The details will change, but the main points I am talking about here will remain valid.
 
 An example Yesod handler, and the corresponding client-side code, are given in the appendix at the end to illustrate these choices,  and generally motivate the discussion.
 
@@ -145,7 +145,7 @@ Actually that is not quite all: for our running example we need to log in in eac
 
 This simple handler, and matching JavaScript, motivates the assumptions made in the discussion above, and also just might help someone get started!
 
-In this example, users have to be logged in, and by the time we reach the handler function, this has already been checked because of a suitable definition of *isAuthorized* in the Yesod instance in Foundation.hs.  For more on authentication and authoriation, see the [Yesod Book](http://www.yesodweb.com/book/authentication-and-authorization).
+In this example, users have to be logged in, and by the time we reach the handler function, this has already been checked because of a suitable definition of *isAuthorized* in the Yesod instance in Foundation.hs.  For more on authentication and authorization, see the [Yesod Book](http://www.yesodweb.com/book/authentication-and-authorization).
 
 Each user has a persistent clipboard for cutting and pasting things, which for our present purposes can be taken as unicode strings.  The server simply stores the data and returns it to the client when requested, so we need read and write operations, which rather naturally map onto HTTP GET and PUT methods.  They will act on entries in a database table, defined like this in *config/models*:
 
