@@ -2,6 +2,7 @@ This is to fill the lacuna in the Yesod Book in the non-scaffolded MongoDB-depar
 
 ~~**Note**: not working with yesod-platform 1.1.6.1. I am in the process of fixing it.~~<br>
 **Update**: now works with yesod-platform 1.1.6.1.
+**Coming soon**: Showing what's already in the DB (The 'R' in 'CRUD').
 
 ``` haskell
 {-# LANGUAGE OverloadedStrings, TypeFamilies, QuasiQuotes,
