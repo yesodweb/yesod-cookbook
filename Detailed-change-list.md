@@ -7,6 +7,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 # 2013-02-18
 
 * The Yesod ecosystem now supports conduit 1.0. This release of conduit is largely backwards compatible, and therefore most code will work with both conduit 0.5 and 1.0 (as is the case for Yesod itself). Little user modification should be necessary. For more information, see [the blog post](http://www.yesodweb.com/blog/2013/02/upcoming-conduit-1-0).
+* wai 1.4 has been released, which adds a new field `requestBodyLength` to the `Request` datatype.
 
 # 2012-12-27
 
