@@ -8,6 +8,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 
 * The Yesod ecosystem now supports conduit 1.0. This release of conduit is largely backwards compatible, and therefore most code will work with both conduit 0.5 and 1.0 (as is the case for Yesod itself). Little user modification should be necessary. For more information, see [the blog post](http://www.yesodweb.com/blog/2013/02/upcoming-conduit-1-0).
 * wai 1.4 has been released, which adds a new field `requestBodyLength` to the `Request` datatype.
+* monad-logger 0.3 is out, which no longer provides instances for `IO`. As a result, in a few places you may need to explicitly use a transformer to deal with logging. This will most commonly occur in the scaffolding with the runMigration call. The simplest thing to do is import `Control.Monad.Logger` and add `runNoLoggingT` to the beginning. For a more sophisticated approach, see [the changes to the scaffolding](https://github.com/yesodweb/yesod-scaffold/commit/578ae4068fd99c3a8ed219db75f477e44da484a4#L0R66).
 
 # 2012-12-27
 
