@@ -17,30 +17,30 @@ mkYesod "PC" [parseRoutes|
 
 getRootR :: Handler RepHtml
 getRootR = do
-    ((res, form), enctype) &lt;- runFormGet $ renderDivs $
+    ((res, form), enctype) <- runFormGet $ renderDivs $
   areq passwordConfirmField "Password" Nothing
     defaultLayout [whamlet|
-&lt;p&gt;Result: #{show res}
-&lt;form enctype=#{enctype}&gt;
+<p>Result: #{show res}
+<form enctype=#{enctype}>
     ^{form}
-    &lt;p&gt;
-  &lt;input type=submit&gt;
+    <p>
+  <input type=submit>
 |]
 
 passwordConfirmField :: Field sub master Text
 passwordConfirmField = Field
-    { fieldParse = \vals -&gt; do
+    { fieldParse = \vals -> do
   case vals of
       [x, y]
-    | x == y -&gt; return $ Right $ Just x
-    | otherwise -&gt; return $ Left "Passwords don't match"
-      [] -&gt; return $ Right Nothing
-      _ -&gt; return $ Left "Incorrect number of results"
-    , fieldView = \id' name val isReq -&gt; [whamlet|
-&lt;input ##{id'} name=#{name} type=password :isReq:required&gt;
-&lt;p&gt;
+    | x == y -> return $ Right $ Just x
+    | otherwise -> return $ Left "Passwords don't match"
+      [] -> return $ Right Nothing
+      _ -> return $ Left "Incorrect number of results"
+    , fieldView = \id' name val isReq -> [whamlet|
+<input ##{id'} name=#{name} type=password :isReq:required>
+<p>
     Confirm
-    &lt;input ##{id'} name=#{name} type=password :isReq:required&gt;
+    <input ##{id'} name=#{name} type=password :isReq:required>
 |]
     }
 
