@@ -42,6 +42,7 @@ import Data.Text (Text, unpack, pack)
 import Data.Text.Encoding (encodeUtf8, decodeUtf8)
 import Network.URI (URI(uriPath), parseURI)
 import Network.HTTP.Types (StdMethod(..), renderStdMethod)
+import Network.Wai.Test (SResponse(..))
 
 -- Adjust as necessary to the url prefix in the Testing configuration
 testRoot :: B.ByteString
