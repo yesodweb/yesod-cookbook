@@ -38,6 +38,29 @@ main = withSqliteConn ":memory:" $ runSqlConn $ do
 ```
 ## In a scaffolded Yesod application
 
+### Fetching data
+
+Combine the [rawSql](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-GenericSql.html#v:rawSql) function with `runSql` (which is defined in "Foundation.hs").
+
+```haskell
+getSearchR :: Text -> Handler RepHtml
+getSearchR pattern = do
+    users <- selectUsers pattern
+    defaultLayout $ do
+        -- [...]
+  where
+    selectUsers :: Text -> Handler [Entity User]
+    selectUsers t = runDB $ rawSql s [toPersistValue t]
+      where s = "SELECT ?? FROM user WHERE name = ? ORDER BY (role_id IS NULL) ASC, name DESC"
+```
+The output of `rawSql` is constrained by the type expected, here `[Entity User]`.
+The "??" within the query is filled according to this expected type.
+
+If the type was `[(Entity User, Entity Role)]` because of a join, the query would begin with `SELECT ??, ??`.
+In case the select returns a list of fields like in `SELECT id, lowercase(name)`, then the type should look like `[(Single UserId, Single PersistValue)]`.
+
+Returned data can be handled through [entityKey](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-GenericSql.html#v:Entity), [entityVal](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-GenericSql.html#v:Entity) or [fromPersistValue](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-Store.html#v:fromPersistValue).
+
 ### Running raw queries at app start
 
 Within Application.hs:
