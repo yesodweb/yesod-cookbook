@@ -116,16 +116,16 @@ createSqlitePoolConn (SqliteConf cs size) = do
     newConn <- customConn cs
     createSqlPool (wrapConnection newConn) size
   where
-      customConn :: Text -> IO Sqlite.Connection
-      customConn s = do
-        conn <- Sqlite.open s
-        execute conn "PRAGMA encoding = 'UTF-8'"
-        execute conn "SELECT icu_load_collation('fr_FR', 'french')"
-        return conn
+      customConn :: Text -> IO Connection
+      customConn s = Sqlite.open s >>= execInit >>= wrapConnection
+
+      execInit :: Sqlite.Connection -> IO Sqlite.Connection
+      execInit conn = execute conn "SELECT icu_load_collation('fr_FR', 'french')"
 
       execute :: Sqlite.Connection -> Text -> IO ()
       execute conn sql = do
         stmt <- Sqlite.prepare conn sql
         _ <- Sqlite.step stmt
+        Sqlite.finalize stmt
         return ()
 ```
