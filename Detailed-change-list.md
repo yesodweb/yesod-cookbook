@@ -5,6 +5,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * Removed a number of deprecated functions from Yesod.Widget. These can be replaced with `toWidget`, `toWidgetHead`, `toWidgetBody`, and `toWidgetMedia`. `toWidgetMedia` was added in 1.2 and replaces `addLuciusMedia` and `addCassiusMedia` as a means of adding CSS that only applies to specific media types.
 * yesod-json has been deprecated. Its functionality has been folded into yesod-core itself.
 * Felipe's newer, more efficient session code is the default. More information: https://github.com/yesodweb/yesod/issues/415#commit-ref-2009165
+* Everything in Yesod.Handler now lives in a typeclass. All functions work in the master site by default, with a few functions provided to deal with subsites. The most important change here was getCurrentRoute, which now has much more sane behavior.
 
 # 2013-02-18
 
