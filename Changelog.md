@@ -2,6 +2,13 @@
 
 Note: for a more technical, detailed set of information, see [[Detailed change list]]. This page mostly covers high-level features.
 
+# Yesod 1.2 (not yet released)
+
+* Much more powerful multi-representation support via the selectRep/provideRep API.
+* More efficient session handling.
+* All Handler functions live in a typeclass, providing you with auto-lifting. For those interested, it is also now quite possible to create restricted monads for more security.
+* Type-based caching of responses via the `cached` function.
+
 # Yesod 1.1
 
 ## Yesod
