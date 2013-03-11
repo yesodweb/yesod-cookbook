@@ -6,6 +6,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * yesod-json has been deprecated. Its functionality has been folded into yesod-core itself.
 * Felipe's newer, more efficient session code is the default. More information: https://github.com/yesodweb/yesod/issues/415#commit-ref-2009165
 * Everything in Yesod.Handler now lives in a typeclass. All functions work in the master site by default, with a few functions provided to deal with subsites. The most important change here was getCurrentRoute, which now has much more sane behavior.
+* Overhaul to the content/representation breakdown. RepHtml et al are deprecated. ChooseRep is gone. Now we have Content, TypedContent, and HasContentType. NOTE: This needs more explanation, I'll write a blog post about this and the YesodRequest/YesodResponse switch.
 
 # 2013-02-18
 
