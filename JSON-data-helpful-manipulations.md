@@ -8,7 +8,7 @@ Some Functions for JSON in Yesod.
 {-# LANGUAGE TupleSections, OverloadedStrings, QuasiQuotes, TemplateHaskell, TypeFamilies, RecordWildCards,
              MultiParamTypeClasses  #-}
 
-
+import qualified Data.HashMap.Strict as H
 import Data.Aeson 
 import Data.Text (pack)
 import Data.List ()
