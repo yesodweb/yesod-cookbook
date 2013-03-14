@@ -9,6 +9,11 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * Overhaul to the content/representation breakdown. RepHtml et al are deprecated. ChooseRep is gone. Now we have Content, TypedContent, and HasContentType. NOTE: This needs more explanation, I'll write a blog post about this and the YesodRequest/YesodResponse switch.
 * yesod-default has been deprecated. Its functionality has been folded into the yesod package.
 
+Changes on the experimental new-subsite branch:
+
+* GHandler and GWidget are replaced entirely with HandlerT and WidgetT. We no longer have a modified `lift` function, since everything is a standard transformer. You need not (and in fact, can not) lift Handler function into a Widget. If you need to lift ResourceT actions into a Handler or Widget, use liftResourceT.
+* Subsite creation has been overhauled entirely. Need a blog post on this.
+
 # 2013-02-18
 
 * The Yesod ecosystem now supports conduit 1.0. This release of conduit is largely backwards compatible, and therefore most code will work with both conduit 0.5 and 1.0 (as is the case for Yesod itself). Little user modification should be necessary. For more information, see [the blog post](http://www.yesodweb.com/blog/2013/02/upcoming-conduit-1-0).
