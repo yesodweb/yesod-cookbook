@@ -16,6 +16,7 @@ Changes on the experimental new-subsite branch:
 * Changed some Yesod typeclass functions: getLogger is now makeLogger. messageLogger, logLevel, gzipSettings have been removed.
 * toWaiApp no longer applies any middlewares.
 * MForm takes three arguments instead of 4 (no subsite). A typical `Form` type synonym in Foundation.hs would be: type Form x = Html -> MForm Handler (FormResult x, Widget)
+* getRouteToMaster is now called getRouteToParent. The rename comes because its semantics have changed slightly. (Perhaps we should still export a deprecated getRouteToMaster synonym?)
 
 # 2013-02-18
 
