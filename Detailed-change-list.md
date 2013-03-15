@@ -11,7 +11,9 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 
 Changes on the experimental new-subsite branch:
 
-* GHandler and GWidget are replaced entirely with HandlerT and WidgetT. We no longer have a modified `lift` function, since everything is a standard transformer. You need not (and in fact, can not) lift Handler function into a Widget. If you need to lift ResourceT actions into a Handler or Widget, use liftResourceT.
+* GHandler and GWidget are replaced entirely with HandlerT and WidgetT. We no longer have a modified `lift` function, since everything is a standard transformer. You need not (and in fact, can not) lift Handler function into a Widget.
+    * If you need to lift ResourceT actions into a Handler or Widget, use liftResourceT.
+    * If you need to lift HandlerT actions into a Widget, use handlerToWidget. (Depending on how we go forward with the Handler typeclasses, we may provide liftHandler.)
 * Subsite creation has been overhauled entirely. Need a blog post on this.
 * Changed some Yesod typeclass functions: getLogger is now makeLogger. messageLogger, logLevel, gzipSettings have been removed.
 * toWaiApp no longer applies any middlewares.
