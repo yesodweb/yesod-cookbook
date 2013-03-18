@@ -1,5 +1,6 @@
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
+* [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
