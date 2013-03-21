@@ -10,3 +10,13 @@ Person
     age Int
     unusedField ByteString Maybe MigrationOnly
 ```
+
+## Deriving
+
+Persistent automatically derives some typeclasses, but the typeclasses derived can be changed.
+
+```
+Person
+    name Text
+    deriving Show
+```
