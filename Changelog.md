@@ -6,7 +6,7 @@ Note: for a more technical, detailed set of information, see [[Detailed change l
 
 * Much more powerful multi-representation support via the selectRep/provideRep API.
 * More efficient session handling.
-* All Handler functions live in a typeclass, providing you with auto-lifting. For those interested, it is also now quite possible to create restricted monads for more security.
+* All Handler functions live in a typeclass, providing you with auto-lifting.
 * Type-based caching of responses via the `cached` function.
 * More sensible subsite handling, switch to HandlerT/WidgetT transformers.
 * Simplified dispatch system, including a lighter-weight Yesod.
