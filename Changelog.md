@@ -10,7 +10,7 @@ Note: for a more technical, detailed set of information, see [[Detailed change l
 * Type-based caching of responses via the `cached` function.
 * More sensible subsite handling, switch to HandlerT/WidgetT transformers.
 * Simplified dispatch system, including a lighter-weight Yesod.
-* (TODO) Simplified streaming data mechanism
+* Simplified streaming data mechanism, for both database and non-database responses.
 
 # Yesod 1.1
 
