@@ -8,9 +8,6 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * Everything in Yesod.Handler now lives in a typeclass. All functions work in the master site by default, with a few functions provided to deal with subsites. The most important change here was getCurrentRoute, which now has much more sane behavior.
 * Overhaul to the content/representation breakdown. RepHtml et al are deprecated. ChooseRep is gone. Now we have Content, TypedContent, and HasContentType. NOTE: This needs more explanation, I'll write a blog post about this and the YesodRequest/YesodResponse switch.
 * yesod-default has been deprecated. Its functionality has been folded into the yesod package.
-
-Changes on the experimental new-subsite branch:
-
 * GHandler and GWidget are replaced entirely with HandlerT and WidgetT. We no longer have a modified `lift` function, since everything is a standard transformer. You need not (and in fact, can not) lift Handler function into a Widget.
     * If you need to lift ResourceT actions into a Handler or Widget, use liftResourceT.
     * If you need to lift HandlerT actions into a Widget, use handlerToWidget. (Depending on how we go forward with the Handler typeclasses, we may provide liftHandler.)
@@ -19,6 +16,12 @@ Changes on the experimental new-subsite branch:
 * toWaiApp no longer applies any middlewares.
 * MForm takes three arguments instead of 4 (no subsite). A typical `Form` type synonym in Foundation.hs would be: type Form x = Html -> MForm Handler (FormResult x, Widget)
 * getRouteToMaster is now called getRouteToParent. The rename comes because its semantics have changed slightly. (Perhaps we should still export a deprecated getRouteToMaster synonym?)
+
+__Persistent__
+
+* Remove the Join modules (you should use esqueleto instead)
+* Refactored module hierarchy
+* Renamed SqlPersist to SqlPersistT (former is kept as a deprecated synonym)
 
 # 2013-02-18
 
