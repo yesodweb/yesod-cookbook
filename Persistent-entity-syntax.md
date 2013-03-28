@@ -23,6 +23,14 @@ Person json
 
 FIXME
 
+## sqltype=
+
+FIXME
+
+## default=
+
+FIXME
+
 ## MigrationOnly
 
 _Sorry, this doesn't work right now..._
