@@ -19,9 +19,12 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 
 __Persistent__
 
+* Fields are now strict by default. To get lazy fields, add a ~ at the beginning of the field name.
 * Remove the Join modules (you should use esqueleto instead)
 * Refactored module hierarchy
 * Renamed SqlPersist to SqlPersistT (former is kept as a deprecated synonym)
+* Split up PersistField typeclass into PersistField and PersistFieldSql, the latter having the sqlType method.
+* Much of the typeclass setup has been refactored to avoid the need passing undefined in the internals. No user-facing change should be involved here.
 
 # 2013-02-18
 
