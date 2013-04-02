@@ -11,6 +11,8 @@ Note: for a more technical, detailed set of information, see [[Detailed change l
 * More sensible subsite handling, switch to HandlerT/WidgetT transformers.
 * Simplified dispatch system, including a lighter-weight Yesod.
 * Simplified streaming data mechanism, for both database and non-database responses.
+* Completely overhauled yesod-test, making it easier to use and providing cleaner integration with hspec.
+* Refactored persistent module structure for clarity and ease-of-use.
 
 # Yesod 1.1
 
