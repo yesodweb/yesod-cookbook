@@ -35,6 +35,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## HTML5 and Yesod
 * [[Basic ServerEvent example]]
+* [[Allowing WOFF fonts to be accessed from other domains (CORS)]]
 
 ## Auth
 
