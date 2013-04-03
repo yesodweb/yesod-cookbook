@@ -26,6 +26,7 @@ __Persistent__
 * Renamed SqlPersist to SqlPersistT (former is kept as a deprecated synonym)
 * Split up PersistField typeclass into PersistField and PersistFieldSql, the latter having the sqlType method.
 * Much of the typeclass setup has been refactored to avoid the need passing undefined in the internals. No user-facing change should be involved here.
+* If you define custom datatypes to be used by Persistent, they will usually need to be defined in a separate module due to the GHC stage restriction.
 
 # 2013-02-18
 
