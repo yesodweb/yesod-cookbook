@@ -4,6 +4,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
+* [Gitit2](https://github.com/jgm/gitit2): A wiki using Git or Darcs as persistent storage
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
