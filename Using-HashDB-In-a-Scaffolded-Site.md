@@ -28,12 +28,13 @@
 
     ```haskell
     -- in Model.hs
-    instance HashDBUser (PersonGeneric backend) where
-        userPasswordHash = personPassword
-        userPasswordSalt = personSalt
-        setUserHashAndSalt s h p = p { personSalt     = s
-                                     , personPasswd = h
-                                     }
+instance HashDBUser (PersonGeneric backend) where
+    userPasswordHash = Just . personPassword
+    userPasswordSalt = Just . personSalt
+    setSaltAndPasswordHash s h p = p { personSalt     = s
+                                 , personPassword = h
+                                 }
+
     ```
 
 3. Now, in Foundation.hs, we hook Auth.HashDB into your foundation. You must
