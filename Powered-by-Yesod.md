@@ -30,7 +30,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Blake Rain](http://meadowstalk.com/)
 * [Pascal Wittmann](https://www.pascal-wittmann.de/) ([github](https://github.com/pSub/pascal-wittmann.de))
 * [Corey O'Connor](http://www.corebotllc.com/)
-* [Peter Robinson](http://robinson.monoid.at/)
+* [Peter Robinson](http://monoid.at/)
 * [Suhail Shergill](http://blog.shergill.su)
 * [Toby Goodwin](http://paganbooks.eu/software/)
 * [Chris Swires](http://christopherswires.com/): Includes some simple tutorials.
