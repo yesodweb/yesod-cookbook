@@ -28,7 +28,7 @@
 
     ```haskell
     -- in Model.hs
-instance HashDBUser (PersonGeneric backend) where
+instance HashDBUser Person where
     userPasswordHash = Just . personPassword
     userPasswordSalt = Just . personSalt
     setSaltAndPasswordHash s h p = p { personSalt     = s
