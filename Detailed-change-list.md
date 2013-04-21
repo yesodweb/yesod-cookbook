@@ -19,6 +19,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * getRouteToMaster is now called getRouteToParent. The rename comes because its semantics have changed slightly. (Perhaps we should still export a deprecated getRouteToMaster synonym?)
 * Completely overhauled yesod-test, making it easier to use and providing cleaner integration with hspec.
 * maximumContentLength is now a `Maybe`, allowing developers to disable maximum sizes.
+* BrowserID now takes a BrowserIdSettings value.
 
 __Persistent__
 
