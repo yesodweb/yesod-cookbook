@@ -19,8 +19,6 @@ Yesod applications that you can run locally.
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
-(TODO: move applications in the applications section)
-
 * [InPlaces](https://inplac.es/)
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
