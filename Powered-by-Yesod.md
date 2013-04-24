@@ -1,27 +1,32 @@
-## applications
+Feel free to add your own application or site to the list
 
-The following applications use Yesod. Feel free to add your own to the list:
+## Applications
 
+Yesod applications that you can run locally.
+
+* [Difftimeline](http://twinside.github.com/DiffTimeline/): See your Git repository in a new way
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
+* [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [Gitit2](https://github.com/jgm/gitit2): A wiki using Git or Darcs as persistent storage
-* [Yablog](https://github.com/konn/Yablog): Yet another Blog engine written in Haskell powered by yesod. 
+* [Yablog](https://github.com/konn/Yablog): Yet another Blog engine written in Haskell powered by yesod.
+* [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
+* [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
+* [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
+* [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
 
-##sites
+
+## Sites
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
 (TODO: move applications in the applications section)
 
-* [Difftimeline](http://twinside.github.com/DiffTimeline/): See your Git repository in a new way
+* [InPlaces](https://inplac.es/)
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
-* [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
-* [TFoo](http://tfoo.herokuapp.com/): a five in a row game
-* [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
+* [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
-* [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
-* [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
 * [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
@@ -31,7 +36,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
 * [Tutorial (spanish)](http://tutorial-yesod-haskell.computer-mind.com/): Yesod tutorial (in spanish), it cover all minimal functionalities to make a site. Has real production site and github repository.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
-* [ghci in a browser](https://github.com/dterei/ghci-in-a-new-dress)
+
 
 ## Personal web sites
 
