@@ -6,7 +6,7 @@ See the [[TODO list]] for tasks that will be implemented. Below is a list of Yes
 * Create a wai-handler-direct-fastcgi which uses the direct-fastcgi package instead of the C library. Discussion: https://github.com/snoyberg/wai-handler-fastcgi/commit/ca64674de3934ae8dd9a612487596db0cd049781
 * http-conduit: add multipart form rendering. That’s possibly even a good project for a separate package.
 * screen casts, maybe webinars/virtual meetups.
-* Have client session cookie code not only optional for whole site, but optional per subsite. Follow up on Matt’s idea of “Yesod middleware” for providing features like sessions.
+* Have client session cookie code not only optional for whole site, but optional per subsite.
 * Proxy subsite. Could be useful for cross-domain Ajax.
 * Extend the current benchmark suite to run against Erlang, Nginx Perl module, and maybe that one Lua contender and Lift. Based on [this](http://steve.vinoski.net/blog/2011/05/09/erlang-web-server-benchmarking/), for Erlang, We may need to benchmark against both Yaws and mistulin. [Here is an article](http://www.mnot.net/blog/2011/05/18/http_benchmark_rules) on doing http benchmarking and [another](http://www.ostinelli.net/a-comparison-between-misultin-mochiweb-cowboy-nodejs-and-tornadoweb/)
 
@@ -31,18 +31,17 @@ See the [[TODO list]] for tasks that will be implemented. Below is a list of Yes
 There is a proposal to improve the per-request cache in ticket #268, based on a `Typeable` type-tagged key map. This type of keys could be used for typesafe storage in a modular way in more places, without polluting everything with type variables, for example:
 
 * Generalize sessions, instead of a Map Text ByteString, make something akin to `(Typeable key, Serializable a) => Map key a`, the current `lookupSession` and `setSession` session map could then just be stored under one key. This would make it easier to make an `addMessage` that builds a list of messages to be displayed, and also for subsites or widgets to store their session things under their own key.
-* Per request storage: store widgets or database lookup results in a cache: one could define cacheable entities that get automatically cached during the whole request, with optional parameters.
 * Flexible general-purpose caching: a bit more complex than per-request cache because of the longer lifetime: use the API for making caches (preferred storage location: foundation type?) with a longer lifetime, for caching things like RSS feeds, updates from remote sites, that only need to be regenerated once in a while. API functions for automatically expiring cache items after a fixed amount of time, or explicitly expiring.
 
 ## Persistent
 
 There are a lot of potential tasks here, including plenty of relatively green field coding opportunities (implement a new backend), or even API redesign.
 
-* projections, or sub-selects, where you only want a portion of your data fields returned. This was discussed on web-devel. The only reasonable implementation given was to stick either a default value or an undefined in the fields you don’t want.
+* projections, or sub-selects, where you only want a portion of your data fields returned. This was discussed on web-devel. The only reasonable implementation given was to stick either a default value or an undefined in the fields you don’t want. I think Groundhog figured out a strategy.
 
 ## Deployment
 
-* Integation with ekg for monitoring
+* By default add gc-monitoring-wai or [StatsWeb](https://github.com/wmoss/StatsWeb) for monitoring
 * Faster deployment with binary diffs, perhaps using bsdiff of courgette.
 * A documented technique for zero-downtime (amazon load balancer?)
 
@@ -58,10 +57,8 @@ There are a lot of potential tasks here, including plenty of relatively green fi
 
 ## hamlet/templates
 
-* a version of the hamlet template package that allows arbitrary haskell code in the templates. (might be easy using haskell-src-extra)
 * a simple pass-through html template (easy)
-* more configurable javascript minifier (for example no minification, or running an external minifier)
-* a javascript template language that knows more about javascript, making it safer to insert interpolated values? (`language-javascript` or `jmacro` perhaps)
+* a version of the hamlet template package that allows arbitrary haskell code in the templates. (might be easy using haskell-src-extra)
 
 ## sprites
 
