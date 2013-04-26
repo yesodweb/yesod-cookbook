@@ -15,12 +15,16 @@ See the [[TODO list]] for tasks that will be implemented. Below is a list of Yes
 * reusable wiki sub-site. there are now a few Yesod wiki applications.
 * A Yesod installer script
 * use the numerals package for i18n numbers
-* type-safe parameters- an extension to type-safe urls. so /foo/2?bar is directed to
+*   type-safe parameters- an extension to type-safe urls. so /foo/2?bar is directed to
 
-```haskell
-getFoo :: Int -> String -> RepHtml
-getFoo id bar = do ...
-```
+    ```haskell
+    getFoo :: Int -> String -> RepHtml
+    getFoo id bar = do ...
+    ```
+
+* Better deployment. Keter is a good tool, but it could use some improvements across the board, and some feature enhancements too.
+* Admin subsite, providing access to modifying database entries, viewing logs, etc. There are already a few attempts at this kind of thing.
+* Easier client-side deployment. I've been using Fay, and I'm happy with it, but the process could certainly be smoother.
 
 ## Key/value stores and caching
 
