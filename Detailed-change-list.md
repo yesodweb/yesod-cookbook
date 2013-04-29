@@ -31,6 +31,8 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * Split up PersistField typeclass into PersistField and PersistFieldSql, the latter having the sqlType method.
 * Much of the typeclass setup has been refactored to avoid the need passing undefined in the internals. No user-facing change should be involved here.
 * If you define custom datatypes to be used by Persistent, they will usually need to be defined in a separate module due to the GHC stage restriction.
+* actually pre-1.2, persistent-mongoDB now has operators for querying nested fields and functions for working with the underlying mongoDB package.
+
 
 # 2013-02-18
 
