@@ -22,7 +22,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * maximumContentLength is now a `Maybe`, allowing developers to disable maximum sizes.
 * BrowserID now takes a BrowserIdSettings value.
 
-__Persistent__
+## Persistent
 
 * Fields are now strict by default. To get lazy fields, add a ~ at the beginning of the field name.
 * Remove the Join modules (you should use esqueleto instead)
