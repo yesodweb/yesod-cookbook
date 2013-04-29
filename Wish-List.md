@@ -37,6 +37,7 @@ There is a proposal to improve the per-request cache in ticket #268, based on a 
 
 There are a lot of potential tasks here, including plenty of relatively green field coding opportunities (implement a new backend), or even API redesign.
 
+* [uuid](http://www.postgresql.org/docs/8.3/static/datatype-uuid.html) primary key for Postgres 
 * projections, or sub-selects, where you only want a portion of your data fields returned. This was discussed on web-devel. The only reasonable implementation given was to stick either a default value or an undefined in the fields you don’t want. I think Groundhog figured out a strategy.
 
 ## Deployment
