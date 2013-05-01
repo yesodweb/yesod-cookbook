@@ -34,7 +34,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
 * [Tutorial (spanish)](http://tutorial-yesod-haskell.computer-mind.com/): Yesod tutorial (in spanish), it cover all minimal functionalities to make a site. Has real production site and github repository.
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
-
+* [PaperServer](http://paperserver.jp): Online journal article management ([github](https://github.com/hirokai/PaperServer)).
 
 ## Personal web sites
 
