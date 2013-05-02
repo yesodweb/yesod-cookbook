@@ -14,6 +14,7 @@ Note: for a more technical, detailed set of information, see [[Detailed change l
 * Completely overhauled yesod-test, making it easier to use and providing cleaner integration with hspec.
 * Refactored persistent module structure for clarity and ease-of-use.
 * yesod-auth's email plugin now supports logging in via username in addition to email address.
+* combine css and javascript with combineScripts and combineStylesheets
 
 # Yesod 1.1
 
