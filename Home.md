@@ -4,6 +4,7 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
   * [[YESOD Installation Errors|YESOD Installation Errors]]
   * [[Detailed change list]] to learn about breaking changes, [[Changelog]] for a higher-level view.
   * [[Using non-standard package versions|non-standard-versions]]
+  * [[1.2 upgrade|1.2 upgrade]]
   * [[1.1 upgrade|1.1 upgrade]]
   * [[0.10 upgrade|0.10 upgrade]]
   * [[0.10 release|missing:old/0.10_release/index.markdown]]
