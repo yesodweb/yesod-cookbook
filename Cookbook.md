@@ -27,6 +27,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Run raw SQL|RawSQL]]
 * [[Sphinx Search|Sphinx Search]]
 * [[Non scaffolded MongoDB App|Non scaffolded MongoDB App]]
+* [[Using Database.Persist.runPool without Foundation|Using Database.Persist.runPool without Foundation]]
 
 ## State
 
