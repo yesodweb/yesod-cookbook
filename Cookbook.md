@@ -41,6 +41,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 ## Auth
 
 * [[Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site]]
+* [[ExtJS compatible proxy for Auth.HashDB]]
 
 ## Internationalization
 
