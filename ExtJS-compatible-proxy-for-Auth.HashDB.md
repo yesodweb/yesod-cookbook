@@ -1,3 +1,7 @@
+Update: Much more robust and easier to handle in Javascript as described in http://stackoverflow.com/questions/16173474/extjs-4-form-submit-without-sucesstrue-in-answer
+
+
+
 ExtJS requires that the response have the attribute "success" set to "true" if the request is successful (see http://docs.extjs.com/extjs/4.2.0/#!/api/Ext.form.action.Submit ). Yesod.Auth.HashDB does not add this attribute, so as a workaround the proxy handler below forwards the request to HashDB login handler and then sends back an appropriate response.
 
 ```haskell
