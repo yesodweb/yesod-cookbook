@@ -33,6 +33,7 @@ After the first tutorials (the one above and the tutorial on the first page "tut
   * [[CSS Tips|CSS Tips]]
   * [[Serving julius files|Rendering Javascript from a Handler]]
   * [[Javascript Options|Javascript Options]]
+  * [[Hamlet]]
 
 # Handy code
   * [[Useful snippets|Snippets]]
