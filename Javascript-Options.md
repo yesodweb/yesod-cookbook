@@ -1,4 +1,4 @@
-Yesod by default gives you Shakespeare-Javascript, also known as Julius. It is just Javascript that you can insert haskell values into. Also Shakespeare-Coffee, which is Coffeescript you can insert haskell values into. Coffeescript is a thin veneer that papers over Javascript to make a convenient and consistent language, but there is still no type system. These solutions can easily be used with any existing javascript code.
+Yesod by default gives you Shakespearean Javascript, also known as Julius. It is just Javascript that you can insert Haskell (JSON) values into. Also Shakespearean Coffee and Shakespearean Typescript. Coffeescript is a thin veneer that papers over Javascript to make a convenient and consistent language, but there is still no type system. TypeScript adds a type system and compiles down the latest Javascript standard to an older version. It is likely the easiest way to get some types into your Javascript, although its type system does allow anything to be null.
 
 There is prior art for Julius: [jmacro](http://hackage.haskell.org/package/jmacro-0.5.1) has QQ value insertion, but also supports a haskell-ish version of javascript.
 
@@ -7,6 +7,7 @@ There is prior art for Julius: [jmacro](http://hackage.haskell.org/package/jmacr
 
 The most robust and portable approach is to use one of the above javascript template tools and integrate with an existing javascript framework.
 
+* AngularJS
 * [Montage](http://hackological.com/blog/?p=5)
 
 
@@ -45,10 +46,6 @@ We would really like to hear about your experience with Elm or Roy, which are 2 
 * [yesod-js](https://github.com/snoyberg/yesod-js.git) - currently stalled while investigating Fay/Elm/ghc-js
 
 
-## Add better typing to Coffeescript
-
-[contracts.coffee](http://disnetdev.com/contracts.coffee/) not types, but contracts. Well maintained, easy to use.
-[Uberscript](https://github.com/jstrachan/coffee-script/blob/master/TypeAnnotations.md) requires Google Closure compiler for its type-checking. A great idea, but this is a fork of coffeescript that has now fallen behind coffeescript by almost a year.
 
 
 ## Other strongly typed functional languages that compile to Javascript
