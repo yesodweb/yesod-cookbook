@@ -1,5 +1,5 @@
 Converting HTML to hamlet
 
 ```
-perl -n -e 'chomp; print' | xmllint --format - | tail | perl -n -e 's/<\/[^>]+>//gi; print'
+perl -pe 'chomp' test.html | xmllint --format --encode UTF-8 - | perl -pe 's#</[^>]+>##g'
 ```
