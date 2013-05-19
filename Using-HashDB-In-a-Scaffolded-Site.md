@@ -9,10 +9,11 @@
     -- in config/models
 
     Person
-        email Text
-        passwd Text
-        salt Text
-        UniqueEmail email 
+        email    Text
+        password Text
+        salt     Text
+        UniqueEmail email
+        deriving Typeable
     ```
 
     In this example, 'email' will be the unique identifier.
@@ -28,18 +29,25 @@
 
     ```haskell
     -- in Model.hs
+import Yesod.Auth.HashDB (HashDBUser(..))
+
 instance HashDBUser Person where
     userPasswordHash = Just . personPassword
     userPasswordSalt = Just . personSalt
     setSaltAndPasswordHash s h p = p { personSalt     = s
-                                 , personPassword = h
-                                 }
+                                    , personPassword = h
+                                    }
 
     ```
 
 3. Now, in Foundation.hs, we hook Auth.HashDB into your foundation. You must
-   add an import of Yesod.Auth.HashDB, of course, and then modify the YesodAuth
-   instance like so:
+   add an import of Yesod.Auth.HashDB, of course,
+
+    ```haskell
+    import Yesod.Auth.HashDB (authHashDB, getAuthIdHashDB)
+    ```
+
+   and then modify the YesodAuth instance like so:
 
     ```haskell
     -- in Foundation.hs
@@ -47,5 +55,5 @@ instance HashDBUser Person where
         type AuthId <MySite> = PersonId
         -- ... loginDest, etc.
         getAuthId creds = getAuthIdHashDB AuthR (Just . UniqueEmail) creds
-        authPlugins = [authHashDB (Just . UniqueEmail)]
+        authPlugins _ = [authHashDB (Just . UniqueEmail)]
     ```
