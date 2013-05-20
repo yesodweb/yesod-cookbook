@@ -43,3 +43,7 @@ Person
 ```
 
 Note that you almost certainly want to either mark the field as `Maybe` or provide a default value, otherwise insertions will fail.
+
+## SafeToRemove
+
+This is intended to be used as part of a deprecation of a field, after `MigrationOnly` has been used usually. This works somewhat as a superset of the functionality of MigrationOnly. In addition, the field will be removed from the database if it is present. Note that this is a destructive change which you are marking as safe.
