@@ -2,14 +2,13 @@
 
 See the [[TODO list]] for tasks that will be implemented. Below is a list of Yesod features that would be nice, but that we can continue to live without. Volunteers are welcome:
 
-* Solution for integration testing using webkit. funcunit.js has some good ideas, but they try to couple it to steal.js and I couldn't get it to get pages from my localhost. The Ruby project ghostbuster may be the easiest approach, but I found it a little buggy. capybara-webkit demonstrates how we could bind directly to webkit. 
+* Solution for integration testing using webkit (phantomjs)
 * Create a wai-handler-direct-fastcgi which uses the direct-fastcgi package instead of the C library. Discussion: https://github.com/snoyberg/wai-handler-fastcgi/commit/ca64674de3934ae8dd9a612487596db0cd049781
 * http-conduit: add multipart form rendering. That’s possibly even a good project for a separate package.
 * screen casts, maybe webinars/virtual meetups.
 * Have client session cookie code not only optional for whole site, but optional per subsite.
 * Proxy subsite. Could be useful for cross-domain Ajax.
-* Extend the current benchmark suite to run against Erlang, Nginx Perl module, and maybe that one Lua contender and Lift. Based on [this](http://steve.vinoski.net/blog/2011/05/09/erlang-web-server-benchmarking/), for Erlang, We may need to benchmark against both Yaws and mistulin. [Here is an article](http://www.mnot.net/blog/2011/05/18/http_benchmark_rules) on doing http benchmarking and [another](http://www.ostinelli.net/a-comparison-between-misultin-mochiweb-cowboy-nodejs-and-tornadoweb/)
-
+* Complete the WebFramework Benchmarks.
 * integrate Yesod's forms with [reform](http://www.happstack.com/docs/crashcourse/Reform.html) or otherwise improve forms
 * file uploading plugin configurable for different storage methods and providers (like Ruby's carrierwave + fog)
 * reusable wiki sub-site. there are now a few Yesod wiki applications.
@@ -28,7 +27,7 @@ See the [[TODO list]] for tasks that will be implemented. Below is a list of Yes
 
 ## Key/value stores and caching
 
-There is a proposal to improve the per-request cache in ticket #268, based on a `Typeable` type-tagged key map. This type of keys could be used for typesafe storage in a modular way in more places, without polluting everything with type variables, for example:
+There is now per-request caching based on a `Typeable` type-tagged key map. This type of keys could be used for typesafe storage in a modular way in more places, without polluting everything with type variables, for example:
 
 * Generalize sessions, instead of a Map Text ByteString, make something akin to `(Typeable key, Serializable a) => Map key a`, the current `lookupSession` and `setSession` session map could then just be stored under one key. This would make it easier to make an `addMessage` that builds a list of messages to be displayed, and also for subsites or widgets to store their session things under their own key.
 * Flexible general-purpose caching: a bit more complex than per-request cache because of the longer lifetime: use the API for making caches (preferred storage location: foundation type?) with a longer lifetime, for caching things like RSS feeds, updates from remote sites, that only need to be regenerated once in a while. API functions for automatically expiring cache items after a fixed amount of time, or explicitly expiring.
