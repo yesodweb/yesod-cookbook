@@ -19,6 +19,13 @@ Person json
     name Text
 ```
 
+## Changing table/collection name
+
+```
+Person sql=peoples
+    name Text
+```
+
 ## Sum types
 
 FIXME
