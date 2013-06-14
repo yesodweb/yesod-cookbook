@@ -29,7 +29,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
-* [BayesHive](http://bayeshive.com): Web application for statistical computing (blog only for now)
+* [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
