@@ -6,20 +6,20 @@ Here is how to do so:
 ```haskell
 import Yesod.Routes.Class (Route)
 
-newtype RepJavascript = RepJavascript Content                                   
-instance ToTypedContent RepJavascript where                                     
-  toTypedContent (RepJavascript c) = TypedContent typeJavascript c              
-instance HasContentType RepJavascript where                                     
-  getContentType _ = typeJavascript                                             
-deriving instance ToContent RepJavascript                                       
-instance ToContent Javascript where                                             
-  toContent = toContent . renderJavascript                                      
+newtype RepJavascript = RepJavascript Content
+instance ToTypedContent RepJavascript where
+  toTypedContent (RepJavascript c) = TypedContent typeJavascript c
+instance HasContentType RepJavascript where
+  getContentType _ = typeJavascript
+deriving instance ToContent RepJavascript
+instance ToContent Javascript where
+  toContent = toContent . renderJavascript
 
 juliusToRepJavascript :: (ToContent a, MonadHandler m) => 
-                     => ((Route (HandlerSite m) -> [(Text,Text)] -> Text) -> a) -> m TypedContent                                                                                
-juliusToRepJavascript j =  do                                                   
-  render <- getUrlRenderParams                                                  
-  return $ toTypedContent $ RepJavascript (toContent $ j render)                
+                     => ((Route (HandlerSite m) -> [(Text,Text)] -> Text) -> a) -> m TypedContent
+juliusToRepJavascript j =  do
+  render <- getUrlRenderParams
+  return $ toTypedContent $ RepJavascript (toContent $ j render)
 ```
 
 Then you can use it like this:
