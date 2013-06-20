@@ -4,6 +4,31 @@ To serve javascript with interpolated values we need to create a couple of insta
 Here is how to do so:
 
 ```haskell
+newtype RepJavascript = RepJavascript Content                                   
+instance ToTypedContent RepJavascript where                                     
+  toTypedContent (RepJavascript c) = TypedContent typeJavascript c              
+instance HasContentType RepJavascript where                                     
+  getContentType _ = typeJavascript                                             
+deriving instance ToContent RepJavascript                                       
+instance ToContent Javascript where                                             
+  toContent = toContent . renderJavascript                                      
+                                                                                
+juliusToRepJavascript j =  do                                                   
+  render <- getUrlRenderParams                                                  
+  return $ toTypedContent $ RepJavascript (toContent $ j render)                
+```
+
+Then you can use it like this:
+
+```haskell                                                                                
+getJavascript :: Handler TypedContent                      
+getJavascript = do                                            
+  juliusToRepJavascript $(juliusFile "templates/myfile.julius")
+```
+
+for version prior to Yesod 1.2:
+
+```haskell
 newtype RepJavascript = RepJavascript Content
 
 instance HasReps RepJavascript where
