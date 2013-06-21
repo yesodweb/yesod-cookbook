@@ -7,11 +7,11 @@
 
 
 ***
-`
+
 
               
-lookupContent ::(FromJSON a , MonadHandler m) => ( (Text,Text)  -> (Text,Value) ) -> m (Result a)
-lookupContent objTransformer = do 
+`lookupContent ::(FromJSON a , MonadHandler m) => ( (Text,Text)  -> (Text,Value) ) -> m (Result a)
+`lookupContent objTransformer = do 
   req <- getRequest
   return $ fromJSON.object $ objTransformer <$> (reqGetParams req) 
 
