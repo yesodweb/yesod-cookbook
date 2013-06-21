@@ -10,17 +10,17 @@
 
 
               
-`lookupContent ::(FromJSON a , MonadHandler m) => ( (Text,Text)  -> (Text,Value) ) -> m (Result a)
-`lookupContent objTransformer = do 
-  req <- getRequest
-  return $ fromJSON.object $ objTransformer <$> (reqGetParams req) 
+`lookupContent ::(FromJSON a , MonadHandler m) => ( (Text,Text)  -> (Text,Value) ) -> m (Result a)`
+`lookupContent objTransformer = do `
+`  req <- getRequest`
+`  return $ fromJSON.object $ objTransformer <$> (reqGetParams req)` 
 
  
-data TestObj =  TestObj { testWidth :: Int
-                          ,testTitle :: Text 
-                          ,testStep :: Int 
-                        }
-             deriving (Show,Eq)
+`data TestObj =  TestObj { testWidth :: Int`
+                          `,testTitle :: Text `
+                         ` ,testStep :: Int   `
+                       `}`
+            ` deriving (Show,Eq)`
 
 instance FromJSON TestObj where 
     parseJSON (Object tObj) = TestObj <$> 
