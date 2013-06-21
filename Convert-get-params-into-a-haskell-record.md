@@ -1,4 +1,3 @@
-
  Lookup content will take a list of values and parse them
     with a transformer into the right values.  Then will map them
     into a JSON Object.
