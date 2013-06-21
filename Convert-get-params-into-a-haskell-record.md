@@ -8,7 +8,7 @@
 
 ***
 
-
+```haskell
               
 lookupContent ::(FromJSON a , MonadHandler m) => ( (Text,Text)  -> (Text,Value) ) -> m (Result a)
 lookupContent objTransformer = do 
@@ -62,4 +62,4 @@ intVal = toJSON.intRead
 textVal :: Text -> Value
 textVal = toJSON
 
-`
+```
