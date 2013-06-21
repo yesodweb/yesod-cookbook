@@ -60,6 +60,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 ## Ajax
 
 * [[Using Ajax with a Scaffolded Site|Using Ajax with a Scaffolded Site]]
+* [[Convert Get Params into a haskell record ]]
 
 ## Testing
 
