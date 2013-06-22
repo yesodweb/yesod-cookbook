@@ -55,7 +55,7 @@ intVal :: Text -> Value
 intVal = toJSON.intRead
          where
            intRead :: Text -> Int
-           intRead = read.unpack
+           intRead = read . unpack
 
 
                      
