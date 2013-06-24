@@ -64,6 +64,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Testing
 
+* [[Testing Yesod App]]
 * [[Performing Authentication during Testing|Performing Authentication during Testing]]
 
 ## Template Haskell
