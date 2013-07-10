@@ -1,7 +1,6 @@
 This is to fill the lacuna in the Yesod Book in the non-scaffolded MongoDB-department. The issue was raised  [over at StackOverflow](http://bit.ly/RzrwDI), as well as encountered by personal forays in Yesod.
 
-~~**Note**: not working with yesod-platform 1.1.6.1. I am in the process of fixing it.~~<br>
-**Update**: now works with yesod-platform 1.1.6.1.
+**Update**: now works with yesod-platform 1.2.2.<br>
 **Coming soon**: Showing what's already in the DB (The 'R' in 'CRUD').
 
 ``` haskell
@@ -10,7 +9,7 @@ This is to fill the lacuna in the Yesod Book in the non-scaffolded MongoDB-depar
 import Yesod
 import Yesod.Default.Config (DefaultEnv (..), withYamlEnvironment)
 import Data.Text (Text, pack)
-import Database.Persist.Store (runPool, createPoolConfig, loadConfig,applyEnv)
+import Database.Persist (runPool, createPoolConfig, loadConfig,applyEnv)
 import Database.Persist.MongoDB (MongoConf (..), Action, ConnectionPool (..), MongoBackend)
 import Language.Haskell.TH.Syntax
 import Control.Applicative ((<$>), (<*>), liftA2, Applicative)
@@ -28,7 +27,7 @@ instance YesodPersist App where
         App pool conf <- getYesod
         runPool conf act pool
 
-share [mkPersist (mkPersistSettings (ConT ''MongoBackend)) { mpsGeneric = False }, mkMigrate "migrateAll"][persist|
+share [mkPersist (mkPersistSettings (ConT ''MongoBackend)) { mpsGeneric = False }, mkMigrate "migrateAll"][persistLowerCase|
 Questionnaire
   desc Text Maybe
   questions [Question]
@@ -48,7 +47,7 @@ mkYesod "App" [parseRoutes|
 appTitle :: Text
 appTitle = "Non-scaffolded MongoDB-driven App skeleton"
 
-getRootR :: Handler RepHtml
+getRootR :: Handler Html
 getRootR = do
   (formWidget, formEnctype) <- generateFormPost choiceForm
   defaultLayout $ do
@@ -73,7 +72,7 @@ postRootR = do
 {-                             AN APPLICATIVE FORM                           -}
 {-===========================================================================-}
 
-choiceForm :: Html -> MForm App App (FormResult Questionnaire, Widget)
+choiceForm :: Html -> MForm Handler (FormResult Questionnaire, Widget)
 choiceForm = renderDivs $ Questionnaire
                <$> aopt textField "Description of questionnaire: " Nothing
                <*> questionFields
@@ -84,7 +83,7 @@ choiceForm = renderDivs $ Questionnaire
                                 `applListAppend`
                                 (questionAFormTextField "Question 3: ") 
                questionAFormTextField :: FieldSettings App
-                                      -> AForm App App [Question]
+                                      -> AForm Handler [Question]
                questionAFormTextField fss = (:[]) <$>
                              (Question <$> areq textField fss Nothing)
                -- to append the list inside of the applicative
@@ -99,10 +98,10 @@ choiceForm = renderDivs $ Questionnaire
 
 main = do
     dbconf <- withYamlEnvironment mongoConfFile Development
-                Database.Persist.Store.loadConfig >>=
-              Database.Persist.Store.applyEnv
-    pool <- Database.Persist.Store.createPoolConfig (dbconf)
-    warpDebug 3000 $ App pool dbconf
+                Database.Persist.loadConfig >>=
+              Database.Persist.applyEnv
+    pool <- Database.Persist.createPoolConfig (dbconf)
+    warp 3000 $ App pool dbconf
     where mongoConfFile = "./mongoDB-nonscaffold.yml" 
 ```
 The configuration file is just taken from a scaffolded site and changed to fit our needs. This route seemed the easiest for me at the time (although, had `MongoAuth` been exported from `Database.Persist.MongoDB`, I would have a hand-made `MongoConf` above). It should be saved under whatever file `mongoConfFile` points to in the source above, and contain the following:
