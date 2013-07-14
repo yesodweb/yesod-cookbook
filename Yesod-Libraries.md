@@ -13,6 +13,10 @@
 * [yesod-datatables](http://hackage.haskell.org/package/yesod-datatables)
 * [yesod-dsl](https://github.com/tlaitinen/yesod-dsl)
 
+# Pre-made sites
+
+* [Yablog](https://github.com/konn/Yablog): Yet another Blog engine written in Haskell powered by yesod.
+
 See also;- <a href="http://hackage.haskell.org/package/#cat:yesod">hackage.haskell.org category: yesod</a>
 <h1>Authorization And Permissions</h1><ul>
 <li><a href="http://blog.felipe.lessa.nom.br/?p=7">blog by Felipe Lessa</a></li>
