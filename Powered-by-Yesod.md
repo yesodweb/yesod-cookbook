@@ -18,7 +18,7 @@ Yesod applications that you can run locally.
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
-* [Bayes Hive](http://bayeshive.com/): Bayesian statistical analysis
+* [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 * [InPlaces](https://inplac.es/): Location app (backend is in Yesod)
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
@@ -26,10 +26,8 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
-* [thesmallestyesodapp.com](http://thesmallestyesodapp.com/): The Yesod equivalent to thesmallestrailsapp.com
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
-* [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
