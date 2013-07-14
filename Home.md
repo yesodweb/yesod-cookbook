@@ -35,10 +35,9 @@ After the first tutorials (the one above and the tutorial on the first page "tut
   * [[Javascript Options|Javascript Options]]
   * [[Hamlet]]
 
-# Handy code
-  * [[Useful snippets|Snippets]]
 
 # Find Code
+  * [[Useful snippets|Snippets]]
   * [[Libraries|Yesod Libraries]]
   * [[Other web frameworks that use WAI|WAI web frameworks]]
 
