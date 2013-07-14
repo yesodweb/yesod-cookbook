@@ -8,7 +8,6 @@ Yesod applications that you can run locally.
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
 * [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [Gitit2](https://github.com/jgm/gitit2): A wiki using Git or Darcs as persistent storage
-* [Yablog](https://github.com/konn/Yablog): Yet another Blog engine written in Haskell powered by yesod.
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
@@ -19,8 +18,9 @@ Yesod applications that you can run locally.
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
+* [Bayes Hive](http://bayeshive.com/): Bayesian statistical analysis
 * [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
-* [InPlaces](https://inplac.es/)
+* [InPlaces](https://inplac.es/): Location app (backend is in Yesod)
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
