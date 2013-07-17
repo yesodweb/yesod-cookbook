@@ -1,5 +1,5 @@
 #Silvester 2011:
-surfed through Hackage, did "cabal install filepath", then "cabal install yesod" fails, because the filepath package is too new. result of "ghc-pkg list" (where is formatting doc for this wiki? bye):
+surfed through Hackage, did `cabal install filepath`, then `cabal install yesod` fails, because the filepath package is too new. result of `ghc-pkg list` (where is formatting doc for this wiki? bye):
 
 <pre>
 root@aguy:/home/aguy# ghc-pkg list
