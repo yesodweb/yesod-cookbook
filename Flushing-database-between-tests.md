@@ -7,7 +7,7 @@ Two possible (reasonable) implementations are:
 
 Second way seems much faster and less hardcode, but I didn't yet manage to implement it (I'm not sure about transaction support for yesod), so I'll describe first way.
 
-NOTE! This requires two patches to be accepted, one in HSpec, another one in yesod-test. I'll send them today.
+NOTE! This requires two patches to be accepted ([0], [1]), one in HSpec, another one in yesod-test. I'll send them today.
 
 In your `tests/main.hs`, modify your test runner to look something like this (assuming your project is called `WebShelf`, which probably isn't true, so please replace that with your db name):
 
@@ -48,3 +48,6 @@ recreateDbWhenExists path = do
     (runMigration migrateAll)
   return ()
 ```
+
+[0]: https://github.com/hspec/hspec/pull/132
+[1]: https://github.com/yesodweb/yesod/pull/577
