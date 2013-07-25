@@ -9,7 +9,7 @@ Second way seems much faster and less hardcode, but I didn't yet manage to imple
 
 NOTE! This requires two patches to be accepted, one in HSpec, another one in yesod-test. I'll send them today.
 
-In your `tests/main.hs`, modify your test runner to look something like this:
+In your `tests/main.hs`, modify your test runner to look something like this (assuming your project is called `WebShelf`, which probably isn't true, so please replace that with your db name):
 
 ```haskell
 -- ... imports
