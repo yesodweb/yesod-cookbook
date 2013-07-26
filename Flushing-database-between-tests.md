@@ -18,7 +18,7 @@ import Yesod.Test
 
 main :: IO ()
 main = do
-    hspec $ (addSetUp removeDb) $ do
+    hspec $ (before removeDb) $ do
         yesodSpecWithSiteGenerator getSiteAction $ do
             homeSpecs
             entriesSpecs
