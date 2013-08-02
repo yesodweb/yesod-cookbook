@@ -6,6 +6,7 @@ Yesod applications that you can run locally.
 
 * [Difftimeline](http://twinside.github.com/DiffTimeline/): See your Git repository in a new way
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
+* [notmuch (e-mail search) mail client](https://bitbucket.org/wuzzeb/notmuch-web)
 * [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [Gitit2](https://github.com/jgm/gitit2): A wiki using Git or Darcs as persistent storage
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
