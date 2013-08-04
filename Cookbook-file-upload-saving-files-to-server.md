@@ -17,7 +17,7 @@ import Database.Persist
 import Database.Persist.Sqlite
 import Data.Time (getCurrentTime) 
 
-share [mkPersist sqlSettings,mkMigrate "migrateAll"] [persist|
+share [mkPersist sqlSettings,mkMigrate "migrateAll"] [persistUpperCase|
 Image
     filename String
     description Textarea Maybe
