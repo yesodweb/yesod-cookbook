@@ -30,7 +30,7 @@ main = do
 ```
 
 
-Using outside of a Yesod app, showing the creationg of an environment for runDB.
+Using outside of a Yesod app, showing the creation of an environment for runDB.
 This was abstracted from working code, it should be close to compiling.
 
 ``` haskell
@@ -60,32 +60,32 @@ type WorkerM = ReaderT WorkerConf (ResourceT (LoggingT IO))
 
 type ControlIO m = (MonadIO m, MonadBaseControl IO m)
 
-makeRunDB ∷ ControlIO m ⇒ WorkerConf → Action m a → m a 
+makeRunDB :: ControlIO m => WorkerConf -> Action m a -> m a 
 makeRunDB workerConf f = Database.Persist.runPool (getConfig workerConf) f (getPool workerConf)
 
-runDB ∷ Action WorkerM a → WorkerM a
+runDB :: Action WorkerM a -> WorkerM a
 runDB f = do
-  workerConf ← ask
+  workerConf <- ask
   makeRunDB workerConf f
 
 main ∷ IO ()
 main = do 
-    dbConfJson ← justEnv "Development" `fmap` loadYaml "mongoDB.yaml"
-    dbConf ← parseMonad Database.Persist.loadConfig dbConfJson
-    pool ← Database.Persist.createPoolConfig dbConf 
+    dbConfJson <- justEnv "Development" `fmap` loadYaml "mongoDB.yaml"
+    dbConf <- parseMonad Database.Persist.loadConfig dbConfJson
+    pool <- Database.Persist.createPoolConfig dbConf 
     let workerConf = WorkerConf dbConf pool
 
     runStdoutLoggingT $ runResourceT $ flip runReaderT workerConf $ do
     res <- runDB ...
     return ()
 
-justEnv ∷ Text → M.Map Text Value → Value
+justEnv :: Text -> M.Map Text Value -> Value
 justEnv envName obj =
     case M.lookup envName obj of
       Nothing → error "could not find environment"
       Just env → env
 
-loadYaml ∷ String → IO (M.Map Text Value)
+loadYaml :: String -> IO (M.Map Text Value)
 loadYaml fp = do
     mval ← decodeFile fp
     case mval of
