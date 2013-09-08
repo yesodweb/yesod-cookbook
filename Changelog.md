@@ -2,6 +2,21 @@
 
 Note: for a more technical, detailed set of information, see [[Detailed change list]]. This page mostly covers high-level features.
 
+# Yesod 1.2.4
+
+This represents a point release from 1.2. Cumulative changes since the initial 1.2 platform release include:
+
+* Improved JSON responses for yesod-auth and yesod-core (Tero Laitinen and Greg Weber).
+* Protocol-independent links for CDN-hosted resources (Iku Iwasa).
+* A nicer yesod devel refresh page (Chris Done).
+* Ability to switch logging level dynamically via `shouldLogIO`.
+* Improved email authentication password security.
+* Better request body support in yesod-test (Konstantine Rybinov).
+* bootstrap and normalize updates in scaffolding (Iku Iwasa).
+* Update many crypto libraries to latest dependencies (Alexey Kotlyarov and others).
+* No double-compression in gzip middleware (John Lenz).
+* Many dependency updates and documentation improvements (Lubomi.
+
 # Yesod 1.2
 
 * Much more powerful multi-representation support via the selectRep/provideRep API.
