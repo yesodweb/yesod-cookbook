@@ -15,7 +15,7 @@ This represents a point release from 1.2. Cumulative changes since the initial 1
 * bootstrap and normalize updates in scaffolding (Iku Iwasa).
 * Update many crypto libraries to latest dependencies (Alexey Kotlyarov and others).
 * No double-compression in gzip middleware (John Lenz).
-* Many dependency updates and documentation improvements (Lubomi.
+* Many dependency updates and documentation improvements (Lubomír Sedlář, Fredrik Carlen and others).
 
 # Yesod 1.2
 
