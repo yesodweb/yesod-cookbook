@@ -2,7 +2,7 @@
 
 Note: for a more technical, detailed set of information, see [[Detailed change list]]. This page mostly covers high-level features.
 
-# Yesod 1.2 (not yet released)
+# Yesod 1.2
 
 * Much more powerful multi-representation support via the selectRep/provideRep API.
 * More efficient session handling.
