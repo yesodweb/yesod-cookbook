@@ -29,6 +29,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Non scaffolded MongoDB App|Non scaffolded MongoDB App]]
 * [[Using Database.Persist.runPool without Foundation|Using Database.Persist.runPool without Foundation]]
 * [[Database Views and Non-Migrated Entities]]
+* [[Lens for existing site]]
 
 ## State
 
