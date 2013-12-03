@@ -54,3 +54,7 @@ Note that you almost certainly want to either mark the field as `Maybe` or provi
 ## SafeToRemove
 
 This is intended to be used as part of a deprecation of a field, after `MigrationOnly` has been used usually. This works somewhat as a superset of the functionality of MigrationOnly. In addition, the field will be removed from the database if it is present. Note that this is a destructive change which you are marking as safe.
+
+## Constraints
+
+Migration will remove any manual constraints from your tables. Exception: constraints whose names begin with the string `__manual_` (which starts with two underscores) will be preserved.
