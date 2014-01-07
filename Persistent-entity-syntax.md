@@ -38,6 +38,36 @@ FIXME
 
 FIXME
 
+Note: if you get migration warnings every time, then you need to tweak defaults. For example, when I had a model definition like so:
+
+    created Day default=CURRENT_TIME
+    avsrelax Bool default='false'
+
+every time yesod started I got:
+
+    Migrating: ALTER TABLE "accounts" ALTER COLUMN "created" SET DEFAULT CURRENT_DATE
+    Migrating: ALTER TABLE "accounts" ALTER COLUMN "avsrelax" SET DEFAULT 'false'
+
+By building a custom persistent-postgresql with this patch (plus the obvious import)
+
+    --- Database/Persist/Postgresql.hs.orig	2013-06-23 18:40:53.000000000 +0100
+    +++ Database/Persist/Postgresql.hs	2014-01-07 11:37:30.387071854 +0000
+    @@ -490,6 +492,9 @@
+                                 _ -> []
+                     modType = if sqltype == sqltype' then [] else [(name, Type sqltype)]
+                     modDef =
+    +                  let msg = "def is: " ++ show def ++ " and def' is: " ++ show def'
+    +                  in trace msg $
+                         if def == def'
+                             then []
+                             else case def of
+
+I found that the correct syntax was:
+
+    created Day default=('now'::text)::date
+    avsrelax Bool default=false
+
+
 ## MigrationOnly
 
 Introduced with `persistent-template` 1.2.0. The purpose of this attribute is to mark a field which will be entirely ignored by the normal processing, but retained in the database definition for purposes of migration. This means, in SQL, a column will not be flagged for removal by the migration scripts, even though it is not used in your code. This is useful for phasing out usage of a column before entirely removing it, or having columns which are needed by other tools but not by Persistent.
