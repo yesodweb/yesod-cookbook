@@ -36,6 +36,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Luach](http://luach.snoyman.com/): English and Hebrew anniversary reminders.
 * [PaperServer](http://paperserver.jp): Online journal article management ([github](https://github.com/hirokai/PaperServer)).
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
+* [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
 
 ## Personal web sites
 
