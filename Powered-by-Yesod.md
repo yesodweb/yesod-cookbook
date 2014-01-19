@@ -9,6 +9,7 @@ Yesod applications that you can run locally.
 * [notmuch (e-mail search) mail client](https://bitbucket.org/wuzzeb/notmuch-web)
 * [TKYProf](http://blog.foldr.in/tkyprof-a-web-based-interactive-visualizer-fo): a ghc profiling visualizer
 * [Gitit2](https://github.com/jgm/gitit2): A wiki using Git or Darcs as persistent storage
+* [wikit](https://github.com/kuznero/wikit): A wiki using Git for storage.
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
