@@ -20,9 +20,9 @@ Yesod applications that you can run locally.
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
+* [Docmunch](http://www.docmunch.com): Understand data in your documents
 * [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
-* [InPlaces](https://inplac.es/): Location app (backend is in Yesod)
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
