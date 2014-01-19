@@ -1,6 +1,7 @@
 # Other tutorials
 
 * [Building a File Hosting Service in Yesod](https://www.fpcomplete.com/school/advanced-haskell/building-a-file-hosting-service-in-yesod)
+* [Spanish tutorial](http://tutorial-yesod-haskell.computer-mind.com/)
 * http://pbrisbin.com/posts/developing_web_applications_with_yesod
 * https://github.com/loyful/consleak
 
