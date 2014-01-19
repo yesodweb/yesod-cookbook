@@ -22,12 +22,10 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 
 * [Docmunch](http://www.docmunch.com): Understand data in your documents
 * [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
-* [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
-* [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
@@ -38,6 +36,8 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [PaperServer](http://paperserver.jp): Online journal article management ([github](https://github.com/hirokai/PaperServer)).
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
+* [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
+* [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 
 ## Personal web sites
 
