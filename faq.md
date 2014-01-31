@@ -26,3 +26,7 @@ request.
 ## With "yesod devel" I get an error like "unknown symbol __stginit_foozm0zi0zi0_HandlerziFoo_"
 
 Make sure that all your Handler files are listed in the cabal file, in the `other-modules` section.
+
+## Why is UTCTime stored as `TIMESTAMP WITHOUT TIME ZONE`? Shouldn't it be `WITH TIME ZONE`?
+
+Please see [[PostgreSQL-UTCTime]] for more information.
