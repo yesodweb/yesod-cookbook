@@ -34,6 +34,13 @@ FIXME
 
 FIXME
 
+### Nullable fields
+
+By default fields will have `NOT NULL` added. To allow `NULL` values, add `Maybe`.
+
+    string Text Maybe
+
+
 ## default=
 
 FIXME
