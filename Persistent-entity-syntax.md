@@ -40,6 +40,9 @@ By default fields will have `NOT NULL` added. To allow `NULL` values, add `Maybe
 
     string Text Maybe
 
+To add `DEFAULT NULL`
+
+    string Text Maybe default=Nothing
 
 ## default=
 
