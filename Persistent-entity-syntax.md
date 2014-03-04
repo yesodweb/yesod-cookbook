@@ -2,18 +2,18 @@ Persistent's entity syntax has acquired quite a few special cases. The goal of t
 
 ## Type conversions
 
-Haskell	   |  PostGre SQL         |  MySQL 
------------|----------------------|-------------------
-Text	   |  VARCHAR             |  FIXME:VARCHAR?
-ByteString |  BYTEA               |  FIXME
-Int        |  INT8                |  FIXME
-Double     |  DOUBLE PRECISION    |  FIXME
-Rational   |  NUMERIC(22, 12)     |  FIXME
-Bool       |  BOOLEAN             |  FIXME
-Day        |  DATE                |  FIXME
-TimeOfDay  |  TIME                |  FIXME
-UTCTime    |  TIMESTAMP           |  FIXME:TIMESTAMP?
-ZonedTime  |  TIMESTAMP+TIMEZONE  |  FIXME:DATETIME?
+Haskell	   |  PostGre SQL         |  MySQL            |  MongoDB  |  SQLLite
+-----------|----------------------|-------------------|-----------|---------
+Text	   |  VARCHAR             |  FIXME:VARCHAR?   | FIXME     |  FIXME
+ByteString |  BYTEA               |  FIXME            | FIXME     |  FIXME
+Int        |  INT8                |  FIXME            | FIXME     |  FIXME
+Double     |  DOUBLE PRECISION    |  FIXME            | FIXME     |  FIXME
+Rational   |  NUMERIC(22, 12)     |  FIXME            | FIXME     |  FIXME
+Bool       |  BOOLEAN             |  FIXME            | FIXME     |  FIXME
+Day        |  DATE                |  FIXME            | FIXME     |  FIXME
+TimeOfDay  |  TIME                |  FIXME            | FIXME     |  FIXME
+UTCTime    |  TIMESTAMP           |  FIXME:TIMESTAMP? | FIXME     |  FIXME
+ZonedTime  |  TIMESTAMP+TIMEZONE  |  FIXME:DATETIME?  | FIXME     |  FIXME
 
 ## Deriving
 
