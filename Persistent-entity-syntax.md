@@ -1,5 +1,20 @@
 Persistent's entity syntax has acquired quite a few special cases. The goal of this page is to document all of them. This page is not yet fully up-to-date, please contribute!
 
+## Type conversions
+
+Haskell	   |  PostGre SQL         |  MySQL 
+-----------|----------------------|-------------------
+Text	   |  VARCHAR             |  FIXME:VARCHAR?
+ByteString |  BYTEA               |  FIXME
+Int        |  INT8                |  FIXME
+Double     |  DOUBLE PRECISION    |  FIXME
+Rational   |  NUMERIC(22, 12)     |  FIXME
+Bool       |  BOOLEAN             |  FIXME
+Day        |  DATE                |  FIXME
+TimeOfDay  |  TIME                |  FIXME
+UTCTime    |  TIMESTAMP           |  FIXME:TIMESTAMP?
+ZonedTime  |  TIMESTAMP+TIMEZONE  |  FIXME:DATETIME?
+
 ## Deriving
 
 Persistent automatically derives some typeclasses, but the typeclasses derived can be changed.
