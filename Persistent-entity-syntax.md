@@ -29,11 +29,11 @@ Person
 
 You can automatically get ToJSON and FromJSON instances for any entity by adding `json` to the entity line:
 
-Requires `{-# LANGUAGE FlexibleInstances #-}`
 ```
 Person json
     name Text
 ```
+(Requires `{-# LANGUAGE FlexibleInstances #-}`)
 
 ## Changing table/collection name
 
