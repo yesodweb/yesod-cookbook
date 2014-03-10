@@ -43,6 +43,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 ## Auth
 
 * [[Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site]]
+* [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
 
 ## Internationalization
 
