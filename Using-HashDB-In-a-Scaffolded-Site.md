@@ -29,15 +29,14 @@
 
     ```haskell
     -- in Model.hs
-import Yesod.Auth.HashDB (HashDBUser(..))
+    import Yesod.Auth.HashDB (HashDBUser(..))
 
-instance HashDBUser Person where
-    userPasswordHash = Just . personPassword
-    userPasswordSalt = Just . personSalt
-    setSaltAndPasswordHash s h p = p { personSalt     = s
-                                    , personPassword = h
-                                    }
-
+    instance HashDBUser Person where
+        userPasswordHash = Just . personPassword
+        userPasswordSalt = Just . personSalt
+        setSaltAndPasswordHash s h p = p { personSalt     = s
+                                         , personPassword = h
+                                         }
     ```
 
 3. Now, in Foundation.hs, we hook Auth.HashDB into your foundation. You must
