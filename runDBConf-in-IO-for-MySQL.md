@@ -85,14 +85,10 @@ readDBConf fPath = do
 share [mkPersist (mkPersistSettings (ConT ''SqlBackend)) { mpsGeneric = False }, mkMigrate "migrateAll"]
           $(persistFileWith lowerCaseSettings "modelsMySQL")
 
-
+-- | Use Conn because there is a config file but if you are going to run it static a Pool would be better
 runDBConf :: MySQLConfig -> (SqlPersistM  b)  -> IO b
-runDBConf (MySQLConfig {..}) a = withMySQLPool connInfo  poolsize (\pool -> do
-                                                                     runSqlPersistMPool a pool )
+runDBConf (MySQLConfig {..}) a = withMySQLConn connInfo  (\pool -> do
+                                                                   runSqlPersistM a pool )
     where
       connInfo = ConnectInfo (up host) port (up user) (up password) (up database) [] "" Nothing
       up = unpack
-                                                 
-
-
-```
