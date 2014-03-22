@@ -32,7 +32,6 @@ Word16          | Tiny,Short
 Word32          | Tiny,Short,Int24,Long
 Word            | Tiny,Short,Int24,Long,LongLong\*
 Word64          | Tiny,Short,Int24,Long,LongLong
-Float           | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24
 Double          | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long
 Ratio Integer   | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long,LongLong
 ByteString      | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
@@ -48,6 +47,9 @@ TimeOfDay       | Time
 
 \*\* Utf8 only
 
+| Not currently supported
+|-----------------------
+| Float
 
 See [MySQL.Simple.Result](http://hackage.haskell.org/package/mysql-simple/docs/Database-MySQL-Simple-Result.html)
 
