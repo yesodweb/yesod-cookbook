@@ -1,6 +1,6 @@
 Persistent's entity syntax has acquired quite a few special cases. The goal of this page is to document all of them. This page is not yet fully up-to-date, please contribute!
 
-## Type conversions
+## Conversion table (migrations)
 
 Haskell	   |  PostGre SQL         |  MySQL            |  MongoDB  |  SQLLite
 -----------|----------------------|-------------------|-----------|---------
@@ -14,6 +14,42 @@ Day        |  DATE                |  FIXME            | FIXME     |  FIXME
 TimeOfDay  |  TIME                |  FIXME            | FIXME     |  FIXME
 UTCTime    |  TIMESTAMP           |  FIXME:TIMESTAMP? | FIXME     |  FIXME
 ZonedTime  |  TIMESTAMP+TIMEZONE  |  FIXME:DATETIME?  | FIXME     |  FIXME
+
+
+# Compatibility tables
+
+Haskell type    | Compatible MySQL types
+----------------|--------------------------
+Bool            | Tiny
+Int8            | Tiny
+Int16           | Tiny,Short
+Int32           | Tiny,Short,Int24,Long
+Int             | Tiny,Short,Int24,Long,LongLong\*
+Int64           | Tiny,Short,Int24,Long,LongLong
+Integer         | Tiny,Short,Int24,Long,LongLong
+Word8           | Tiny
+Word16          | Tiny,Short
+Word32          | Tiny,Short,Int24,Long
+Word            | Tiny,Short,Int24,Long,LongLong\*
+Word64          | Tiny,Short,Int24,Long,LongLong
+Float           | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24
+Double          | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long
+Ratio Integer   | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long,LongLong
+ByteString      | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
+Lazy.ByteString | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
+Encoding.Text\*\* | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
+Lazy.Text       | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
+[Char]/String   | VarChar,TinyBlob,MediumBlob,LongBlob,Blob,VarString,String,Set,Enum
+UTCTime         | DateTime,Timestamp
+Day             | Year,Date,NewDate
+TimeOfDay       | Time
+
+\* When `Word` size is 64bit
+
+\*\* Utf8 only
+
+
+See [MySQL.Simple.Result](http://hackage.haskell.org/package/mysql-simple/docs/Database-MySQL-Simple-Result.html)
 
 ## Deriving
 
@@ -119,5 +155,4 @@ Migration will remove any manual constraints from your tables. Exception: constr
 
     example Text
     UniqueExample example
-
 
