@@ -30,7 +30,6 @@ Integer         | Tiny,Short,Int24,Long,LongLong
 Word8           | Tiny
 Word16          | Tiny,Short
 Word32          | Tiny,Short,Int24,Long
-Word            | Tiny,Short,Int24,Long,LongLong\*
 Word64          | Tiny,Short,Int24,Long,LongLong
 Double          | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long
 Ratio Integer   | Float,Double,Decimal,NewDecimal,Tiny,Short,Int24,Long,LongLong
@@ -49,6 +48,7 @@ TimeOfDay       | Time
 
 | Not currently supported
 |-----------------------
+| Word
 | Float
 
 See [MySQL.Simple.Result](http://hackage.haskell.org/package/mysql-simple/docs/Database-MySQL-Simple-Result.html)
