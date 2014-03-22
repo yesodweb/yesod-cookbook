@@ -16,7 +16,7 @@ UTCTime    |  TIMESTAMP           |  FIXME:TIMESTAMP? | FIXME     |  FIXME
 ZonedTime  |  TIMESTAMP+TIMEZONE  |  FIXME:DATETIME?  | FIXME     |  FIXME
 
 
-# Compatibility tables
+## Compatibility tables
 
 Haskell type    | Compatible MySQL types
 ----------------|--------------------------
