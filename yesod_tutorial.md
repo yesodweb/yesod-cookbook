@@ -16,4 +16,4 @@
 
 # Persistent tutorials
 
-[[Database access (with persistent & esqueleto)|https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/persistent-db]]
+* [[Database access (with persistent & esqueleto)|https://www.fpcomplete.com/school/starting-with-haskell/libraries-and-frameworks/persistent-db]]
