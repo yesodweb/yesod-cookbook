@@ -1,6 +1,5 @@
 # Update
-There's now some middleware available on hackage to help with CORS: http://hackage.haskell.org/package/wai-
-cors-0.1.1
+There's now some middleware available on hackage to help with CORS: http://hackage.haskell.org/package/wai-cors-0.1.1
 
 ***
 
