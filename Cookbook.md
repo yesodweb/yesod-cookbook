@@ -31,6 +31,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Using runDB in IO with SQL | runDBConf in IO for MySQL]]
 * [[Database Views and Non-Migrated Entities]]
 * [[Lens for existing site]]
+* [Connecting to an additional existing database](https://github.com/yesodweb/yesod/wiki/Connecting-to-an-additional-existing-database)
 
 ## State
 
