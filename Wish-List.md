@@ -24,6 +24,7 @@ See the [[TODO list]] for tasks that will be implemented. Below is a list of Yes
 * Better deployment. Keter is a good tool, but it could use some improvements across the board, and some feature enhancements too.
 * Admin subsite, providing access to modifying database entries, viewing logs, etc. There are already a few attempts at this kind of thing.
 * Easier client-side deployment. I've been using Fay, and I'm happy with it, but the process could certainly be smoother.
+* OData support in complement to RESTful Content.
 
 ## Key/value stores and caching
 
