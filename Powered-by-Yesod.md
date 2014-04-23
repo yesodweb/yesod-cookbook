@@ -37,7 +37,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
 * [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
-* [Showdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
+* [Snowdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 
 ## Personal web sites
 
