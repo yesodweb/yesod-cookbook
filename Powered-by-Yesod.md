@@ -28,6 +28,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
+* [PlanIt9](http://www.planit9.com): Plan, schedule and track project tasks.
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
