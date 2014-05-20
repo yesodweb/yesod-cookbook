@@ -4,6 +4,7 @@ Feel free to add your own application or site to the list
 
 Yesod applications that you can run locally.
 
+* [HsCms](https://github.com/Tehnix/HsCMS): A CMS (Content Management System)
 * [Difftimeline](http://twinside.github.com/DiffTimeline/): See your Git repository in a new way
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
 * [notmuch (e-mail search) mail client](https://bitbucket.org/wuzzeb/notmuch-web)
@@ -20,15 +21,18 @@ Yesod applications that you can run locally.
 
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
-* [Docmunch](http://www.docmunch.com): Understand data in your documents
+* [Dox](http://www.usedox.com): Document viewing analytics
+* [Snowdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 * [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
 * [Haskellers](http://www.haskellers.com/) ([github](https://github.com/snoyberg/haskellers)): Professional network of Haskell programmers.
+* [Docmunch](http://www.docmunch.com): Understand data in your documents
+* [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
+* [PlanIt9](http://www.planit9.com): Plan, schedule and track project tasks.
+
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
-* [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
-* [PlanIt9](http://www.planit9.com): Plan, schedule and track project tasks.
 * [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
@@ -37,8 +41,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [PaperServer](http://paperserver.jp): Online journal article management ([github](https://github.com/hirokai/PaperServer)).
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
-* [Who Saw That Coming](http://www.whosawthatcoming.com/): Make predictions online.
-* [Snowdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
+
 
 ## Personal web sites
 
