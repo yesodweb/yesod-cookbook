@@ -50,6 +50,7 @@ TimeOfDay       | Time
 |-----------------------
 | Word
 | Float
+| Scientific [#225](https://github.com/yesodweb/persistent/issues/225)
 
 See [MySQL.Simple.Result](http://hackage.haskell.org/package/mysql-simple/docs/Database-MySQL-Simple-Result.html)
 
