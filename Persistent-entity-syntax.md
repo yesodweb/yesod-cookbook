@@ -101,7 +101,9 @@ To add `DEFAULT NULL`
 
 ## default=
 
-FIXME
+This is a SQL only syntax. It will set the DEFAULT attribute on a column using the specific syntax for the current DBMS. Persistent performs *no analysis* of default values, and simply passes them on to the DBMS verbatim. This can lead to confusing behavior in migrations, such as [automatic canonicalization of boolean values](https://github.com/yesodweb/persistent/issues/241).
+
+Note that the DEFAULT attribute will affect migrations and raw SQL, but will have no impact on normal Persistent calls. You must still specify all fields, for example, when using an `insert` call.
 
 Note: if you get migration warnings every time, then you need to tweak defaults. For example, when I had a model definition like so:
 
