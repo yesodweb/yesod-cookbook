@@ -4,7 +4,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 
 * New routing system, which requires OverloadedStrings and ViewPatterns. Generated code is faster and *much* more readable.
 * Dropped backwards compatibility with older versions of dependencies.
-* yesod-test now sends HTTP/1.1 as the version.
+* yesod-test now sends HTTP/1.1 as the version. This may require updating tests to expect 303 instead of 302 redirects.
 
 # Yesod 1.2
 
