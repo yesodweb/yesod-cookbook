@@ -1,6 +1,12 @@
 This page mostly focuses on detailed views of breaking changes, not necessarily covering new features. For a higher-level view, see [[Changelog]].
 
-# Not yet released Yesod 1.2
+# Yesod 1.4
+
+* New routing system, which requires OverloadedStrings and ViewPatterns. Generated code is faster and *much* more readable.
+* Dropped backwards compatibility with older versions of dependencies.
+* yesod-test now sends HTTP/1.1 as the version.
+
+# Yesod 1.2
 
 * json requests for authenticated/authorized routes will return a proper response code (401 or 403) instead of a redirection response
 * Removed a number of deprecated functions from Yesod.Widget. These can be replaced with `toWidget`, `toWidgetHead`, `toWidgetBody`, and `toWidgetMedia`. `toWidgetMedia` was added in 1.2 and replaces `addLuciusMedia` and `addCassiusMedia` as a means of adding CSS that only applies to specific media types.
