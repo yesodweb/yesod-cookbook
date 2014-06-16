@@ -35,7 +35,6 @@ After the first tutorials (the one above and the tutorial on the first page "tut
   * [[Javascript Options|Javascript Options]]
   * [[Hamlet]]
 
-
 # Find Code
   * [[Useful snippets|Snippets]]
   * [[Libraries|Yesod Libraries]]
