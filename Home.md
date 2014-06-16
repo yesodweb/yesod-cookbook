@@ -7,8 +7,6 @@ This wiki is what you make of it! Please link out from here to [[Blog Posts|Blog
   * [[1.2 upgrade|1.2 upgrade]]
   * [[1.1 upgrade|1.1 upgrade]]
   * [[0.10 upgrade|0.10 upgrade]]
-  * [[0.10 release|missing:old/0.10_release/index.markdown]]
-
 
 # General docs
 
