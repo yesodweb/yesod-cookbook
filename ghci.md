@@ -3,6 +3,17 @@ ghci (which you should use via `cabal repl`) can be used to inspect and run your
 The latest scaffold provides a file [app/DevelMain.hs](https://github.com/yesodweb/yesod-scaffold/blob/postgres/app/DevelMain.hs) that you can run your Yesod app with and achieve fast reloads.
 That file has instructions at the top. This page has some advance info.
 
+**TODO: a brief explanation of how to get started with debugging yesod with ghci **
+
+ie: 
+1. Start ghci with `cabal repl --ghc-options="-O0 -fobject-code"`
+
+2. how to set modules to be interpreted (rather than compiled) eg `:add *Handler.myhandler`
+
+3. how to set breakpoint eg: `:break Handler.myhandler 95`
+
+3. (This is the bit I don't know) - How to start the yesod server after you've done 1 - 3
+
 ## Killing threads
 
 Restarting ghci does not kill running threads. One technique to handle this is to register all your threads so you have an easy target for shutting them down.
