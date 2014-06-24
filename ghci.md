@@ -12,7 +12,7 @@ ie:
 
 3. how to set breakpoint eg: `:break Handler.myhandler 95`
 
-3. (This is the bit I don't know) - How to start the yesod server after you've done 1 - 3
+4. (This is the bit I don't know) - How to start the yesod server after you've done 1 - 3
 
 ## Killing threads
 
