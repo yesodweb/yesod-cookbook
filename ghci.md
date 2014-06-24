@@ -23,3 +23,24 @@ Killing threads. Restarting ghci does not kill running threads. One technique to
   shutdownApp :: App -> IO ()
   shutdownApp app = readIORef (activeThreadIds app) >>= mapM_ killThread
 ```
+
+This needs to be integrated into DevelMain.hs.
+One aspect is that you need access to the App, so you can add this function to Application.hs
+
+``` haskell
+  getApplicationRepl :: IO (Int, App, Application)
+  getApplicationRepl = do
+    conf <- getDevelConf
+    (app1, site) <- makeApplicationFoundation conf
+    (p, app2) <- defaultDevelApp (return conf) (const (return app1))
+    return (p, site, app2)
+```
+
+Then in DevelMain.hs add shutdownApp as a finalizer
+
+``` haskell
+start done = do
+    (port, site, app) <- getApplicationRepl
+    forkIO (finally (runSettings (setPort port defaultSettings) app)
+                    (putMVar done () >> shutdownApp site))
+```
