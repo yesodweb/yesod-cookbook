@@ -41,6 +41,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [PaperServer](http://paperserver.jp): Online journal article management ([github](https://github.com/hirokai/PaperServer)).
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
+* [CapitalMadrid](https://www.capitalmadrid.com): Spanish newsletter specialising in economic and financial information.
 
 
 ## Personal web sites
