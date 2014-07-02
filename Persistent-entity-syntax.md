@@ -101,39 +101,32 @@ To add `DEFAULT NULL`
 
 ## default=
 
-This is a SQL only syntax. It will set the DEFAULT attribute on a column using the specific syntax for the current DBMS. Persistent performs *no analysis* of default values, and simply passes them on to the DBMS verbatim. This can lead to confusing behavior in migrations, such as [automatic canonicalization of boolean values](https://github.com/yesodweb/persistent/issues/241).
+Persistent supports setting default values on SQL backends like so:
 
-Note that the DEFAULT attribute will affect migrations and raw SQL, but will have no impact on normal Persistent calls. You must still specify all fields, for example, when using an `insert` call.
+```
+created UTCTime default=now()
+```
 
-Note: if you get migration warnings every time, then you need to tweak defaults. For example, when I had a model definition like so:
+The DEFAULT attribute is set with the exact SQL entered in your `models` file—Persistent performs *no analysis* of default values, and simply passes them onto the DBMS verbatim.
 
-    created Day default=CURRENT_TIME
-    avsrelax Bool default='false'
+The DEFAULT attribute will affect migrations and raw SQL, but will have no impact on normal Persistent calls. You must still specify all fields, for example, when using an `insert` call.
 
-every time yesod started I got:
+**Note**: Persistent determines whether or not to migrate a column's default value by comparing the exact string found in your `models` file with the one returned by the database. If a database canonicalizes the SQL `FALSE` from your `models` file to `false` in the database, Persistent will think the default value needs to be migrated and [attempt a migration each time you start your app](https://github.com/yesodweb/persistent/issues/241).
 
-    Migrating: ALTER TABLE "accounts" ALTER COLUMN "created" SET DEFAULT CURRENT_DATE
-    Migrating: ALTER TABLE "accounts" ALTER COLUMN "avsrelax" SET DEFAULT 'false'
+To workaround this, find the exact SQL your DBMS uses for the default value. For example, using postgres:
 
-By building a custom persistent-postgresql with this patch (plus the obvious import)
+```
+psql database_name # Open postgres
 
-    --- Database/Persist/Postgresql.hs.orig	2013-06-23 18:40:53.000000000 +0100
-    +++ Database/Persist/Postgresql.hs	2014-01-07 11:37:30.387071854 +0000
-    @@ -490,6 +492,9 @@
-                                 _ -> []
-                     modType = if sqltype == sqltype' then [] else [(name, Type sqltype)]
-                     modDef =
-    +                  let msg = "def is: " ++ show def ++ " and def' is: " ++ show def'
-    +                  in trace msg $
-                         if def == def'
-                             then []
-                             else case def of
+\d+ table_name -- describe the table schema
+```
 
-I found that the correct syntax was:
+```
+...
+created       | timestamp without time zone | not null default now()
+```
 
-    created Day default=('now'::text)::date
-    avsrelax Bool default=false
-
+Then use the listed default value SQL inside your `models` file.
 
 ## MigrationOnly
 
