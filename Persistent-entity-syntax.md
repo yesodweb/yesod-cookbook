@@ -4,16 +4,16 @@ Persistent's entity syntax has acquired quite a few special cases. The goal of t
 
 Haskell	   |  PostGre SQL         |  MySQL            |  MongoDB  |  SQLLite
 -----------|----------------------|-------------------|-----------|---------
-Text	   |  VARCHAR             |  TEXT             | FIXME     |  FIXME
-ByteString |  BYTEA               |  BLOB             | FIXME     |  FIXME
-Int        |  INT8                |  BIGINT(20)       | FIXME     |  FIXME
-Double     |  DOUBLE PRECISION    |  DOUBLE           | FIXME     |  FIXME
-Rational   |  NUMERIC(22, 12)     |  DECIMAL(32,20    | FIXME     |  FIXME
-Bool       |  BOOLEAN             |  TINYINT(1)       | FIXME     |  FIXME
-Day        |  DATE                |  DATE             | FIXME     |  FIXME
-TimeOfDay  |  TIME                |  TIME             | FIXME     |  FIXME
-UTCTime    |  TIMESTAMP           |  DATETIME         | FIXME     |  FIXME
-ZonedTime  |  TIMESTAMP+TIMEZONE  |  VARCHAR(50)      | FIXME     |  FIXME
+Text	   |  VARCHAR             |  TEXT             | FIXME     |  VARCHAR
+ByteString |  BYTEA               |  BLOB             | FIXME     |  BLOB
+Int        |  INT8                |  BIGINT(20)       | FIXME     |  INTEGER
+Double     |  DOUBLE PRECISION    |  DOUBLE           | FIXME     |  REAL
+Rational   |  NUMERIC(22, 12)     |  DECIMAL(32,20    | FIXME     |  NUMERIC(32,20)
+Bool       |  BOOLEAN             |  TINYINT(1)       | FIXME     |  BOOLEAN
+Day        |  DATE                |  DATE             | FIXME     |  DATE
+TimeOfDay  |  TIME                |  TIME             | FIXME     |  TIME
+UTCTime    |  TIMESTAMP           |  DATETIME         | FIXME     |  TIMESTAMP
+ZonedTime  |  TIMESTAMP+TIMEZONE  |  VARCHAR(50)      | FIXME     |  TIMESTAMP
 
 
 ## Compatibility tables
