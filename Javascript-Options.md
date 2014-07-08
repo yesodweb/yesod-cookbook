@@ -35,7 +35,7 @@ We would really like to hear about your experience with Elm or Roy, which are 2 
 * [Elm](http://elm-lang.org/) - Yesod integration available. Haskell inspired language that also offers an FRP GUI. Downside: not quite Haskell, not Javascript.
 * [Roy](http://roy.brianmckenna.org/) - Yesod integration (Roy templates) available. Javascripty semantics with Haskelly features. Project is starting to mature. Upside: should be easier to use with existing JS than many other alternatives. Downside: not Haskell.
 * [lambdascript](https://github.com/valderman/lambdascript)
-* [Forml](http://texodus.github.io/forml/)
+* [Forml](http://texodus.github.io/forml/) - Haskell-inspired syntax & type safety with Ruby-inspired expresiveness
 
 
 ## Haskell code that explicitly generates Javascript
