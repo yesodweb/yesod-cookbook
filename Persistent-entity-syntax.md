@@ -2,18 +2,18 @@ Persistent's entity syntax has acquired quite a few special cases. The goal of t
 
 ## Conversion table (migrations)
 
-Haskell	   |  PostGre SQL         |  MySQL            |  MongoDB  |  SQLLite
------------|----------------------|-------------------|-----------|---------
-Text	   |  VARCHAR             |  TEXT             | FIXME     |  VARCHAR
-ByteString |  BYTEA               |  BLOB             | FIXME     |  BLOB
-Int        |  INT8                |  BIGINT(20)       | FIXME     |  INTEGER
-Double     |  DOUBLE PRECISION    |  DOUBLE           | FIXME     |  REAL
-Rational   |  NUMERIC(22, 12)     |  DECIMAL(32,20    | FIXME     |  NUMERIC(32,20)
-Bool       |  BOOLEAN             |  TINYINT(1)       | FIXME     |  BOOLEAN
-Day        |  DATE                |  DATE             | FIXME     |  DATE
-TimeOfDay  |  TIME                |  TIME             | FIXME     |  TIME
-UTCTime    |  TIMESTAMP           |  DATETIME         | FIXME     |  TIMESTAMP
-ZonedTime  |  TIMESTAMP+TIMEZONE  |  VARCHAR(50)      | FIXME     |  TIMESTAMP
+Haskell	   |  PostGre SQL         |  MySQL            |  MongoDB      |  SQLLite
+-----------|----------------------|-------------------|---------------|---------
+Text	   |  VARCHAR             |  TEXT             | String        |  VARCHAR
+ByteString |  BYTEA               |  BLOB             | BinData       |  BLOB
+Int        |  INT8                |  BIGINT(20)       | NumberLong    |  INTEGER
+Double     |  DOUBLE PRECISION    |  DOUBLE           | Double        |  REAL
+Rational   |  NUMERIC(22, 12)     |  DECIMAL(32,20    | *Unsupported* |  NUMERIC(32,20)
+Bool       |  BOOLEAN             |  TINYINT(1)       | Boolean       |  BOOLEAN
+Day        |  DATE                |  DATE             | NumberLong    |  DATE
+TimeOfDay  |  TIME                |  TIME             | *Unsupported* |  TIME
+UTCTime    |  TIMESTAMP           |  DATETIME         | Date          |  TIMESTAMP
+ZonedTime  |  TIMESTAMP+TIMEZONE  |  VARCHAR(50)      | String        |  TIMESTAMP
 
 
 ## Compatibility tables
