@@ -83,7 +83,44 @@ Person sql=peoples
 
 ## Sum types
 
-FIXME
+You'll frequently want to store an enum of values in your database. For example, you might note a `Person`'s employment status as being `Employed`, `Unemployed`, or `Retired`. In Haskell this is represented with a sum type, and Persistent provides a Template Haskell function to marshall these values to and from the database:
+
+```haskell
+-- @Employment.hs
+{-# LANGUAGE TemplateHaskell #-}
+module Employment where
+
+import Database.Persist.TH
+import Prelude
+
+data Employment = Employed | Unemployed | Retired
+    deriving (Show, Read, Eq)
+derivePersistField "Employment"
+```
+
+`derivePersistField` stores sum type values as strings in the database. While not as efficient as using integers, this approach simplifies adding and removing values from your enumeration.
+
+> Due to the GHC Stage Restriction, the call to the Template Haskell function `derivePersistField` must be in a separate module than where the generated code is used
+
+Import the module into your `Model.hs` file:
+
+```haskell
+import Employment
+```
+
+and use it in the `models` DSL:
+
+```
+Person
+    employment Employment
+```
+
+You can export the Employment module from Import to use it across your app:
+
+```haskell
+-- @Import.hs
+import Employment as Import
+```
 
 ## sqltype=
 
