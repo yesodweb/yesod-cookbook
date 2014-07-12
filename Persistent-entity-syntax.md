@@ -83,7 +83,7 @@ Person sql=peoples
 
 ## Sum types
 
-You'll frequently want to store an enum of values in your database. For example, you might note a `Person`'s employment status as being `Employed`, `Unemployed`, or `Retired`. In Haskell this is represented with a sum type, and Persistent provides a Template Haskell function to marshall these values to and from the database:
+You'll frequently want to store an enum of values in your database. For example, you might describe a `Person`'s employment status as being `Employed`, `Unemployed`, or `Retired`. In Haskell this is represented with a sum type, and Persistent provides a Template Haskell function to marshall these values to and from the database:
 
 ```haskell
 -- @Employment.hs
