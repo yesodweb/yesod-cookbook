@@ -102,7 +102,7 @@ derivePersistField "Employment"
 
 > Due to the GHC Stage Restriction, the call to the Template Haskell function `derivePersistField` must be in a separate module than where the generated code is used
 
-Import the module into your `Model.hs` file:
+Use the module by importing it into your `Model.hs` file:
 
 ```haskell
 import Employment
