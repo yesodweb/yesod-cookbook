@@ -105,6 +105,7 @@ derivePersistField "Employment"
 Use the module by importing it into your `Model.hs` file:
 
 ```haskell
+-- @Model.hs
 import Employment
 ```
 
@@ -190,4 +191,3 @@ Migration will remove any manual constraints from your tables. Exception: constr
 
     example Text
     UniqueExample example
-
