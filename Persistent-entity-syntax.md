@@ -125,7 +125,18 @@ import Employment as Import
 
 ## sqltype=
 
-FIXME
+By default, Persistent maps the Haskell types you specify in the Models DSL to an appropriate SQL type in the database (refer to the [conversion table](#conversion-table-migrations) above for the default mappings). Using the `sqltype=` option, you can  customize the SQL type Persistent uses for your column. Use cases include:
+
+* Interacting with an existing database whose column types don't match Persistent's defaults.
+* Taking advantage of a specific SQL type's features
+    * e.g. Using an equivalent type that has better space or performance characteristics
+
+To use this setting, add the `sqltype=` option after declaring your field name and type:
+
+```
+User
+    username Text sqltype=varchar(255)
+```
 
 ### Nullable fields
 
