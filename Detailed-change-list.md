@@ -5,6 +5,7 @@ This page mostly focuses on detailed views of breaking changes, not necessarily 
 * New routing system, which requires OverloadedStrings and ViewPatterns. Generated code is faster and *much* more readable.
 * Dropped backwards compatibility with older versions of dependencies.
 * yesod-test now sends HTTP/1.1 as the version. This may require updating tests to expect 303 instead of 302 redirects.
+* Overlap checking can be turned off for multipieces, entire routes, and parent routes in a hierarchy. For more information, see [the commit comment](https://github.com/yesodweb/yesod/commit/e23c78f2ce60591574a177de9f3ce5d634384e4a).
 
 # Yesod 1.2
 
