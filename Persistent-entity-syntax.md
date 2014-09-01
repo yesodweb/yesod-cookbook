@@ -81,6 +81,13 @@ Person sql=peoples
     name Text
 ```
 
+## Change table/collection id field name and/or type (persistent >= 2.1)
+
+```
+Person idName=name idtType=Text
+   phone Text
+```
+
 ## Sum types
 
 You'll frequently want to store an enum of values in your database. For example, you might describe a `Person`'s employment status as being `Employed`, `Unemployed`, or `Retired`. In Haskell this is represented with a sum type, and Persistent provides a Template Haskell function to marshall these values to and from the database:
