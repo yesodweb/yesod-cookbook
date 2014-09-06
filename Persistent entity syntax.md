@@ -1,0 +1,1 @@
+see the persistent wiki: https://github.com/yesodweb/persistent/wiki/Persistent-entity-syntax
