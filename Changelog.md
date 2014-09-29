@@ -2,6 +2,10 @@
 
 Note: for a more technical, detailed set of information, see [[Detailed change list]]. This page mostly covers high-level features.
 
+# Yesod 1.4
+
+There were very few changes in the 1.4 release. Please see [the detailed change list](https://github.com/yesodweb/yesod/wiki/Detailed-change-list#yesod-14) for more information.
+
 # Yesod 1.2.4
 
 This represents a point release from 1.2. Cumulative changes since the initial 1.2 platform release include:
