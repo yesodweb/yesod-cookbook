@@ -42,7 +42,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Mythic Beasts](http://www.mythic-beasts.com/): UK-based hosting provider
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
 * [CapitalMadrid](https://www.capitalmadrid.com): Spanish newsletter specialising in economic and financial information.
-
+* [Visual](http://visual.metabind.com): An image gallery using persistant-mongoDB and zimg ([github](https://github.com/metabind/visual)).
 
 ## Personal web sites
 
