@@ -1,4 +1,4 @@
-In Sqlite, foreign key constraints are not checked before record deletion by default.  This feature needs to be activated in each connection by issuing a PRAGMA command, like so:
+In Sqlite, by default foreign key constraints are not checked before record deletion.  This feature needs to be activated in each connection by issuing a PRAGMA command, like so:
 
 > PRAGMA foreign_keys = ON;
 
