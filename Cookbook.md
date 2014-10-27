@@ -32,6 +32,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Database Views and Non-Migrated Entities]]
 * [[Lens for existing site]]
 * [Connecting to an additional existing database](https://github.com/yesodweb/yesod/wiki/Connecting-to-an-additional-existing-database)
+* [[Activate foreign key checking in Sqlite]]
 
 ## State
 
