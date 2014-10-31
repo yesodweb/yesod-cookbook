@@ -5,6 +5,8 @@
 {-# LANGUAGE QuasiQuotes #-}
 {-# LANGUAGE TemplateHaskell #-}
 {-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
 
 import           Control.Monad.IO.Class (liftIO)
 import           Network (PortID (PortNumber))
@@ -13,7 +15,7 @@ import           Database.Persist.MongoDB
 import           Database.Persist.TH
 import           Language.Haskell.TH.Syntax
 
-let mongoSettings = (mkPersistSettings (ConT ''MongoBackend)) {mpsGeneric = False}
+let mongoSettings = (mkPersistSettings (ConT ''MongoContext)) {mpsGeneric = False}
  in share [mkPersist mongoSettings] [persistLowerCase|
 Person
     name        String
