@@ -29,7 +29,6 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Docmunch](http://www.docmunch.com): Understand data in your documents
 * [Bitlove.org](http://bitlove.org/): Web interface to automated podcast distribution via BitTorrent
 * [PlanIt9](http://www.planit9.com): Plan, schedule and track project tasks.
-
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
@@ -43,6 +42,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [TED2srt](http://ted2srt.org): Download bilingual subtitles of TED talks ([github](https://github.com/rnons/ted2srt)).
 * [CapitalMadrid](https://www.capitalmadrid.com): Spanish newsletter specialising in economic and financial information.
 * [Visual](http://visual.metabind.com): An image gallery using persistant-mongoDB and zimg ([github](https://github.com/metabind/visual)).
+* [Carnival](http://robots.thoughtbot.com): thoughtbot's blog comments are powered by a Yesod app called Carnival ([github](https://github.com/thoughtbot/carnival)).
 
 ## Personal web sites
 
