@@ -26,7 +26,7 @@ You are liable to get something like:
         In the first argument of `toHtml', namely
           `\ u_a3g6 -> urender_a3g5 u_a3g6 [] SubRootR'
 
-This is because `SubRootR` is of type `Route HelloSub`, but Yesod is expecting the routes to be the same type as `master`. One way to fix this problem is to use [`getRouteToMaster`](http://hackage.haskell.org/packages/archive/yesod-core/1.0.1.2/doc/html/Yesod-Handler.html#v:getRouteToMaster) to transform `SubRootR` into type `Route master`: 
+This is because `SubRootR` is of type `Route HelloSub`, but Yesod is expecting the routes to be the same type as `master`. One way to fix this problem is to use [`getRouteToMaster`](http://hackage.haskell.org/packages/archive/yesod-core/1.0.1.2/doc/html/Yesod-Handler.html#v:getRouteToMaster) (edit: renamed [`getRouteToParent`](http://www.yesodweb.com/blog/2013/03/big-subsite-rewrite) after Yesod 1.2) to transform `SubRootR` into type `Route master`: 
 
 ```haskell
 getSubRootR = do
