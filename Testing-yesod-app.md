@@ -3,15 +3,10 @@
 To test your app, you should first configure it with:
 
 ```
-cabal configure --enable-tests
 cabal install --enable-tests
 ```
 
-Then you build it and run `test` command:
-
-```
-cabal build
-```
+Then you run the `test` command which will build your app, the tests, and run the tests:
 
 ```
 cabal test
