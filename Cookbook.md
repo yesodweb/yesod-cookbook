@@ -33,6 +33,7 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 * [[Lens for existing site]]
 * [Connecting to an additional existing database](https://github.com/yesodweb/yesod/wiki/Connecting-to-an-additional-existing-database)
 * [[Activate foreign key checking in Sqlite]]
+* [[Adding Seed data to Scaffolded Site]]
 
 ## State
 
