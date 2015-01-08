@@ -7,7 +7,7 @@
 * [Dropbox API with Haskell](http://tech.dropbox.com/?p=129)
 
 
-# Blog Post Ideas (possibly for non-haskellers)
+# Blog Post Ideas
 
 A list of blog post ideas to increase content for non-haskellers.
 
