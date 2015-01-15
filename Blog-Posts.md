@@ -5,6 +5,7 @@
 * [Pieces of Yesod: Inverting a Haskell Function, a DRY way to convert some haskell types to a url piece](http://chplib.wordpress.com/2011/06/17/pieces-of-yesod-inverting-a-haskell-function/)
 * [Deploying to Amazon with Fedora](http://jpmoresmau.blogspot.com/2011/04/install-ghc7-and-yesod-on-amazon-linux.html)
 * [Dropbox API with Haskell](http://tech.dropbox.com/?p=129)
+* [Internationalization](http://jabberwocky.eu/2014/02/10/internationalization-with-yesod/)
 
 
 # Blog Post Ideas
