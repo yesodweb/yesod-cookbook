@@ -1,43 +1,57 @@
-In Sqlite, by default foreign key constraints are not checked before record deletion.  This feature needs to be activated in each connection by issuing a PRAGMA command, like so:
+*Updated for the Yesod 1.4.3.3 scaffolding*
 
-> PRAGMA foreign_keys = ON;
+In SQLite, foreign keys checks [are not enabled by default](https://www.sqlite.org/foreignkeys.html#fk_enable). Instead, they must be enabled on a per-connection basis by issuing a PRAGMA command, like so:
 
-In the yesod 1.3.3 scaffolding project, this can be done automatically like so:
-
-1) add this code to the project as "ForkeyOpen.hs"
-
+```sql
+PRAGMA foreign_keys = ON;
 ```
-module ForkeyOpen
-    where
 
-import qualified Database.Persist.Sqlite as PSqlite
+The command to issue foreign keys is [a noop if done inside of a transaction](https://www.sqlite.org/foreignkeys.html#fk_enable), so it is necessary to enable them outside of one. Persistent functions like `runSqlPersistMPool` wrap your statements inside of a transaction, necessitating dropping down to the underlying Database.Sqlite package to enable foreign keys. To do this, add the following imports and functions to `Application.hs`:
+
+```haskell
 import qualified Database.Sqlite as Sqlite
-import qualified Database.Persist.Sql as Psql
-import Control.Monad
-import Data.Text
-import Data.Int
-import System.IO
-import Control.Monad.IO.Class
-import Data.Function
+import Database.Persist.Sqlite              (createSqlPool, wrapConnection)
 
-forKeyOpen :: Text -> IO PSqlite.Connection
-forKeyOpen t = do
-  conn <- Sqlite.open t
-  stmt <- Sqlite.prepare conn "PRAGMA foreign_keys = ON;"
-  res <- Sqlite.step stmt
-  PSqlite.wrapConnection conn
+rawConnection :: Text -> IO Sqlite.Connection
+rawConnection t = Sqlite.open t
 
-forKeyCreatePoolConfig :: MonadIO m => PSqlite.SqliteConf -> m Psql.ConnectionPool
-forKeyCreatePoolConfig (PSqlite.SqliteConf cs size) = forKeyCreateSqlitePool cs size
-
-forKeyCreateSqlitePool :: MonadIO m => Text -> Int -> m PSqlite.ConnectionPool
-forKeyCreateSqlitePool s = Psql.createSqlPool $ forKeyOpen s
+disableForeignKeys :: Sqlite.Connection -> IO ()
+disableForeignKeys conn = Sqlite.prepare conn "PRAGMA foreign_keys = ON;" >>= void . Sqlite.step
 ```
 
-2) in Application.hs, add an import for ForkeyOpen.  Then in the the MakeFoundation function make this change:
+Then, in the `makeFoundation` function, replace this code:
+```
+-- Create the database connection pool
+pool <- flip runLoggingT logFunc $ createSqlitePool
+    (sqlDatabase $ appDatabaseConf appSettings)
+    (sqlPoolSize $ appDatabaseConf appSettings)
+```
+
+with this:
 
 ```
-    p <- forKeyCreatePoolConfig (dbconf :: Settings.PersistConf) 
-    -- p <- Database.Persist.createPoolConfig (dbconf :: Settings.PersistConf)
+sqliteConn <- rawConnection (sqlDatabase $ appDatabaseConf appSettings)    
+disableForeignKeys sqliteConn
+
+pool <- flip runLoggingT logFunc $ createSqlPool 
+        (wrapConnection sqliteConn) 
+        (sqlPoolSize $ appDatabaseConf appSettings)
 ```
 
+You can then verify that foreign keys are enabled by sending `PRAGMA foreign_keys` to SQLite:
+
+```haskell
+import Database.Persist.Sql  (SqlBackend, rawSql, unSingle)
+
+fksEnabled :: MonadIO m => ReaderT SqlBackend m Bool
+fksEnabled = do
+    fkStatus <- rawSql "PRAGMA foreign_keys" []
+    return $ (map unSingle fkStatus) == ["1" :: Text]
+```
+
+You can then call this function from a Handler or a test, like so:
+
+```haskell
+fkStatus <- runDB $ fksEnabled
+traceM $ "Foreign keys enabled = " ++ show fkStatus
+```
