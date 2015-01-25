@@ -2,6 +2,8 @@
 
 The Yesod Cookbook contains small snippets of code for solving practical problems with Yesod. If you have some code to share, please create a wiki page and link to it in the appropriate section.
 
+If you're looking for a comprehensive guide to learning Yesod, please consider [reading the book](http://www.yesodweb.com/book).
+
 For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Basics
