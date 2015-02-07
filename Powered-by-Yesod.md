@@ -4,6 +4,7 @@ Feel free to add your own application or site to the list
 
 Yesod applications that you can run locally.
 
+* [LambdaCMS](http://lambdacms.org/): A CMS that you can extend with subsites
 * [HsCms](https://github.com/Tehnix/HsCMS): A CMS (Content Management System)
 * [Difftimeline](http://twinside.github.com/DiffTimeline/): See your Git repository in a new way
 * [git-annex assistant](http://git-annex.branchable.com/assistant/)
