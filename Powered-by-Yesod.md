@@ -32,7 +32,6 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [TFoo](http://tfoo.herokuapp.com/): a five in a row game
 * [packdeps](http://packdeps.haskellers.com/): Track outdated Hackage dependencies.
 * [paccrat.org](http://paccrat.org/): the PEG parser-generator for C
-* [PLT Games](http://www.pltgames.com/): Monthly programming language competition.
 * [Licentious](http://licentious.herokuapp.com/): Commits a chosen license to a GitHub repository.
 * [eatnutrients.com](http://eatnutrients.com/): Nutrition search & visualization site
 * [Tutorial (spanish)](http://tutorial-yesod-haskell.computer-mind.com/): Yesod tutorial (in spanish), it cover all minimal functionalities to make a site. Has real production site and github repository.
