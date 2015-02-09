@@ -20,7 +20,7 @@ Fay is a new alternative that we would love to hear some experience reports abou
 * [Fay, Haskell code translated to JS](http://fay-lang.org/). Upside: produces a small amount of understandable javascript. Downside: only a subset of Haskell is supported.
 * [UHC js compiler](http://www.haskell.org/haskellwiki/The_JavaScript_Problem#UHC). Downsides: alpha, not completely integrated with cabal, not GHC.
 * [ghcjs](https://github.com/pedromartins/ghcjs) - [example Yesod app](https://github.com/hamishmack/yesod-slides) - directly compile ghc core to javascript. Downside: produces large amounts of javascript.
-* [PureScript](http://www.purescript.org) - small, stronly typed, very similar to Haskell. Downside: not actually Haskell. Maybe worth looking at [Purescript Virtual DOM](https://github.com/purescript-contrib/purescript-virtual-dom) , similar FRM style thing to ReactJS.
+* [PureScript](http://www.purescript.org) - small, stronly typed, very similar to Haskell. Downside: not actually Haskell. Maybe worth looking at [Purescript Virtual DOM](https://github.com/purescript-contrib/purescript-virtual-dom) , similar FRP-style thing to ReactJS.
 
 ### Alternative experimental ways to compile Haskell
 
