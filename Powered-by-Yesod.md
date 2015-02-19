@@ -43,7 +43,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [CapitalMadrid](https://www.capitalmadrid.com): Spanish newsletter specialising in economic and financial information.
 * [Visual](http://visual.metabind.com): An image gallery using persistant-mongoDB and zimg ([github](https://github.com/metabind/visual)).
 * [Carnival](http://robots.thoughtbot.com): thoughtbot's blog comments are powered by a Yesod app called Carnival ([github](https://github.com/thoughtbot/carnival)).
-* [DoHaskell](http://www.dohaskell.com): A site collecting and tagging resources for learning the Haskell programming language.
+* [DoHaskell](http://www.dohaskell.com): A site collecting and tagging resources for learning the Haskell programming language ([github](https://github.com/mitchellwrosen/dohaskell)).
 
 ## Personal web sites
 
