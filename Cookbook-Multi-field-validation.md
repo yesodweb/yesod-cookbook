@@ -7,8 +7,7 @@ import Control.Applicative ((<$>), (<*>))
 
 data MF = MF
 
-instance Yesod MF where
-    approot _ = ""
+instance Yesod MF
 instance RenderMessage MF FormMessage where
     renderMessage _ _ = defaultFormMessage
 
@@ -18,19 +17,19 @@ mkYesod "MF" [parseRoutes|
 
 form html = do
     (res, widget) <- flip renderDivs html $ (,)
-  <$> areq textField "Name" Nothing
-  <*> areq intField "Age" Nothing
+            <$> areq textField "Name" Nothing
+            <*> areq intField "Age" Nothing
     return $ case res of
-  FormSuccess (name, age)
-      | name == "Michael" && age /= 26 ->
-    let msg = "Invalid name/age combination"
-     in (FormFailure [msg], [whamlet|
-<p .errors>#{msg}
-^{widget}
-|])
-  _ -> (res, widget)
+              FormSuccess (name, age)
+                        | name == "Michael" && age /= 26 ->
+                      let msg = "Invalid name/age combination"
+                       in (FormFailure [msg], [whamlet|
+                  <p .errors>#{msg}
+                  ^{widget}
+                  |])
+              _ -> (res, widget)
 
-getRootR :: Handler RepHtml
+getRootR :: Handler Html
 getRootR = do
     ((res, widget), enctype) <- runFormGet form
     defaultLayout [whamlet|
@@ -41,5 +40,5 @@ getRootR = do
   <input type=submit>
 |]
 
-main = warpDebug 3000 MF
+main = warp 3000 MF
 ```
