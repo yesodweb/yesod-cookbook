@@ -1,18 +1,110 @@
+## Running database and handler actions from GHCI
+
+Use `cabal repl` to start a GHCi session:
+
+```
+cabal repl
+```
+
+The `Application` module of the scaffolding provides the [`db` and `handler` functions](https://github.com/yesodweb/yesod-scaffold/blob/bb7897b67021f42aa38c7f2fedd03be81f8980c9/Application.hs#L161-L171) to run database requests and `Handler` actions from the REPL:
+
+```haskell
+ghci > import Application
+ghci > db $ selectList [UserName ==. "foo"] []
+```
+
+```haskell
+ghci > import Application
+ghci > renderingFunction <- Application.handler $ getUrlRender
+ghci > renderingFunction HomeR
+"http://localhost:3000/"
+```
+
+Note that many `Handler` actions only make sense in the context of an actual HTTP request, and they may fail when from GHCi.
+
+```haskell
+ghci > handler $ notModified
+*** Exception: runFakeHandler issue: InternalError "runFakeHandler: no result"
+```
+
+## Using the debugger with Yesod
+
+Assuming you wanted to debug the following code, which you've added to `Model.hs`:
+
+```haskell
+-- * Model.hs lines 13-17
+foo :: [Integer] -> [Integer]
+foo xs =
+    let ys = map (+1) xs
+        zs = map (+2) xs
+    in ys ++ zs
+```
+
+Start a GHCi session with `cabal repl`:
+
+```
+cabal repl
+```
+
+Set the module to be interpreted:
+
+```
+ghci > :add *Model # The asterisk makes it interpreted
+```
+
+Add your breakpoint:
+
+```
+ghci > :break Model 17
+Breakpoint 0 activated at Model.hs:17:8-15
+```
+
+Run the `foo` function to stop at your breakpoint and evaluate intermediate variables:
+
+```haskell
+ghci > foo [1,2,3]
+Stopped at Model.hs:17:8-15
+_result :: [Integer] = _
+ys :: [Integer] = _
+zs :: [Integer] = _
+
+ghci > ys
+[2,3,4]
+
+ghci > zs
+[3,4,5]
+```
+
+You can also hit breakpoints from a URL request from your browser:
+
+```
+ghci > :add *Handler.Home
+ghci > :break Handler.Home 20
+ghci > Application.appMain -- Start the server
+```
+
+*Now hit http://localhost:3000 from your browser.*
+
+```
+GET /
+  Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Stopped at Handler/Home.hs:(20,5)-(23,32)
+_result :: HandlerT App IO Html = _
+formEnctype :: Enctype = _
+formWidget :: Widget = _
+handlerName :: Text = _
+submission :: Maybe (FileInfo, Text) = _
+
+ghci > handlerName
+"getHomeR"
+```
+
+### DevelMain
+
 ghci (which you should use via `cabal repl`) can be used to inspect and run your Yesod app.
 
 The latest scaffold provides a file [app/DevelMain.hs](https://github.com/yesodweb/yesod-scaffold/blob/postgres/app/DevelMain.hs) that you can run your Yesod app with and achieve fast reloads.
 That file has instructions at the top. This page has some advance info.
-
-**TODO: a brief explanation of how to get started with debugging Yesod with ghci**
-
-ie: 
-1. Start ghci with `cabal repl --ghc-options="-O0 -fobject-code"`
-
-2. how to set modules to be interpreted (rather than compiled) eg `:add *Handler.myhandler`
-
-3. how to set breakpoint eg: `:break Handler.myhandler 95`
-
-4. (This is the bit I don't know) - How to start the yesod server after you've done 1 - 3
 
 ## Killing threads
 
