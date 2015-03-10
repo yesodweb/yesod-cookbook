@@ -1,6 +1,7 @@
 # Packages
 
 * [yesod-auth-account](http://hackage.haskell.org/package/yesod-auth-account)
+* [yesod-auth-hashdb](https://hackage.haskell.org/package/yesod-auth-hashdb)
 * [yesod-comments](http://hackage.haskell.org/package/yesod-comments)
 * [yesod-paginate](http://hackage.haskell.org/package/yesod-paginate)
 * [yesod-markdown](http://hackage.haskell.org/package/yesod-markdown)
