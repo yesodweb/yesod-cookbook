@@ -11,7 +11,6 @@
     Person
         email    Text
         password Text
-        salt     Text
         UniqueEmail email
         deriving Typeable
     ```
@@ -33,10 +32,7 @@
 
     instance HashDBUser Person where
         userPasswordHash = Just . personPassword
-        userPasswordSalt = Just . personSalt
-        setSaltAndPasswordHash s h p = p { personSalt     = s
-                                         , personPassword = h
-                                         }
+        setPasswordHash h p = p { personPassword = h }
     ```
 
 3. Now, in Foundation.hs, we hook Auth.HashDB into your foundation. You must
@@ -56,3 +52,5 @@
         getAuthId creds = getAuthIdHashDB AuthR (Just . UniqueEmail) creds
         authPlugins _ = [authHashDB (Just . UniqueEmail)]
     ```
+
+Further examples can be found in the [module documentation](https://hackage.haskell.org/package/yesod-auth-hashdb/docs/Yesod-Auth-HashDB.html)
