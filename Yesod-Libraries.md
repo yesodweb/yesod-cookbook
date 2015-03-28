@@ -13,6 +13,7 @@
 * [yesod-auth-zendesk](http://hackage.haskell.org/package/yesod-auth-zendesk)
 * [yesod-datatables](http://hackage.haskell.org/package/yesod-datatables)
 * [yesod-dsl](https://github.com/tlaitinen/yesod-dsl)
+* [yesod-vend](https://github.com/Tener/yesod-vend/blob/master/src/Yesod/VEND.hs)
 
 # Pre-made sites
 
