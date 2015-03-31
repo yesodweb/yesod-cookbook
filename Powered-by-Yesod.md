@@ -23,6 +23,7 @@ Yesod applications that you can run locally.
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
 * [Dox](http://www.usedox.com): Document viewing analytics
+* [Weedreporter](http://weedreporter.com): News site featuring cannabis news
 * [Snowdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 * [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
 * [FP Complete School of Haskell](https://www.fpcomplete.com)
