@@ -1,4 +1,1 @@
-Scratch what I said previously, I was mistaken. Currently (through version 1.3), Persistent uses `WITHOUT TIME ZONE` to store `UTCTime`. This is based on a mistaken understanding, and the problem will be addressed in version 2.0 (see [the roadmap](https://github.com/yesodweb/persistent/wiki/Persistent-2.0-goals#wiki-change-handling-of-utctime-in-postgresql)). In the meanwhile, you can:
-
-1. Use `ZonedTime` to force the database to use `WITH TIME ZONE`.
-2. Continue to use `UTCTime` with the understanding that the value stored in the database is in the UTC timezone. During the 2.0 upgrade process, we'll provide migration information as necessary.
+Since version 2.0 persistent uses UTCTime for both timestamp types in Postgres. ZonedTime is no longer supported. Define your own custom persistent field to obtain the timezone or store it in a separate column.
