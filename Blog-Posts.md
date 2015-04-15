@@ -6,6 +6,7 @@
 * [Deploying to Amazon with Fedora](http://jpmoresmau.blogspot.com/2011/04/install-ghc7-and-yesod-on-amazon-linux.html)
 * [Dropbox API with Haskell](http://tech.dropbox.com/?p=129)
 * [Internationalization](http://jabberwocky.eu/2014/02/10/internationalization-with-yesod/)
+* [Getting started with Yesod using Docker](https://ilikewhenit.works/blog/1)
 
 
 # Blog Post Ideas
