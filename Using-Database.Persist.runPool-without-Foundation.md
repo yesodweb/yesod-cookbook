@@ -10,7 +10,7 @@ import Yesod.Default.Config
 import qualified Database.Persist
 import Settings
 import Model
-import Data.Conduit (runResourceT)
+import Control.Monad.Trans.Resource (runResourceT)
 import Control.Monad.Logger (runStdoutLoggingT)
 
 runQueries = do
