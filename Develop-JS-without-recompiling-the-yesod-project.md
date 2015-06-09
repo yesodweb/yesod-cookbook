@@ -2,7 +2,7 @@ Normally yesod pulls in julius files at compile time.  If you make changes to yo
 
 Here's an example of forcing the javascript to load anew each time the page is loaded.  For this page, in the templates directory there is a playback.hamlet and playback.julius file.  When I make changes to the playback.julius, on reload the page will have the new changes, without having to recompile the yesod project.  
 
-Relevant code is after the 'add line 1' and 'add line 2' comments.
+Relevant code is after the 'added line 1' and 'added line 2' comments.  Also, you'll need to import Text.Julius.  
 
 ```
 playSongWs :: SongId -> WebSocketsT Handler ()
@@ -23,7 +23,7 @@ getPlaySongR sid = do
     (Just song) ->
       defaultLayout $ do
         aDomId <- newIdent
-        -- added line two: add the script 
+        -- added line 2: add the script 
         toWidgetHead playbackscript
         setTitle "Song Playback!"
         $(widgetFile "playback")
