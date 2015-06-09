@@ -4,7 +4,7 @@ Here's an example of forcing the javascript to load anew each time the page is l
 
 Relevant code is after the 'added line 1' and 'added line 2' comments.  Also, you'll need to import Text.Julius.  
 
-```
+```haskell
 playSongWs :: SongId -> WebSocketsT Handler ()
 playSongWs sid = do
   app <- getYesod
