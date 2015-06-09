@@ -18,7 +18,7 @@ getPlaySongR sid = do
   webSockets $ playSongWs sid
   mbsong <- runDB $ get sid
   -- added line 1: load the script
-  let playbackscript =  $(juliusFileReload "templates/playback.julius")**
+  let playbackscript =  $(juliusFileReload "templates/playback.julius")
   case mbsong of
     (Just song) ->
       defaultLayout $ do
