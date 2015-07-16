@@ -50,7 +50,7 @@ main = do
 
 So let's go through this step by step:
 
-0. `HellowWorld` is our foundation type. We use record syntax to name the field `counter` appropriately. This makes it easier extend the foundation type further (e.g. adding a second counter that counts something else).
+0. `HelloWorld` is our foundation type. We use record syntax to name the field `counter` appropriately. This makes it easier extend the foundation type further (e.g. adding a second counter that counts something else).
 
 1. In the main function, the very first thing we do is to create a new `IORef` and store it in `counter`. We need to use `<-` because `newIoRef` returns an `IO IORef a`, but we want to access the `IORef a` inside an IO monad. This makes sense: `newIORef 0` returns different IORefs on every call, that is expressed by that return type.
 
