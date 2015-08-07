@@ -1,11 +1,14 @@
 Feel free to add your own application or site to the list
 
-## High traffic sites
+## Commercial sites with high traffic
 
-[Front Row Education](http://www.frontrowed.com). Every web request is served by Haskell. The application students learn Math with has a large volume of users. Yesod doesn't use much CPU. The DB is the bottleneck.
+[Front Row Education](http://www.frontrowed.com). Every web request is served by Haskell. The application students learn Math with has a large volume of users and a lot of requests. Yesod doesn't use much CPU. The DB is the bottleneck.
 
   * [initial usage](https://www.fpcomplete.com/blog/2015/05/haskell-at-front-row)
   * [tech blog](http://tech.frontrowed.com/)
+
+* [DoxIQ](http://www.doxiq.com): Document viewing analytics. Every document view creates multiple requests to Yesod for analytics. When a document is popular and seeing thousands of views in a short time frame, things keep operating smoothly.
+
 
 ## Applications
 
@@ -30,7 +33,6 @@ Yesod applications that you can run locally.
 The following sites are powered by Yesod. Feel free to add your own to the list:
 
 * [Budzu](http://budzu.com): Cannabis information site featuring user submitted prices
-* [Dox](http://www.doxiq.com): Document viewing analytics
 * [Weedreporter](http://weedreporter.com): News site featuring cannabis news
 * [Snowdrift.coop](https://snowdrift.coop/): sustainable funding for open source projects
 * [BayesHive](http://bayeshive.com): Web application for Bayesian statistical computing 
