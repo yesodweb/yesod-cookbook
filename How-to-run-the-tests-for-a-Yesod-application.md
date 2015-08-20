@@ -1,6 +1,6 @@
 # Testing a Yesod App
 
-To test your app, you should first configure it with:
+To test your app, just run:
 
 ```
 stack test
