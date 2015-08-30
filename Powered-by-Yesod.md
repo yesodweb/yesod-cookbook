@@ -55,6 +55,7 @@ The following sites are powered by Yesod. Feel free to add your own to the list:
 * [Visual](http://visual.metabind.com): An image gallery using persistent-mongoDB and zimg ([github](https://github.com/metabind/visual)).
 * [Carnival](http://robots.thoughtbot.com): thoughtbot's blog comments are powered by a Yesod app called Carnival ([github](https://github.com/thoughtbot/carnival)).
 * [DoHaskell](http://www.dohaskell.com): A site collecting and tagging resources for learning the Haskell programming language ([github](https://github.com/mitchellwrosen/dohaskell)).
+* [glot.io](https://glot.io/): A pastebin with runnable snippets ([github](https://github.com/prasmussen/glot-www)).
 
 ## Personal web sites
 
