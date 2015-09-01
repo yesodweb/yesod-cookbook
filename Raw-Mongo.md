@@ -1,4 +1,4 @@
-You will need to use the raw driver with Persistent to deal with embedded fields.
+persistent-mongoDB has extended to support the most commonly used MongoDB operators in a type-safe way. However, you still may need to use the raw driver with Persistent at times.
 Note also that persistent-mongoDB exposes functions to help with converting between a document and an entity: `toInsertFields`, `entityToFields`, `docToEntityEither`, and `docToEntityThrow`.
 
 [Persistent's test case](https://github.com/yesodweb/persistent/blob/master/persistent-test/PersistentTest.hs#L600)
