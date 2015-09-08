@@ -8,8 +8,8 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Basics
 * [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
-* [[JSON Object Create and Append | JSON-data-helpful-manipulations]]
-* [[Develop JS without recompiling the yesod project]]
+* [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/JSON-data-helpful-manipulations.md)
+* [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/Develop-JS-without-recompiling-the-yesod-project.md)
 
 ## Forms
 
