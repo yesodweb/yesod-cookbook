@@ -8,21 +8,21 @@ For non-Yesod code, see also [[Snippets|Snippets]].
 
 ## Basics
 * [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
-* [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/JSON-data-helpful-manipulations.md)
-* [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/Develop-JS-without-recompiling-the-yesod-project.md)
+* [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/JSON-data-helpful-manipulations.md)
+* [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Develop-JS-without-recompiling-the-yesod-project.md)
 
 ## Forms
 
-* [Change the order of form fields](https://github.com/yesodweb/yesod-cookbook/blob/master/OrderFormFields.md)
-* [Require input for Maybe field](https://github.com/yesodweb/yesod-cookbook/blob/master/RequireInputMaybeField.md)
-* [Custom form layout](https://github.com/yesodweb/yesod-cookbook/blob/master/CustomFormLayout.md)
-* [Password confirm field](https://github.com/yesodweb/yesod-cookbook/blob/master/Password-Confirm-Field.md)
-* [Multi-field validation](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook-Multi-field-validation.md)
-* [Select field populated from database](https://github.com/yesodweb/yesod-cookbook/blob/master/Select-field-populated-from-database.md)
-* [Multi-select field populated from database](https://github.com/yesodweb/yesod-cookbook/blob/master/Multi-select-field-populated-from-database.md)
-* [Multi-select field populated from database (esqueleto)](https://github.com/yesodweb/yesod-cookbook/blob/master/Multi-select-field-populated-from-database-(using-esqueleto).md) - this is the optimized version
-* [File upload](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook-File-upload.md)
-* [File upload saving files to server](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook-file-upload-saving-files-to-server.md)
+* [Change the order of form fields](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/OrderFormFields.md)
+* [Require input for Maybe field](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/RequireInputMaybeField.md)
+* [Custom form layout](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/CustomFormLayout.md)
+* [Password confirm field](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Password-Confirm-Field.md)
+* [Multi-field validation](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-Multi-field-validation.md)
+* [Select field populated from database](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Select-field-populated-from-database.md)
+* [Multi-select field populated from database](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Multi-select-field-populated-from-database.md)
+* [Multi-select field populated from database (esqueleto)](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Multi-select-field-populated-from-database-(using-esqueleto).md) - this is the optimized version
+* [File upload](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-File-upload.md)
+* [File upload saving files to server](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-file-upload-saving-files-to-server.md)
 
 ## Persistence
 
