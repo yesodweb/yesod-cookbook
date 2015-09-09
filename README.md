@@ -15,11 +15,11 @@ You can view the pages here:
 All the pages related to cookbook are inside the directory
 `cookbook-pages`. Create a new file inside it and add a corresponding
 link for it in the
-[Cookbook section](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook.md)
+[Cookbook section](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook.md).
 
 ### Creating a new Snippet page
 
 All the pages related to cookbook are inside the directory
 `snippets`. Create a new file inside it and add a corresponding
 link for it in the
-[Snippets section](https://github.com/yesodweb/yesod-cookbook/blob/master/Snippets.md)
+[Snippets section](https://github.com/yesodweb/yesod-cookbook/blob/master/Snippets.md).
