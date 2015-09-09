@@ -4,7 +4,7 @@ The Yesod Cookbook contains small snippets of code for solving practical problem
 
 If you're looking for a comprehensive guide to learning Yesod, please consider [reading the book](http://www.yesodweb.com/book).
 
-For non-Yesod code, see also [Snippets|Snippets].
+For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbook/blob/master/Snippets.md).
 
 ## Basics
 * [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
