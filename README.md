@@ -13,7 +13,7 @@ You can view the pages here:
 ### Creating a new Cookbook page
 
 All the pages related to cookbook are inside the directory
-`cookbook-pages`. Create a new file inside it and add a corresponding
+`cookbook`. Create a new file inside it and add a corresponding
 link for it in the
 [Cookbook section](https://github.com/yesodweb/yesod-cookbook/blob/master/Cookbook.md).
 
