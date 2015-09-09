@@ -26,8 +26,8 @@ For non-Yesod code, see also [Snippets|Snippets].
 
 ## Persistence
 
-* [Run raw MongoDB|RawMongo]
-* [Run raw SQL|RawSQL]
+* [Run raw MongoDB](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Rawmongo.md)
+* [Run raw SQL](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/RawSQL.md)
 * [Sphinx Search](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Sphinx-Search.md)
 * [Non scaffolded MongoDB App](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Non-scaffolded-MongoDB-App.md)
 * [Using Database.Persist.runPool without Foundation](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-Database.Persist.runPool-without-Foundation.md)
@@ -61,8 +61,7 @@ For non-Yesod code, see also [Snippets|Snippets].
 
 * [Hierarchical routes and breadcrumbs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Hierarchical-routes-and-breadcrumbs.md)
 * [Domain-based routing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Domain-based-routing.md)
-* [subdomain (www) redirect](/show/topic/536)
-* [Static file subsite Hello World|Static-file-subsite-Hello-World]
+* [Static file subsite Hello World](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Static-file-subsite-Hello-World.md)
 * [Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Pure-Haskell-static-subdomains.md)
 * [Slugs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Slugs.md)
 * [Using type-safe URLs from inside Javascript](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-type-safe-urls-from-inside-javascript.md)
@@ -74,7 +73,7 @@ For non-Yesod code, see also [Snippets|Snippets].
 
 ## Testing
 
-* [Testing Yesod App]
+* TODO: Testing Yesod App
 * [Performing Authentication during Testing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Performing-Authentication-during-Testing.md)
 * [Flushing Database Between Tests](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Flushing-database-between-tests.md)
 
