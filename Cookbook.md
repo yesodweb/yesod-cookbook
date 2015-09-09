@@ -45,43 +45,43 @@ For non-Yesod code, see also [Snippets|Snippets].
 * [Keeping (in-memory) state with yesod](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Keeping-(in-memory)-state-with-yesod.md)
 
 ## HTML5 and Yesod
-* [Basic ServerEvent example]
-* [Allowing WOFF fonts to be accessed from other domains (CORS)]
+* [Basic ServerEvent example](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Basic-ServerEvent-example.md)
+* [Allowing WOFF fonts to be accessed from other domains (CORS)](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Allowing-WOFF-fonts-to-be-accessed-from-other-domains-(CORS).md)
 
 ## Auth
 
-* [Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site]
+* [Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-HashDB-In-a-Scaffolded-Site.md)
 * [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
 
 ## Internationalization
 
-* [Internationalization of forms|Cookbook/InternationalizedForm]
+* [Internationalization of forms|Cookbook/InternationalizedForm](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-InternationalizedForm.md)
 
 ## Routing
 
-* [Hierarchical routes and breadcrumbs|Hierarchical-routes-and-breadcrumbs]
-* [Domain-based routing|Domain-based routing]
+* [Hierarchical routes and breadcrumbs|Hierarchical-routes-and-breadcrumbs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Hierarchical-routes-and-breadcrumbs.md)
+* [Domain-based routing|Domain-based routing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Domain-based-routing.md)
 * [subdomain (www) redirect](/show/topic/536)
 * [Static file subsite Hello World|Static-file-subsite-Hello-World]
-* [Pure-Haskell static subdomains|Pure-Haskell static subdomains]
-* [Slugs]
-* [Using type-safe URLs from inside Javascript]
+* [Pure-Haskell static subdomains|Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Pure-Haskell-static-subdomains.md)
+* [Slugs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Slugs.md)
+* [Using type-safe URLs from inside Javascript](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-type-safe-urls-from-inside-javascript.md)
 
 ## Ajax
 
-* [Using Ajax with a Scaffolded Site|Using Ajax with a Scaffolded Site]
-* [Convert Get Params into a haskell record ]
+* [Using Ajax with a Scaffolded Site|Using Ajax with a Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-Ajax-with-a-Scaffolded-Site.md)
+* [Convert Get Params into a haskell record ](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Convert-get-params-into-a-haskell-record.md)
 
 ## Testing
 
 * [Testing Yesod App]
-* [Performing Authentication during Testing|Performing Authentication during Testing]
-* [Flushing Database Between Tests|Flushing-Database-Between-Tests]
+* [Performing Authentication during Testing|Performing Authentication during Testing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Performing-Authentication-during-Testing.md)
+* [Flushing Database Between Tests|Flushing-Database-Between-Tests](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Flushing-database-between-tests.md)
 
 ## Template Haskell
 
-* [Creating string based enums using Template Haskell|Create-String-Based-Enums-With-Template-Haskell]
+* [Creating string based enums using Template Haskell|Create-String-Based-Enums-With-Template-Haskell](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Create-String-Based-Enums-With-Template-Haskell.md)
 
 ## Conduit
 
-* [Consume a webpage with http-conduit and print progress along the way]
+* [Consume a webpage with http-conduit and print progress along the way](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Consume-a-webpage-with-http-conduit-and-print-progress-along-the-way.md)
