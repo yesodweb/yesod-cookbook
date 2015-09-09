@@ -50,33 +50,33 @@ For non-Yesod code, see also [Snippets|Snippets].
 
 ## Auth
 
-* [Use HashDB in a scaffolded site|Using HashDB In a Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-HashDB-In-a-Scaffolded-Site.md)
+* [Use HashDB in a scaffolded site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-HashDB-In-a-Scaffolded-Site.md)
 * [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
 
 ## Internationalization
 
-* [Internationalization of forms|Cookbook/InternationalizedForm](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-InternationalizedForm.md)
+* [Internationalization of forms](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Cookbook-InternationalizedForm.md)
 
 ## Routing
 
-* [Hierarchical routes and breadcrumbs|Hierarchical-routes-and-breadcrumbs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Hierarchical-routes-and-breadcrumbs.md)
-* [Domain-based routing|Domain-based routing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Domain-based-routing.md)
+* [Hierarchical routes and breadcrumbs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Hierarchical-routes-and-breadcrumbs.md)
+* [Domain-based routing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Domain-based-routing.md)
 * [subdomain (www) redirect](/show/topic/536)
 * [Static file subsite Hello World|Static-file-subsite-Hello-World]
-* [Pure-Haskell static subdomains|Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Pure-Haskell-static-subdomains.md)
+* [Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Pure-Haskell-static-subdomains.md)
 * [Slugs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Slugs.md)
 * [Using type-safe URLs from inside Javascript](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-type-safe-urls-from-inside-javascript.md)
 
 ## Ajax
 
-* [Using Ajax with a Scaffolded Site|Using Ajax with a Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-Ajax-with-a-Scaffolded-Site.md)
+* [Using Ajax with a Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Using-Ajax-with-a-Scaffolded-Site.md)
 * [Convert Get Params into a haskell record ](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Convert-get-params-into-a-haskell-record.md)
 
 ## Testing
 
 * [Testing Yesod App]
-* [Performing Authentication during Testing|Performing Authentication during Testing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Performing-Authentication-during-Testing.md)
-* [Flushing Database Between Tests|Flushing-Database-Between-Tests](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Flushing-database-between-tests.md)
+* [Performing Authentication during Testing](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Performing-Authentication-during-Testing.md)
+* [Flushing Database Between Tests](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook-pages/Flushing-database-between-tests.md)
 
 ## Template Haskell
 
