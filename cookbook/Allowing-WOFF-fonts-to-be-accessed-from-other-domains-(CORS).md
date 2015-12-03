@@ -1,7 +1,27 @@
-# Update
-There's now some middleware available on hackage to help with CORS: http://hackage.haskell.org/package/wai-cors-0.1.1
+# CORS configuration
 
-***
+## Using `wai-cors` package
+
+There's now some middleware available on hackage to help with CORS: https://hackage.haskell.org/package/wai-cors
+
+The quick start for it, in a scaffolded yesod app, is:
+
+1. `stack install wai-cors`;
+2. add `wai-cors` as `build-depends` in PROJECTNAME.cabal;
+3. add `import Network.Wai.Middleware.Cors` in `Application.hs`;
+4. add `simpleCors` as middleware in `makeApplication` in `Application.hs`.
+
+For example:
+
+```haskell
+makeApplication foundation = do
+    logWare <- makeLogWare foundation
+    -- Create the WAI application and apply middlewares
+    appPlain <- toWaiAppPlain foundation
+    return $ logWare $ defaultMiddlewaresNoLogging $ simpleCors appPlain
+```
+
+## Using a custom middleware
 
 > [WOFF fonts](https://en.wikipedia.org/wiki/WOFF) may not be accessed from [other domains by default](https://developer.mozilla.org/en-US/docs/HTTP/Access_control_CORS).  That means that your page at `http://www.example.com/` may not access a font `http://static.example.com/font.woff`.  The solution is to add a CORS header to the WOFF font allowing it to be used from other domains.
 
