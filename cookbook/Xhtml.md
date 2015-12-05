@@ -10,9 +10,9 @@ The biggest difference is the mimetype which is `application/xhtml+xml` for XHTM
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
-    <meta content="application/xhtml+xml;charset=utf-8" http-equiv="Content-Type"/>
-    <meta content="en-US" http-equiv="Content-Language"/>
-    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport"/>
+    <meta content="application/xhtml+xml;charset=utf-8" http-equiv="Content-Type">
+    <meta content="en-US" http-equiv="Content-Language">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=yes" name="viewport">
 
     <title>XHTML
   <body>
@@ -30,7 +30,7 @@ The biggest difference is the mimetype which is `application/xhtml+xml` for XHTM
 {-# LANGUAGE TypeFamilies               #-}
 
 import Data.ByteString (ByteString)
-import Text.Hamlet     (hamletFile)
+import Text.Hamlet     (xhamletFile)
 import Yesod.Core
 
 xhtmlType :: ByteString
@@ -45,7 +45,7 @@ data App = App {}
 instance Yesod App where
     defaultLayout widget = do
         pc <- widgetToPageContent widget
-        withUrlRenderer $(hamletFile "xhtml-wrapper.hamlet")
+        withUrlRenderer $(xhamletFile "xhtml-wrapper.hamlet")
 
 mkYesod "App" [parseRoutes|
 / HomeR GET
@@ -54,8 +54,9 @@ mkYesod "App" [parseRoutes|
 getHomeR :: Handler Xhtml
 getHomeR = do
     xhtml <- defaultLayout $ do
-        [whamlet|
+        toWidgetBody [xhamlet|
             <p>Hello XHTML
+            <hr>
         |]
     return $ Xhtml xhtml
 
