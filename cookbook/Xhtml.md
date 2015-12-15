@@ -51,14 +51,18 @@ mkYesod "App" [parseRoutes|
 / HomeR GET
 |]
 
+-- helper function for passing xhamlet to Handler Xhtml
+xhtml :: (ToWidgetBody site a, Yesod site) => a -> HandlerT site IO Xhtml
+xhtml src = do
+    xhtml' <- defaultLayout $ toWidgetBody src
+    return $ Xhtml xhtml'
+
 getHomeR :: Handler Xhtml
-getHomeR = do
-    xhtml <- defaultLayout $ do
-        toWidgetBody [xhamlet|
-            <p>Hello XHTML
-            <hr>
-        |]
-    return $ Xhtml xhtml
+getHomeR =
+    xhtml [xhamlet|
+        <p>Hello XHTML
+        <hr>
+    |]
 
 main :: IO ()
 main = do
