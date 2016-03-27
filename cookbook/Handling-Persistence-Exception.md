@@ -38,8 +38,10 @@ persistent-try-bugs: SQLite3 returned ErrorConstraint while attempting to perfor
 
 You can use the [exceptions](https://hackage.haskell.org/package/exceptions) package to handle exceptions. Have the appropriate imports:
 
->>> import Control.Exception (SomeException)
->>> import Control.Monad.Catch
+```
+import Control.Exception (SomeException)
+import Control.Monad.Catch
+```
 
 And the rest of the code is like this:
 
