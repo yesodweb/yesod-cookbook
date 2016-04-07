@@ -1,21 +1,31 @@
 This example shows how to upload image files to the server and manage the uploads in a database. Each image can be deleted as well.
 
 ```haskell
+#!/usr/bin/env stack
+{- stack
+     --resolver lts-5.10
+     runghc
+     --package yesod
+     --package yesod-static
+     --package persistent-sqlite
+ -}
 {-# LANGUAGE OverloadedStrings, QuasiQuotes, TemplateHaskell,
-         TypeFamilies, MultiParamTypeClasses, FlexibleContexts, GADTs #-}
+         TypeFamilies, MultiParamTypeClasses, FlexibleContexts, GADTs,
+         GeneralizedNewtypeDeriving, ViewPatterns #-}
 import Yesod
 import Yesod.Static
 import Data.Time (UTCTime)
 import System.FilePath
-import System.Directory (removeFile, doesFileExist)
+import System.Directory (removeFile, doesFileExist, createDirectoryIfMissing)
 import Control.Applicative ((<$>), (<*>))
+import Control.Monad.Logger (runStdoutLoggingT)
 import Data.Conduit
 import Data.Text (unpack)
 import qualified Data.ByteString.Lazy as DBL
 import Data.Conduit.List (consume)
 import Database.Persist
 import Database.Persist.Sqlite
-import Data.Time (getCurrentTime) 
+import Data.Time (getCurrentTime)
 
 share [mkPersist sqlSettings,mkMigrate "migrateAll"] [persistUpperCase|
 Image
@@ -25,9 +35,7 @@ Image
     deriving Show
 |]
 
-staticFiles "static"
-
-data App = App 
+data App = App
     { getStatic :: Static -- ^ Settings for static file serving.
     , connPool  :: ConnectionPool
     }
@@ -41,7 +49,7 @@ mkYesod "App" [parseRoutes|
 instance Yesod App
 
 instance YesodPersist App where
-    type YesodPersistBackend App = SqlPersist
+    type YesodPersistBackend App = SqlBackend
     runDB action = do
         App _ pool <- getYesod
         runSqlPool action pool
@@ -52,11 +60,11 @@ instance RenderMessage App FormMessage where
 uploadDirectory :: FilePath
 uploadDirectory = "static"
 
-uploadForm :: Html -> MForm App App (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
+uploadForm :: Html -> MForm Handler (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
 uploadForm = renderBootstrap $ (,,)
     <$> fileAFormReq "Image file"
     <*> aopt textareaField "Image description" Nothing
-    <*> aformM (liftIO getCurrentTime)
+    <*> lift (liftIO getCurrentTime)
 
 addStyle :: Widget
 addStyle = do
@@ -94,7 +102,7 @@ $(function(){
 });
 |]
 
-getImagesR :: Handler RepHtml
+getImagesR :: Handler Html
 getImagesR = do
     ((_, widget), enctype) <- runFormPost uploadForm
     images <- runDB $ selectList [ImageFilename !=. ""] [Desc ImageDate]
@@ -141,7 +149,7 @@ $maybe msg <- mmsg
 
 |]
 
-postImagesR :: Handler RepHtml
+postImagesR :: Handler Html
 postImagesR = do
     ((result, widget), enctype) <- runFormPost uploadForm
     case result of
@@ -187,9 +195,10 @@ openConnectionCount = 10
 
 main :: IO ()
 main = do
-    pool <- createSqlitePool "images.db3" openConnectionCount
+    pool <- runStdoutLoggingT $ createSqlitePool "images.db3" openConnectionCount
     runSqlPool (runMigration migrateAll) pool
     -- Get the static subsite, as well as the settings it is based on
-    static@(Static settings) <- static "static"
-    warpDebug 3000 $ App static pool
+    createDirectoryIfMissing True uploadDirectory
+    static@(Static settings) <- static uploadDirectory
+    warp 3000 $ App static pool
 ```
