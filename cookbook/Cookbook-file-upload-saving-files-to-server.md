@@ -4,6 +4,7 @@ This example shows how to upload image files to the server and manage the upload
 #!/usr/bin/env stack
 {- stack
      --resolver lts-5.10
+     --install-ghc
      runghc
      --package yesod
      --package yesod-static
