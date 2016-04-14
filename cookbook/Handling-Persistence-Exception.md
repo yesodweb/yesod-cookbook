@@ -135,7 +135,7 @@ postgreSQLTest = runNoLoggingT $ withPostgresqlPool conn 10 $ liftSqlPersistMPoo
                    liftIO $ print "Going to insert jane twice"
                    
                    insertJane
-                   insertJane
+                   insertJane -- This should cause exception 
                    
                    users <- getUsers
                    liftIO $ print users
@@ -214,7 +214,7 @@ transaction1 :: (MonadIO m, MonadCatch m) => ReaderT SqlBackend m ()
 transaction1 = (do
   liftIO $ print "Inside transaction 1"
   insertJane
-  insertJane
+  insertJane -- This should cause exception 
   liftIO $ print "This should not be printed (transaction 1)"
   u <- getUsers
   liftIO $ print u
