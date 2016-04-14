@@ -160,3 +160,83 @@ perm2=# select id, age from public.user;
 (0 rows)
 ```
 
+This below code shows how to handle exception in a database like `PostgreSQL`. The key is to split your queries into transactions and catching exception on the transaction.
+
+``` haskell
+{-# LANGUAGE EmptyDataDecls             #-}
+{-# LANGUAGE FlexibleContexts           #-}
+{-# LANGUAGE GADTs                      #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses      #-}
+{-# LANGUAGE OverloadedStrings          #-}
+{-# LANGUAGE QuasiQuotes                #-}
+{-# LANGUAGE TemplateHaskell            #-}
+{-# LANGUAGE TypeFamilies               #-}
+
+module Postgresql where
+
+import Database.Persist
+import Data.Pool (Pool)
+import           Control.Monad.IO.Class  (liftIO)
+import           Control.Monad.Logger    (runNoLoggingT)
+import           Database.Persist
+import           Control.Monad.Reader
+import           Data.Text
+import           Database.Persist.Sql
+import           Database.Persist.Postgresql
+import           Database.Persist.TH
+import Control.Exception (SomeException)
+import Control.Monad.Catch
+
+share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
+User
+    age Int
+    UniqueAge age
+    deriving Show
+|]
+
+getUsers :: MonadIO m => ReaderT SqlBackend m [Entity User]
+getUsers = selectList [] []
+
+insertJane :: MonadIO m => ReaderT SqlBackend m ()
+insertJane = insert_ $ User 40
+
+mapliftSqlPersistMPool :: MonadIO m => [SqlPersistM a] -> Pool SqlBackend -> m ()
+mapliftSqlPersistMPool xs pool = mapM_ (\x -> liftSqlPersistMPool x pool) xs
+
+conn = "host=localhost dbname=perm2 user=postgres password=postgres port=5432"
+       
+postgreSQLTest :: IO ()
+postgreSQLTest = runNoLoggingT $ withPostgresqlPool conn 10 $ 
+                 mapliftSqlPersistMPool [transaction1, transaction2]
+
+transaction1 :: (MonadIO m, MonadCatch m) => ReaderT SqlBackend m ()
+transaction1 = (do
+  liftIO $ print "Inside transaction 1"
+  insertJane
+  insertJane
+  liftIO $ print "This should not be printed (transaction 1)"
+  u <- getUsers
+  liftIO $ print u
+  return ()) `catch` (\(SomeException e) -> return ())
+
+
+transaction2 :: (MonadIO m, MonadCatch m) => ReaderT SqlBackend m ()
+transaction2 = do
+  liftIO $ print "Inside transaction 2"
+  users <- getUsers
+  liftIO $ print users
+  liftIO $ print "This should just print fine (transaction 2)"
+  return ()
+```
+
+On execution:
+
+``` shellsession
+$ ./postgresql-code
+"Inside transaction 1"
+"Inside transaction 2"
+[]
+"This should just print fine (transaction 2)"
+```
+
