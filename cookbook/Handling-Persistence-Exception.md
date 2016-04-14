@@ -201,14 +201,14 @@ getUsers = selectList [] []
 insertJane :: MonadIO m => ReaderT SqlBackend m ()
 insertJane = insert_ $ User 40
 
-mapliftSqlPersistMPool :: MonadIO m => [SqlPersistM a] -> Pool SqlBackend -> m ()
-mapliftSqlPersistMPool xs pool = mapM_ (\x -> liftSqlPersistMPool x pool) xs
+mapLiftSqlPersistMPool :: MonadIO m => [SqlPersistM a] -> Pool SqlBackend -> m ()
+mapLiftSqlPersistMPool xs pool = mapM_ (\x -> liftSqlPersistMPool x pool) xs
 
 conn = "host=localhost dbname=perm2 user=postgres password=postgres port=5432"
        
 postgreSQLTest :: IO ()
 postgreSQLTest = runNoLoggingT $ withPostgresqlPool conn 10 $ 
-                 mapliftSqlPersistMPool [transaction1, transaction2]
+                 mapLiftSqlPersistMPool [transaction1, transaction2]
 
 transaction1 :: (MonadIO m, MonadCatch m) => ReaderT SqlBackend m ()
 transaction1 = (do
