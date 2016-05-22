@@ -85,3 +85,6 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 ## Conduit
 
 * [Consume a webpage with http-conduit and print progress along the way](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Consume-a-webpage-with-http-conduit-and-print-progress-along-the-way.md)
+
+## Persistent
+* [Builtin Postgresql types with Persistent](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/CustomPostgresqlTypes.md)
