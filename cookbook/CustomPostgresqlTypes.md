@@ -1,6 +1,6 @@
 While using derivePersistField can provide an easy method for storing Haskell simple/sum types there are cases were you will 
 to need to use native DB types for efficiency or to use type specific functions which can be helpful in advanced queries.
-This cookbook provides examples for two Postgresql types JSONB and INTERVAL
+This cookbook provides examples for two Postgresql types JSONB, INTERVAL, and UUID
 
 To support native encoding to class instances need to be created.
 * `PersistFieldSql` class specifies which Posgresql type should be created for the database migration.
@@ -36,7 +36,7 @@ data JsonB = JsonB A.Value
 instance PersistField JsonB where
   toPersistValue (JsonB t) = PersistDbSpecific $ toStrict $ A.encode t
   fromPersistValue (PersistByteString s) = either (Left . pack . ("Could not convert Json " ++)) (Right . JsonB) $ AP.eitherResult $ AP.parse value $  s
-  fromPersistValue a = Left $ pack ("JsonB values must be converted from PersistDbSpecific " ++ show a)
+  fromPersistValue a = Left $ pack ("JsonB conversion failed for value " ++ show a)
 
 instance PersistFieldSql JsonB where
   sqlType _ = SqlOther "jsonb"
@@ -69,8 +69,34 @@ data Interval = Interval Double
 instance PersistField Interval where
   toPersistValue (Interval r) = PersistDbSpecific $ fromString $ show r
   fromPersistValue (PersistDbSpecific s) =  either (Left . pack . ("Could not convert to Interval " ++)) (Right) $ AP.eitherResult $ AP.parse parseInterval (s ++ "\0")
-  fromPersistValue a = Left $ pack ("Interval values must be converted from PersistDbSpecific " ++ show a)
+  fromPersistValue a = Left $ pack ("Interval conversion failed for value " ++ show a)
 
 instance PersistFieldSql Interval where
   sqlType _ = SqlOther "interval"
 ```
+### UUID
+[UUID](http://www.postgresql.org/docs/9.5/static/datatype-uuid.html) for storing Universally Unique Identifiers.
+For the `toPersistValue` we only need to convert the UUID to a `Text` value and PersistValue the value using constructor `PersistText`. The library uuid has functions convert UUID to and from `String` and to and from `Text`. For `fromPersistValue` the UUID is embedded in a `PersistDbSpecific`value. We first must convert the `ByteString` to a normal `String` and then convert the string to a UUID. 
+```haskell
+import qualified Data.ByteString.UTF8 as BSU
+import Data.UUID.Types (UUID(..), fromText, toText)
+import qualified  Data.UUID.Types as UU -- for fromString
+
+instance PersistField UUID where
+  toPersistValue = `PersistText` . toText
+  fromPersistValue raw@(PersistText s) =  maybe (Left ("Could not convert to UUID " ++ s)) (Right) $ fromText s
+  fromPersistValue raw@(PersistDbSpecific t) = maybe (Left $ pack ("Could not convert to UUID " ++ show raw)) (Right ) $ UU.fromString $ BSU.toString t
+  fromPersistValue a = Left $ pack ("UUID conversion failed for value " ++ show a)
+
+instance PersistFieldSql UUID where
+  sqlType _ = SqlOther "uuid"
+```
+If you want to replace the primary id with a UUID, add the following to your model
+  ID UUID default=uuid_generate_v1()
+
+To use UUID automatic generation on postgres enable [uuid-ossp](http://www.postgresql.org/docs/current/static/uuid-ossp.html)
+ in postgresql use:
+'''
+enable_extension 'uuid-ossp'
+'''
+alternatively if you only need UUID V4, you can use the function gen_random_uuid in the pgcrypto module.
