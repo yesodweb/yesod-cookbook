@@ -39,6 +39,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Activate foreign key checking in Sqlite](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Activate-foreign-key-checking-in-Sqlite.md)
 * [Adding Seed data to Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Adding-Seed-Data-to-Scaffolded-Site.md)
 * [Handling exception in persistence](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Handling-Persistence-Exception.md)
+* [Builtin Postgresql types with Persistent](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/CustomPostgresqlTypes.md)
 
 ## State
 
@@ -85,3 +86,4 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 ## Conduit
 
 * [Consume a webpage with http-conduit and print progress along the way](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Consume-a-webpage-with-http-conduit-and-print-progress-along-the-way.md)
+
