@@ -40,6 +40,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Adding Seed data to Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Adding-Seed-Data-to-Scaffolded-Site.md)
 * [Handling exception in persistence](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Handling-Persistence-Exception.md)
 * [Builtin Postgresql types with Persistent](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/CustomPostgresqlTypes.md)
+* [Modelling Schema with Persistent](./cookbook/modelling-schema.md)
 
 ## State
 
