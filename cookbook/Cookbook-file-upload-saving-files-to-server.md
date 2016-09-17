@@ -47,7 +47,8 @@ mkYesod "App" [parseRoutes|
 /static StaticR Static getStatic
 |]
 
-instance Yesod App
+instance Yesod App where
+    maximumContentLength _ (Just ImagesR) = Just $ 200 * 1024 * 1024 -- 200 megabytes
 
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend
