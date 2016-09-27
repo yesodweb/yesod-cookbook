@@ -1,6 +1,17 @@
 Custom data types column in Persistent
 ===============================================
 
+*NOTE: This article just demonstrates how to use this technique. But
+in actual practice you should probably store each value in
+MyCustomTuple as an individual column. This is what Michael Snoyman
+had to say on this: "It's bad from a DB management standpoint: it's
+just storing the data as JSON in the table, which is difficult to work
+with. The proper where is to just have two different fields in the
+entity. Whether you want to do it one way or the other though is up to
+personal preference, both work." See
+[here](https://github.com/yesodweb/yesod-cookbook/pull/11#issuecomment-247297565)
+for more information.*
+
 Let's say you have a custom datatype like
 
 ``` haskell
