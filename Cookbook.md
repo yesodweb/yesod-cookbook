@@ -41,6 +41,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Handling exception in persistence](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Handling-Persistence-Exception.md)
 * [Builtin Postgresql types with Persistent](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/CustomPostgresqlTypes.md)
 * [Modelling Schema with Persistent](./cookbook/modelling-schema.md)
+* [Custom data types column in Persistent](./cookbook/custom-datatype-columns.md)
 
 ## State
 
