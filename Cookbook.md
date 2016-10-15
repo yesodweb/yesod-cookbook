@@ -28,6 +28,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 
 * [Run raw MongoDB](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Rawmongo.md)
 * [Run raw SQL](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/RawSQL.md)
+* [Sample MongoDB connection with persistent](./cookbook/mongodb-example.md)
 * [Sphinx Search](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Sphinx-Search.md)
 * [Non scaffolded MongoDB App](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Non-scaffolded-MongoDB-App.md)
 * [Using Database.Persist.runPool without Foundation](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-Database.Persist.runPool-without-Foundation.md)
