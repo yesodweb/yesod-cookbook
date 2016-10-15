@@ -56,8 +56,9 @@ data GeoLocation = GeoLocation
       longitude :: Double 
     } deriving (Show, Eq, Ord)
 
+-- Note that lat, lon inside the query refers to the column name
 findNearbyMarkers :: (MonadIO m) => GeoLocation -> ReaderT SqlBackend m [(Single String, Single Double)]
-findNearbyMarkers (GeoLocation lat lon) = rawSql "SELECT name, ( 3959 * acos( cos( radians(37) ) * cos( radians( ? ) ) * cos( radians( ? ) - radians(-122) ) + sin( radians(37) ) * sin( radians( ? ) ) ) ) AS distance FROM markers" [PersistDouble lat, PersistDouble lon, PersistDouble lat]
+findNearbyMarkers (GeoLocation lat lon) = rawSql "SELECT name, ( 3959 * acos( cos( radians(?) ) * cos( radians( lat ) ) * cos( radians( lon ) - radians(?) ) + sin( radians(?) ) * sin( radians( lat ) ) ) ) AS distance FROM markers" [PersistDouble lat, PersistDouble lon, PersistDouble lat]
 
 main :: IO ()
 main = runStderrLoggingT $ withPostgresqlPool connStr 10 $ liftSqlPersistMPool $ do
