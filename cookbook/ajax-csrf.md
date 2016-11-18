@@ -226,10 +226,7 @@ mkYesod
 /json/test TestR POST
 |]
 
-instance Yesod App
-         -- Emails will include links, so be sure to include an approot so that
-         -- the links are valid!
-                                 where
+instance Yesod App where
   approot = ApprootStatic "http://localhost:3006"
   
   yesodMiddleware = defaultCsrfMiddleware . defaultYesodMiddleware
