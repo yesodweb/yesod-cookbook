@@ -9,6 +9,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 ## Basics
 * [Adding CSS and JS](http://www.yesodweb.com/blog/2013/01/adding-css-js)
 * [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/JSON-data-helpful-manipulations.md)
+* [Doing AJAX calls with CSRF Protection](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/ajax-csrf.md)
 * [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Develop-JS-without-recompiling-the-yesod-project.md)
 
 ## Forms
