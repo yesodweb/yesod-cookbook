@@ -2,8 +2,9 @@
 
 This is a nice [video](https://www.youtube.com/watch?v=hW2ONyxAySY)
 which describes CSRF and how it can be exploited. Yesod offers easy to
-use protection again CSRF by providin a middleware for it. For using
-it, all you have to do is include it while making the instance of it
+use protection again CSRF by providing a middleware for it. For using
+it, all you have to do is include the following line while making the
+instance of `Yesod` typeclass:
 
 ```
 yesodMiddleware = defaultCsrfMiddleware . defaultYesodMiddleware
