@@ -38,6 +38,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Lens for existing site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Lens-for-existing-site.md)
 * [Connecting to an additional existing database](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Connecting-to-an-additional-existing-database.md)
 * [Example MySQL Connection code](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Example-MySQL-Connection-code.md)
+* [Example Postgres Connection code](./cookbook/postgres-example-code.md)
 * [Activate foreign key checking in Sqlite](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Activate-foreign-key-checking-in-Sqlite.md)
 * [Adding Seed data to Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Adding-Seed-Data-to-Scaffolded-Site.md)
 * [Handling exception in persistence](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Handling-Persistence-Exception.md)
