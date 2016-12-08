@@ -60,6 +60,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 
 * [Use HashDB in a scaffolded site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-HashDB-In-a-Scaffolded-Site.md)
 * [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
+* [Demo of Yesod.Auth.Email module using JSON endpoints](./cookbook/yesod-auth-json.md)
 
 ## Internationalization
 
