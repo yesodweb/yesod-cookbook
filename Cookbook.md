@@ -11,6 +11,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/JSON-data-helpful-manipulations.md)
 * [Doing AJAX calls with CSRF Protection](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/ajax-csrf.md)
 * [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Develop-JS-without-recompiling-the-yesod-project.md)
+* [RAW JSON Parsing example](./cookbook/raw-json-parsing.md)
 
 ## Forms
 
@@ -59,6 +60,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 
 * [Use HashDB in a scaffolded site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-HashDB-In-a-Scaffolded-Site.md)
 * [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
+* [Demo of Yesod.Auth.Email module using JSON endpoints](./cookbook/yesod-auth-json.md)
 
 ## Internationalization
 
