@@ -1,5 +1,9 @@
 # Init of the project
 
+**Warning**: Stack templates are now the preferred way of creating scaffolded
+Yesod apps, use `stack templates` to lists the available ones. Additionally use
+`stack exec -- yesod` to invoke *yesod-bin* in your project.
+
 ## Goal
 
 The goal of this chapter is to create the scaffolded site and make it work.
