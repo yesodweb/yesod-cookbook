@@ -152,7 +152,7 @@ instance YesodAuthEmail App where
         , partHeaders = []
         }
   getVerifyKey = runDB . fmap (join . fmap userVerkey) . get
-  needOldPassword _ = return True
+  needOldPassword _ = return False
   setVerifyKey uid key = runDB $ update uid [UserVerkey =. Just key]
   verifyAccount uid =
     runDB $
