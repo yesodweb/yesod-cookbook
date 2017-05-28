@@ -8,26 +8,38 @@ Example of a product list where each product optionally has multiple categories 
 This example shows how to fill a multi select box with values from the Category table, and use the selected values to create a new Product.
 
 ```haskell
-{-# LANGUAGE FlexibleContexts
-           , GADTs
-           , MultiParamTypeClasses
-           , OverloadedStrings
-           , QuasiQuotes
-           , TemplateHaskell
-           , TypeFamilies
- #-}
+#!/usr/bin/env stack
+{- stack
+     --resolver lts-5.10
+     --install-ghc
+     runghc
+     --package esqueleto
+     --package yesod
+     --package persistent-sqlite
+ -}
 
-import Yesod hiding ((==.), (!=.))
-import Database.Esqueleto
-import Database.Persist.Sqlite (withSqliteConn, withSqlitePool)
-import Control.Applicative (pure, (<$>), (<*>))
-import Data.Text (Text, concat)
-import Control.Monad (forM_, liftM)
-import qualified Data.Map.Strict as Map
-import Data.List (foldl', intersperse, sort)
-import Data.Maybe (catMaybes)
+{-# LANGUAGE FlexibleContexts      #-}
+{-# LANGUAGE GADTs                 #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE OverloadedStrings     #-}
+{-# LANGUAGE QuasiQuotes           #-}
+{-# LANGUAGE TemplateHaskell       #-}
+{-# LANGUAGE TypeFamilies          #-}
 
-share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persist|
+import           Control.Applicative     (pure, (<$>), (<*>))
+import           Control.Monad           (forM_, liftM)
+import           Control.Monad.Trans.Resource (runResourceT)
+import           Control.Monad.Logger (runStderrLoggingT)
+import           Data.List               (foldl', intersperse, sort)
+import qualified Data.Map.Strict         as Map
+import           Data.Maybe              (catMaybes)
+import           Data.Text               (Text, concat)
+import           Database.Esqueleto
+import           Database.Persist.Sqlite (withSqliteConn, withSqlitePool)
+import           Yesod                   hiding ((!=.), (==.))
+
+share [mkPersist sqlSettings, mkMigrate "migrateAll"] [persistLowerCase|
 Product
     name Text
     deriving Eq Ord Show
@@ -48,7 +60,8 @@ mkYesod "App" [parseRoutes|
 
 instance Yesod App
 instance YesodPersist App where
-    type YesodPersistBackend App = SqlPersist
+    type YesodPersistBackend App = SqlBackend
+
     runDB action = do
         App pool <- getYesod
         runSqlPool action pool
@@ -68,7 +81,7 @@ getProductsAndCategories = runDB $ select $
     orderBy [ asc (p ^. ProductName) ]
     return (p, mc)
 
-keyValuesToMap :: (Ord k) => [(k, a)] -> Map.Map k [a]  
+keyValuesToMap :: (Ord k) => [(k, a)] -> Map.Map k [a]
 keyValuesToMap = Map.fromListWith (++) . map (\(k,v) -> (k,[v]))
 
 productsAndCategoriesToValues :: [(Entity Product, [Maybe (Entity Category)])] -> [(Product, [Category])]
@@ -112,18 +125,18 @@ getHomeR = do
 postHomeR :: Handler RepHtml
 postHomeR = do
     ((result, _), _) <- runFormPostNoToken $ productForm Nothing
-    case result of 
+    case result of
         FormSuccess (product, maybeCategories) -> do
             p <- runDB $ insert $ product
             case maybeCategories of
-                Just c -> mapM_ (\c' -> runDB $ insert $ ProductCategory p c') c 
+                Just c -> mapM_ (\c' -> runDB $ insert $ ProductCategory p c') c
                 Nothing -> return ()
             redirect HomeR
         _ -> do
             setMessage "Failure adding"
             redirect HomeR
 
-productForm :: Maybe Product -> Html -> MForm App App (FormResult (Product, Maybe [CategoryId]), Widget)
+productForm :: Maybe Product -> Html -> MForm Handler (FormResult (Product, Maybe [CategoryId]), Widget)
 productForm mproduct = renderBootstrap $ (,)
     <$> product
     <*> mcategories
@@ -145,8 +158,8 @@ openConnectionCount :: Int
 openConnectionCount = 1 -- when using 'memory', otherwise higher, f.i. 10
 
 main :: IO ()
-main = withSqlitePool ":memory:" openConnectionCount $ \pool -> do
-    flip runSqlPool pool $ do
+main = runStderrLoggingT $ withSqlitePool "multi_field_esqueleto.db3" openConnectionCount $ \pool -> liftIO $ do
+    runResourceT $ flip runSqlPool pool $ do
         runMigration migrateAll
 
         -- add some example data
