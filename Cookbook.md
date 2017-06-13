@@ -74,6 +74,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Pure-Haskell-static-subdomains.md)
 * [Slugs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Slugs.md)
 * [Using type-safe URLs from inside Javascript](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-type-safe-urls-from-inside-javascript.md)
+* [Subsite with typeclass contexts and type variables](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Subsite-with-typeclass-contexts-and-type-variables.md)
 
 ## Ajax
 
