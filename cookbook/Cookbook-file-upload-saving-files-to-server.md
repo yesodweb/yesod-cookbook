@@ -62,7 +62,7 @@ instance RenderMessage App FormMessage where
 uploadDirectory :: FilePath
 uploadDirectory = "static"
 
-uploadForm :: Html -> MForm Handler (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
+uploadForm :: MForm Handler (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
 uploadForm = renderBootstrap $ (,,)
     <$> fileAFormReq "Image file"
     <*> aopt textareaField "Image description" Nothing
