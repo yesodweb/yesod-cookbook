@@ -3,7 +3,7 @@ This example shows how to upload image files to the server and manage the upload
 ```haskell
 #!/usr/bin/env stack
 {- stack
-     --resolver lts-5.10
+     --resolver lts-8.17
      --install-ghc
      runghc
      --package yesod
@@ -48,7 +48,7 @@ mkYesod "App" [parseRoutes|
 |]
 
 instance Yesod App where
-    maximumContentLength _ (Just ImagesR) = Just $ 200 * 1024 * 1024 -- 200 megabytes
+    maximumContentLength _ _ = Just $ 200 * 1024 * 1024 -- 200 megabytes
 
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend
