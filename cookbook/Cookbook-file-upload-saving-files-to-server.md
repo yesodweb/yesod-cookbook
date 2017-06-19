@@ -10,9 +10,17 @@ This example shows how to upload image files to the server and manage the upload
      --package yesod-static
      --package persistent-sqlite
  -}
-{-# LANGUAGE OverloadedStrings, QuasiQuotes, TemplateHaskell,
-         TypeFamilies, MultiParamTypeClasses, FlexibleContexts, GADTs,
-         GeneralizedNewtypeDeriving, ViewPatterns #-}
+
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE TemplateHaskell #-}
+{-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE TypeFamilies #-}
+{-# LANGUAGE MultiParamTypeClasses #-}
+{-# LANGUAGE FlexibleContexts #-}
+{-# LANGUAGE GADTs #-}
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+{-# LANGUAGE ViewPatterns #-}
+
 import Yesod
 import Yesod.Static
 import Data.Time (UTCTime)
@@ -62,7 +70,7 @@ instance RenderMessage App FormMessage where
 uploadDirectory :: FilePath
 uploadDirectory = "static"
 
-uploadForm :: MForm Handler (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
+uploadForm :: Html -> MForm Handler (FormResult (FileInfo, Maybe Textarea, UTCTime), Widget)
 uploadForm = renderBootstrap $ (,,)
     <$> fileAFormReq "Image file"
     <*> aopt textareaField "Image description" Nothing
