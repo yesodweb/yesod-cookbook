@@ -56,7 +56,8 @@ mkYesod "App" [parseRoutes|
 |]
 
 instance Yesod App where
-    maximumContentLength _ _ = Just $ 200 * 1024 * 1024 -- 200 megabytes
+    maximumContentLength _ (Just ImagesR) = Just $ 200 * 1024 * 1024 -- 200 megabytes
+    maximumContentLength _ _ = Just $ 10 * 1024 * 1024 -- 10 megabytes
 
 instance YesodPersist App where
     type YesodPersistBackend App = SqlBackend
