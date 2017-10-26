@@ -2,11 +2,11 @@ So you want to keep state in yesod?
 
 # Disclamer
 
-Please read the disclamer on [[Keeping (in memory) state with warp]] carefully. It completely applies to keeping state with yesod, too.
+Please read the disclamer on [Keeping (in memory) state with warp] carefully. It completely applies to keeping state with yesod, too.
 
 # Thread-safe state
 
-Same as described in [[Keeping (in memory) state with warp]]. While you're there, _**make sure to read the disclamer**_.
+Same as described in [Keeping (in memory) state with warp]. While you're there, _**make sure to read the disclamer**_.
 
 # How to inject state into yesod?
 
@@ -14,7 +14,7 @@ It's actually very simply: Just put it into the yesod foundation type. Your Hand
 
 # Example: Counting requests
 
-As we did with [[Keeping (in memory) state with warp]], let's count the number of requests using an IORef. For that, we only need to slightly modify the [Hello World Example](http://www.yesodweb.com/book/basics). "-- (n)" indicates a that there's something that I want to comment on below.
+As we did with [Keeping (in memory) state with warp], let's count the number of requests using an IORef. For that, we only need to slightly modify the [Hello World Example](http://www.yesodweb.com/book/basics). "-- (n)" indicates a that there's something that I want to comment on below.
 
 ```haskell
 {-# LANGUAGE TypeFamilies, QuasiQuotes, MultiParamTypeClasses,
@@ -89,3 +89,5 @@ Meanwhile, your console should show:
     127.0.0.1 - - [25/Nov/2012:14:21:40 +0100] "GET /favicon.ico HTTP/1.1" 404 - "" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11"
 
 The lines "Sending Response 0" and "Sending Response 1" are written by us, while the lines starting with an IP address are the debug output of `warpDebug`.
+
+[Keeping (in memory) state with warp]: https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Keeping-(in-memory)-state-with-warp.md
