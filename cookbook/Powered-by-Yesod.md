@@ -22,6 +22,7 @@ Yesod applications that you can run locally.
 * [hledger-web](http://demo.hledger.org/): The web interface for the hledger accounting tool.
 * [yackage](http://hackage.haskell.org/package/yackage) ([github](https://github.com/snoyberg/yackage)): A personal Hackage serving for testing new packages.
 * [Kestrel](https://github.com/cutsea110/Kestrel): A Wiki clone. This site has been published as a home customized to a university department ([Seitoku University Junior College](http://soubun.seitoku.ac.jp)).
+* [DoHaskell](https://github.com/mitchellwrosen/dohaskell): A site collecting and tagging resources for learning the Haskell programming language.
 
 
 ## Sites
