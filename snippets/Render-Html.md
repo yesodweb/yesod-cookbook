@@ -10,7 +10,6 @@ Main idea: Using the `preEscapedText` from the package `blaze-markup`
      runghc
      --package yesod
      --package text
-     --package blaze-markup
  -}
 
 
@@ -20,7 +19,6 @@ Main idea: Using the `preEscapedText` from the package `blaze-markup`
 {-# LANGUAGE TypeFamilies          #-}
 import Yesod
 import Data.Text
-import Text.Blaze (preEscapedText)
 import qualified Data.Text.IO as TIO
 
 data HelloWorld = HelloWorld
@@ -37,7 +35,7 @@ htmlFilePath = "/home/sibi/hello.html"
 getHomeR :: Handler Html
 getHomeR = do
   htmlContent <- liftIO $ TIO.readFile htmlFilePath
-  return $ preEscapedText htmlContent
+  return $ preEscapedToMarkup htmlContent
 
 main :: IO ()
 main = warp 3000 HelloWorld
