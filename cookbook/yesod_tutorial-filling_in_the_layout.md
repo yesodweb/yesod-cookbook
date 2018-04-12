@@ -33,7 +33,7 @@ When you refresh one of the four pages, you'll notice a change in font!
 
 ## Adding some structure
 
-We want to give some more structure to our pages with a site logo, a navigation header and a site footer. The mockup looks like [http://railstutorial.org/images/figures/home_page_mockup-full.png](http://railstutorial.org/images/figures/home_page_mockup-full.png).
+We want to give some more structure to our pages with a site logo, a navigation header and a site footer.
 
 The site navigation should be omnipresent and therefore added to `hamlet/default-layout.hamlet`.
 
@@ -188,5 +188,3 @@ Because the sign up button is specific to the homepage, we can put the CSS into 
         padding: 20px
 
 Notice that putting this code in `cassius/default-homepage.cassius` will also work and will be available on every page.
-
-The homepage will look like [http://railstutorial.org/images/figures/site_with_footer-full.png](http://railstutorial.org/images/figures/site_with_footer-full.png).

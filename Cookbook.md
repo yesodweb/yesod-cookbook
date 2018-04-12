@@ -11,6 +11,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [JSON Object Create and Append](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/JSON-data-helpful-manipulations.md)
 * [Doing AJAX calls with CSRF Protection](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/ajax-csrf.md)
 * [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Develop-JS-without-recompiling-the-yesod-project.md)
+* [RAW JSON Parsing example](./cookbook/raw-json-parsing.md)
 
 ## Forms
 
@@ -38,6 +39,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Lens for existing site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Lens-for-existing-site.md)
 * [Connecting to an additional existing database](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Connecting-to-an-additional-existing-database.md)
 * [Example MySQL Connection code](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Example-MySQL-Connection-code.md)
+* [Example Postgres Connection code](./cookbook/postgres-example-code.md)
 * [Activate foreign key checking in Sqlite](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Activate-foreign-key-checking-in-Sqlite.md)
 * [Adding Seed data to Scaffolded Site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Adding-Seed-Data-to-Scaffolded-Site.md)
 * [Handling exception in persistence](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Handling-Persistence-Exception.md)
@@ -58,6 +60,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 
 * [Use HashDB in a scaffolded site](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-HashDB-In-a-Scaffolded-Site.md)
 * [Abstracting user roles & permissions](http://blog.felipe.lessa.nom.br/?p=7)
+* [Demo of Yesod.Auth.Email module using JSON endpoints](./cookbook/yesod-auth-json.md)
 
 ## Internationalization
 
@@ -71,6 +74,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Pure-Haskell static subdomains](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Pure-Haskell-static-subdomains.md)
 * [Slugs](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Slugs.md)
 * [Using type-safe URLs from inside Javascript](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Using-type-safe-urls-from-inside-javascript.md)
+* [Subsite with typeclass contexts and type variables](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Subsite-with-typeclass-contexts-and-type-variables.md)
 
 ## Ajax
 

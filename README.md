@@ -19,7 +19,7 @@ link for it in the
 
 ### Creating a new Snippet page
 
-All the pages related to cookbook are inside the directory
+All the pages related to snippets are inside the directory
 `snippets`. Create a new file inside it and add a corresponding
 link for it in the
 [Snippets section](https://github.com/yesodweb/yesod-cookbook/blob/master/Snippets.md).

@@ -45,7 +45,7 @@ instance YesodBreadcrumbs App where
     breadcrumb (UKR UKRootR) = return ("UK", Just RootR)
     breadcrumb (AdminR AdminRootR) = return ("Admin", Just RootR)
 
-getRootR :: Handler RepHtml
+getRootR :: Handler Html
 getRootR = defaultLayout [whamlet|$newline never
 <h1>Homepage
 <p>
@@ -61,32 +61,33 @@ getRootR = defaultLayout [whamlet|$newline never
     \.
 |]
 
-getAdminRootR :: Handler RepHtml
+getAdminRootR :: Handler Html
 getAdminRootR = do
     defaultLayout $ do
     [whamlet|$newline never
 <h1>Admin
 |]
 
-getNLRootR :: Handler RepHtml
+getNLRootR :: Handler Html
 getNLRootR = do
     defaultLayout $ do
     [whamlet|$newline never
 <h1>NL
 |]
 
-getUKRootR :: Handler RepHtml
+getUKRootR :: Handler Html
 getUKRootR = do
     defaultLayout $ do
     [whamlet|$newline never
 <h1>UK
 |]
 
-myLayout :: GWidget s App () -> GHandler s App RepHtml
+--myLayout :: GWidget s App () -> GHandler s App RepHtml
+myLayout :: Widget -> Handler Html
 myLayout widget = do
     (title, parents) <- breadcrumbs
     pc <- widgetToPageContent widget
-    hamletToRepHtml [hamlet|$newline never
+    withUrlRenderer [hamlet|$newline never
 $doctype 5
 <html>
     <head>
@@ -118,5 +119,5 @@ $doctype 5
             ^{pageBody pc}
 |]
 
-main = warpDebug 3000 $ App
+main = warp 3000 $ App
 ```
