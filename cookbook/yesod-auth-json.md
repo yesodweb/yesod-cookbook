@@ -1,6 +1,6 @@
 # Demo of Yesod.Auth.Email module using JSON endpoints
 
-The code below will show how to the JSON endpoints
+The code below will show how to get the JSON endpoints
 of
 [Yesod.Auth.Email](https://www.stackage.org/haddock/nightly-2016-12-08/yesod-auth-1.4.15/Yesod-Auth-Email.html) module
 to interact. Note that you need a minimum version of
