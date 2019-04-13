@@ -95,3 +95,6 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 
 * [Consume a webpage with http-conduit and print progress along the way](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Consume-a-webpage-with-http-conduit-and-print-progress-along-the-way.md)
 
+## Heroku
+
+* [Deploying to Heroku](./cookbook/yesod-heroku-deploy.md)
