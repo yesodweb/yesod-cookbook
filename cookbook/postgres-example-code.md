@@ -41,6 +41,8 @@ Peerson
 |]
 
 connStr = "host=localhost dbname=test user=postgres password=postgres port=5432"
+-- connStr = "postgresql://postgres:postgres@localhost:5432/test"
+-- Both of the above variants of connection string will work
 
 main :: IO ()
 main =
