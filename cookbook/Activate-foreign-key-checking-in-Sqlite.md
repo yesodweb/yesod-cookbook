@@ -1,3 +1,5 @@
+*Foreign keys checking is enabled by default since persistent-sqlite-2.6.2: [#646](https://github.com/yesodweb/persistent/pull/646)*
+
 *Updated for the Yesod 1.4.3.3 scaffolding*
 
 In SQLite, foreign keys checks [are not enabled by default](https://www.sqlite.org/foreignkeys.html#fk_enable). Instead, they must be enabled on a per-connection basis by issuing a PRAGMA command, like so:
