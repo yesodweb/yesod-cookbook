@@ -160,7 +160,7 @@ instance YesodAuthEmail App where
        case mu of
          Nothing -> return Nothing
          Just u -> do
-           update uid [UserVerified =. True]
+           update uid [UserVerified =. True, UserVerkey =. Nothing]
            return $ Just uid
   getPassword = runDB . fmap (join . fmap userPassword) . get
   setPassword uid pass = runDB $ update uid [UserPassword =. Just pass]
