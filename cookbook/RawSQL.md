@@ -40,7 +40,7 @@ main = withSqliteConn ":memory:" $ runSqlConn $ do
 
 ### Fetching data
 
-Combine the [rawSql](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-GenericSql.html#v:rawSql) function with `runDB` (which is defined in "Foundation.hs").
+Combine the [rawSql](http://hackage.haskell.org/packages/archive/persistent/1.1.5.1/doc/html/Database-Persist-GenericSql.html#v:rawSql) function with `runDB` (which is defined in "Foundation.hs"). Also consider [rawExecute](http://hackage.haskell.org/package/persistent-2.10.1/docs/Database-Persist-Sql.html#v:rawExecute) when you don't care about return type, eg for an `UPDATE ...`.
 
 ```haskell
 getSearchR :: Text -> Handler RepHtml
