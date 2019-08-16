@@ -13,14 +13,14 @@ The project needs to be rebuilt to bring css_my_css_file_css under the scope. If
 So to every new file added in static files you should execute the follows commands.
 
 ```
-stack clean
+stack clean  # You should skip this command if you only added a file to the project.
 stack build 
 ```
 
 or
 
 ```
-stack clean
+stack clean # You should skip this command if you only added a file to the project.
 stack build --fast --file-watch
 ```
 
