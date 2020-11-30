@@ -12,6 +12,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Doing AJAX calls with CSRF Protection](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/ajax-csrf.md)
 * [Develop JS without recompiling the yesod project](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Develop-JS-without-recompiling-the-yesod-project.md)
 * [RAW JSON Parsing example](./cookbook/raw-json-parsing.md)
+* [Tip to use statics files](./cookbook/Tip-to-use-statics-files-js-css.md)
 
 ## Forms
 
