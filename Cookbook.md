@@ -19,6 +19,7 @@ For non-Yesod code, see also [Snippets](https://github.com/yesodweb/yesod-cookbo
 * [Change the order of form fields](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/OrderFormFields.md)
 * [Require input for Maybe field](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/RequireInputMaybeField.md)
 * [Custom form layout](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/CustomFormLayout.md)
+* [Maintaining Applicative Form Behavior In Monadic Forms](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Maintaining-Applicative-Form-Behavior-In-Monadic-Forms.md)
 * [Password confirm field](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Password-Confirm-Field.md)
 * [Multi-field validation](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Cookbook-Multi-field-validation.md)
 * [Select field populated from database](https://github.com/yesodweb/yesod-cookbook/blob/master/cookbook/Select-field-populated-from-database.md)
